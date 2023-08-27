@@ -1,0 +1,44 @@
+body {
+    background-color: #3D4244;
+}
+
+.center-box {
+    min-width: 60%;
+    max-width: 80%;
+    min-height: 60%;
+    max-height: 80%;
+    margin: auto;
+    padding: 1px;
+    display: block;
+    outline-color: #3D4244;
+    background-color: #FFC8C8;
+}
+
+.input-field {
+    display: inline-block;
+    width: 80%;
+    height: 5%;
+    margin: 0 auto;
+    padding: 1px;
+    border-radius: 10px;
+    border: 0px solid;
+    outline-color: #3D4244;
+    background-color: #FFFFFF;
+}
+
+input[type=text]#user-login {
+    text-align:center;
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 80%;
+    padding: 5px;
+}
+
+input[type=text], input[type=password] {
+    text-align:left;
+    
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 80%;
+    padding: 5px;
+}
