@@ -2,6 +2,11 @@ body {
     background-color: #3D4244;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 1px;
+    padding-left: 5%;
+}
+
 .center-box {
     min-width: 60%;
     max-width: 80%;
