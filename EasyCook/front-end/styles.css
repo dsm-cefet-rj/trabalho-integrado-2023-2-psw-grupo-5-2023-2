@@ -43,14 +43,14 @@ input[type=text], input[type=password] {
     text-align:left;
     
     display: block;
-    margin: 0 auto 0 auto;
+    margin: 2% auto 2% auto;
     width: 80%;
     padding: 5px;
 }
 
 .forgot-password {
     text-align: right;
-    margin: 0 5% 0 5%;
+    margin: 1 5% 1 5%;
     display: block;
     color: aliceblue;
 }

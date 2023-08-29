@@ -1,16 +1,220 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="center-box">
-        <h2>Login</h2>
-        <input type="text" class="input-field" placeholder="Seu e-mail">
-        <input type="password" class="input-field" placeholder="Sua senha">
-        <a class="forgot-password" href="http://">Esqueci minha senha</a>
+<html>
+ <head>
+  <title> Validação de Formulário </title>
+  <meta charset="utf-8">
+  <style>
+    .form-control i {
+      visibility: hidden;
+    }
+    .form-control small {
+      visibility: hidden;
+    }
+    .form-control.error small {
+      visibility: visible;
+      color: red;
+      position: relative;
+      bottom: 18px;
+    }
+    .form-control.success i .img-success {
+      visibility: visible;
+      position: relative;
+      bottom: 23px;
+      left: 304px;
+    }
+    .form-control.error i .img-error {
+      visibility: visible;
+      position: relative;
+      top: 5px;
+    }
+    .form-control.success input {
+      border: 2px solid green;
+    }
+    .form-control.error input {
+      border: 2px solid red;
+    }
+/*
+design sem javascript
+*/
+    .container{
+      border: 2px solid #0F94D6;
+      background-color: #87CEFA;
+      width: 370px;
+      border-radius: 30px;
+    }
+    body{
+      font-family: Helvetica, arial;
+      background-color: white;
+    }
+    label{
+      color: #191970;
+      font-size: 1.4em;
+    }
+    .header{
+      color: white;
+      font-size: 2.5em;
+      text-align: center;
+      padding: 15px;
+      text-shadow: 2px 2px 5px #0F94D6;
+      position: relative;
+      top: 7px;
+    }
+    input{
+      font-size: 1em;
+      font-family: Helvetica, arial;
+      color: #191970;
+      border: 1px solid #0F94D6;
+      border-radius: 15px;
+      width: 300px;
+      text-align: left;
+    }
+    form{
+      padding: 20px;
+    }
+    #date{
+      text-align: left;
+    }
+    button{
+      background-color: #191970;
+      color: white;
+      border-radius: 15px;
+      font-size: 17px;
+    }
+    .campo-selecionado{
+      background-color: #c2e8ff;
+      color: #191970;
+    }
+    .campo-nao-selecionado{
+      background-color: white;
+      color: #191970;
+    }
+
+  </style>
+ <head>
+ <body>
+    <div class="container">
+      <div class="header"> Cadastro </div>
+     <form class="form" id="form">
+      <div class="form-control">
+        <label for="name"> Nome </label>
+        <input type="text" id="name" onmouseover="clicarCampo('name')" onmouseout="desclicarCampo('name')"/>
+        <i><img class="img-error" src="error-icon.svg"></i>
+        <i><img class="img-success" src="success-icon.svg"></i>
+        <br/>
+        <small> Mensagem de Erro </small>
+      </div>
+      <div class="form-control">
+        <label for="email"> Email </label>
+        <input type="email" id="email" onmouseover="clicarCampo('email')" onmouseout="desclicarCampo('email')"/>
+        <i><img class="img-error" src="error-icon.svg"></i>
+        <i><img class="img-success" src="success-icon.svg"></i>
+        <br/>
+        <small> Mensagem de Erro </small>
+      </div>
+      <div class="form-control">
+        <label for="cpf"> CPF </label>
+        <input type="text" id="cpf" onmouseover="clicarCampo('cpf')" onmouseout="desclicarCampo('cpf')"/>
+        <i><img class="img-error" src="error-icon.svg"></i>
+        <i><img class="img-success" src="success-icon.svg"></i>
+        <br/>
+        <small> Mensagem de Erro </small>
+      </div>
+      <div class="form-control">
+        <label for="date"> Data de Nascimento </label>
+        <input type="date" id="date" onmouseover="clicarCampo('date')" onmouseout="desclicarCampo('date')"/>
+        <i><img class="img-error" src="error-icon.svg"></i>
+        <i><img class="img-success" src="success-icon.svg"></i>
+        <br/>
+        <small> Mensagem de Erro </small>
+      </div>
+      <div class="form-control">
+        <label for="password"> Senha </label>
+        <input type="password" id="password" onmouseover="clicarCampo('password')" onmouseout="desclicarCampo('password')"/>
+        <i><img class="img-error" src="error-icon.svg"></i>
+        <i><img class="img-success" src="success-icon.svg"></i>
+        <br/>
+        <small> Mensagem de Erro </small>
+      </div>
+        <button type="submit"> Enviar </button>
+     </form>
     </div>
-</body>
+  <script>
+    const name = document.getElementById('name')
+    const email = document.getElementById('email')
+    const cpf = document.getElementById('cpf')
+    const date = document.getElementById('date')
+    const password = document.getElementById('password')
+    const form = document.getElementById('form')
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault()
+      checaInputs()
+    })
+    name.addEventListener('keypress', (e)=>{
+       const keyCode = (e.keyCode? e.keyCode : e.which)
+       if(keyCode > 47 && keyCode < 58){
+         e.preventDefault()
+       }
+    })
+    function checaInputs(){
+      const nameValue = name.value.trim()
+      const emailValue = email.value.trim()
+      const cpfValue = cpf.value.trim()
+      const dateValue = date.value.trim()
+      const passwordValue = password.value.trim()
+      if(nameValue===''){
+        erroValidacao(name,'Preencha este campo')
+      }/*else if(nameValue === '0' || nameValue === '1' || nameValue === '2' || nameValue === '3' || nameValue === '4' || nameValue === '5' || nameValue === '6' || nameValue === '7' || nameValue === '8' || nameValue === '9'){
+        erroValidacao(name, 'Preencha corretamente esse campo')
+      }*/else{
+        sucessoValidacao(name)
+      }
+      if(emailValue===''){
+        erroValidacao(email,'Preencha este campo')
+      }else{
+        sucessoValidacao(email)
+      }
+      if(cpfValue===''){
+        erroValidacao(cpf,'Preencha este campo')
+      }else if(cpfValue.length < 11 || cpfValue.length > 11){
+        erroValidacao(cpf,'Preencha corretamente este campo')
+      }else{
+        sucessoValidacao(cpf)
+      }
+
+      const data = new Date()
+      const dataClica = new Date(dateValue)
+      if(dateValue===''){
+        erroValidacao(date,'Preencha este campo')
+      }else if(dataClica>data){
+        erroValidacao(date,'Data inválida')
+      }else{
+        sucessoValidacao(date)
+      }
+      if(passwordValue===''){
+        erroValidacao(password,'Preencha este campo')
+      }else if(passwordValue.length < 8){
+        erroValidacao(password,'A senha deve ter no mínimo 8 caracteres')
+      }else{
+        sucessoValidacao(password)
+      }
+      function erroValidacao(input, mensagem){
+        const formControl = input.parentElement
+        const small = formControl.querySelector('small')
+        small.innerText = mensagem
+        formControl.className = 'form-control error'
+      }
+      function sucessoValidacao(input){
+        const formControlValue = input.parentElement
+        formControlValue.className = 'form-control success'
+      }
+    }
+    function clicarCampo(id){
+      const campo = document.getElementById(id)
+      campo.className = 'campo-selecionado'
+    }
+    function desclicarCampo(id){
+      const campo = document.getElementById(id)
+      campo.className = 'campo-nao-selecionado'
+    }
+  </script>
+ </body>
 </html>
