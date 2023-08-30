@@ -1,0 +1,150 @@
+<html>
+ <head>
+  <title> Novo Ingrediente </title>
+  <meta charset="utf-8">
+  <style> 
+    body{
+     padding: 0;
+     margin: 0;
+     font-family: helvetica;
+    }
+    .categoria{
+     width: 13%;
+    }
+    .medida, .var-padrao{
+     width: 10%;
+    }
+    .outras-categorias, .substitutos{
+     width: 20%;
+    }
+    .header-tipo1{
+     background-color: #B22828;
+     color: white;
+     font-family: helvetica rounded;
+     height: 9%;
+
+    }
+    label{
+     font-weight: bold;
+    }
+    select, input, textarea{
+     color: gray;
+     border-color: white;
+     border-radius: 12px;
+    }
+    button{
+     background-color: #B22828;
+     color: white;
+     border-color: #B22828;
+     width: 4%;
+     height: 4%;
+    }
+    .imagem-quadrado{
+     width: 6%;
+     height: 12%;
+    }
+     .fundo-rosa{
+      background-color: #E3B4B4;
+     }
+     .fundo-branco{
+      background-color: white;
+     }
+     h2{
+      position: fixed;
+      bottom: 90%;
+      left: 5%;
+     } 
+     .padding{
+      padding: 2%;
+     }
+     .imagem-seta{
+      position: fixed;
+      width: 4%;
+      height: 8%;
+      bottom: 91%;
+      left: 0.5%;
+     }
+     input{
+      height: 4.5%;
+     }
+     select{
+      height: 4.5%;
+     }
+  </style>
+</head>
+<body class="fundo-rosa">
+ <div class="header-tipo1">
+   <a href=""><img src="imagens/icone-seta-branca.png" class="imagem-seta"/></a>
+   <h2> Novo Ingrediente </h2>
+ </div>
+ <div class="container">
+  <div class="padding">
+   <img src="imagens/quadrado-vinho.jpg" class="imagem-quadrado">
+   </br>
+   </br>
+   <form class="form">
+    <label> Nome </label>
+    </br>
+    <input placeholder="Nome" type="text" id="criar-nome-ing"/>
+    </br>
+    <label> Categoria Principal </label>
+    </br>
+    <select class="categoria"> 
+      <option> Categoria 1</option>
+      <option> Categoria 2 </option>
+      <option> Categoria 3 </option>
+      <option> Categoria 4 </option>
+    </select>
+    </br>
+    </br>
+    <label> Medidas </label>
+    </br>
+      <select class="medida"> 
+      <option> Kg</option>
+      <option> g </option>
+      <option> unidade </option>
+      <option> mL </option>
+    </select>
+    </br>
+    </br>
+    <label> Variação Padrão? </label>
+    </br>
+      <select class="var-padrao"> 
+      <option> Variação 1 </option>
+      <option> Variação 2 </option>
+      <option> Variação 3 </option>
+      <option> Variação 4 </option>
+    </select>
+    </br>
+    </br>
+    <label> Outras Categorias </label>
+    </br>
+      <select class="outras-categorias"> 
+      <option> Outras Categorias 1 </option>
+      <option> Outras Categorias 2 </option>
+      <option> Outras Categorias 3 </option>
+      <option> Outras Categorias 4 </option>
+    </select>
+    </br>
+    </br>
+    <label> Substitutos </label>
+    </br>
+      <select class="substitutos"> 
+      <option> Substituto 1 </option>
+      <option> Substituto 2 </option>
+      <option> Substituto 3 </option>
+      <option> Substituto 4 </option>
+    </select>
+    </br>
+    </br>
+    <label> Descrição </label>
+    </br>
+    <textarea cols="33" rows="6"></textarea>
+    </br>
+    </br>
+    <button type="submit"> Criar </button>
+   </form>
+  </div>
+ </div>
+</body>
+</html>
