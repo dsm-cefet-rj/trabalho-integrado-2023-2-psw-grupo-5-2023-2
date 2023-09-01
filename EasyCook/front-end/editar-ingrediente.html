@@ -1,0 +1,218 @@
+<html>
+ <head>
+  <title> Detalhes Ingredientes </title>
+  <meta charset="utf-8"/>
+  <style> 
+    body{
+     padding: 0;
+     margin: 0;
+     font-family: helvetica;
+    }
+    .categoria{
+     width: 13%;
+    }
+    .medida, .var-padrao{
+     width: 10%;
+    }
+    .outras-categorias, .substitutos{
+     width: 20%;
+    }
+    .header-tipo1{
+     background-color: #B22828;
+     color: white;
+     font-family: helvetica rounded;
+    }
+    label{
+     font-weight: bold;
+    }
+    select, input, textarea{
+     color: gray;
+     border-color: white;
+     border-radius: 12px;
+    }
+    button{
+     background-color: #B22828;
+     color: white;
+     border-color: #B22828;
+    }
+    .imagem-quadrado{
+     width: 6%;
+     height: 12%;
+    }
+    .header-tipo2{
+     background-color: #f59393;
+     color: white;
+     font-family: helvetica rounded;
+     height: 9%;
+    }
+    .fundo-rosa{
+      background-color: #E3B4B4;
+     }
+     .fundo-branco{
+      background-color: white;
+     }
+     h1{
+      font-size: 1.5em;
+      color: #666666;
+      font-family: helvetica rounded;
+     }
+     span{
+      font-family: helvetica rounded;
+      color: #f74040;
+      font-size: 1.3em;
+     }
+    p{
+      color: gray;
+    }
+    h2{
+     position: fixed;
+     bottom: 90%;
+     left: 5%;
+    }
+    #tabela-substitutos{
+     width: 20%;
+     height: 24%;
+     font-family: helvetica rounded;
+     font-size: 1.3em;
+     border-radius: 12px;  
+     border: 1px solid #dbdbdb; 
+     padding: 0.8%;
+    }
+    a{
+     text-decoration: none;
+    }
+    a:link, a:visited{
+     color: #a6a6a6;
+    }
+    a:hover{
+     color: #b3b3b3;
+    }
+    .imagem-3pontos{
+     width: 2%;
+     height: 8%;
+     position: fixed;
+     left: 89%;
+     bottom: 91%;
+    }
+    .imagem-casa{
+     width: 4%;
+     height: 8%;
+     position: fixed;
+     left: 93%;
+     bottom: 91%;
+    }
+    .imagem-seta{
+     float: right;
+     position: fixed;
+     width: 4%;
+     height: 8%;
+     bottom: 91%;
+     left: 0.5%;
+    }
+    .padding{
+     padding: 2%;
+    }
+    #edicao a:link, #edicao a:visited{
+        color: white;
+    }
+    #edicao{
+        position: fixed;
+        top: 2%;
+        width: 100%;
+        right: 3%;
+    }
+    .salvar{
+        float: right;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 12px;
+        background-color: #f74040;
+    }
+    .cancelar{
+        float: right;
+    }
+    #edicao a{
+        padding: 1%;
+    }
+    input, select{
+        border: 0 none;
+        outline: 0;
+        font-family: helvetica;
+    }
+    #edit-nome-ingrediente{
+        font-size: 150%;
+        font-family: helvetica rounded;
+    }
+    #edit-categoria-ingrediente{
+        font-size: 100%;
+
+    }
+    .edit-select-ingrediente{
+        font-size: 100%;
+        font-family: helvetica rounded;
+        color: #9e9e9e;
+    }
+  </style>
+</head>
+<body class="fundo-branco">
+ <div class="header-tipo2">
+   <h2> Detalhes </h2>
+   <a href=""><img src="imagens/icone-seta-branca.png" class="imagem-seta"/></a>
+<div id="edicao">
+    <a href="#consultar-ingrediente-atualizado" class="salvar">Salvar</a>
+   <a href="popup-consultar-ingrediente.html" class="cancelar">Cancelar</a>
+</div>   
+ </div>
+ <div class="container">
+  <div class="padding">
+   <img src="imagens/quadrado-vinho.jpg" class="imagem-quadrado"/>
+ </br>
+ </br>
+   <input id="edit-nome-ingrediente" type="text" placeholder="Nome do Ingrediente" />
+  </br>
+  </br>
+  <span> Categoria </span>
+</br>
+</br>
+   <select id="edit-categoria-ingrediente"> 
+     <option> Categoria  </option>
+     <option> Categoria 2 </option>
+     <option> Categoria 3 </option>
+   </select>
+</br>
+</br>
+   <span> Substitutos </span>
+   </br>
+   </br>
+   <table id="tabela-substitutos">
+    <tr>
+        <td>
+            <select class="edit-select-ingrediente">
+              <option> Ingrediente 1 </option>
+              <option> Ingrediente 2 </option>
+              <option> Ingrediente 3 </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select class="edit-select-ingrediente">
+                <option> Ingrediente 5 </option>
+                <option> Ingrediente 2 </option>
+                <option> Ingrediente 3 </option>
+              </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select class="edit-select-ingrediente">
+                <option> Ingrediente 10 </option>
+                <option> Ingrediente 2 </option>
+                <option> Ingrediente 3 </option>
+              </select>
+        </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</body>
+</html>
