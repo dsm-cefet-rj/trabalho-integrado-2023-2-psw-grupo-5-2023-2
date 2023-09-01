@@ -5,18 +5,21 @@ h1, h3, h4, h5, h6 {
 }
 
 h2 {
-    position: fixed;
-    bottom: 90%;
-    left: 5%;
+    position: sticky;
+    text-align: left;
+    margin: auto 45px;
+    padding: 10px 0;
 } 
 
 input[type=text], input[type=password] {
     text-align:left;
-    
     display: block;
-    margin: 2% auto 2% auto;
-    width: 80%;
+    margin: 0.5em auto 0.5em auto;
     padding: 5px;
+    min-width: 15em;
+    max-width: 25em;
+    min-height: 2em;
+    max-height: 3em;
 }
 
 input {
@@ -50,6 +53,7 @@ button {
     background-color: #B22828;
     color: white;
     border-color: #B22828;
+    border-radius: 10px;
     width: 4%;
     height: 4%;
 }
@@ -81,8 +85,14 @@ button {
 }
 
 .forgot-password {
-    text-align: right;
-    margin: 1 5% 1 5%;
+    text-align: left;
+    display: block;
+    color: aliceblue;
+    padding: 0% 0% 0% 55%;
+}
+
+.discrete-link {
+    text-align: center;
     display: block;
     color: aliceblue;
 }
@@ -113,12 +123,18 @@ button {
     background-color: #B22828;
     color: white;
     font-family: helvetica rounded;
-    height: 9%;
+    height: 48px;
+    min-height: 48px;
 }
 
 .imagem-quadrado {
     width: 6%;
     height: 12%;
+}
+
+.imagem-centralizada {
+    display: block;
+    margin: auto auto;
 }
 
 .fundo-rosa {
@@ -135,8 +151,24 @@ button {
 
 .imagem-seta {
     position: fixed;
-    width: 4%;
-    height: 8%;
-    bottom: 91%;
-    left: 0.5%;
+    margin: auto -5;
+    padding: 4 0;
+    width: 52px;
+    height: 42px;
+}
+
+.login-button {
+    background-color: #B22828;
+    color: white;
+    border-color: #B22828;
+    border-radius: 10px;
+    text-align:center;
+    display: block;
+    margin: 1em auto;
+    min-width: 15em;
+    max-width: 15em;
+    min-height: 2em;
+    max-height: 6%;
+    padding: 0% 0%;
+    
 }
