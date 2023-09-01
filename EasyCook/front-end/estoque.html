@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <style>
+    body{
+     padding: 0;
+     margin: 0;
+     font-family: helvetica;
+    }
+    .header-tipo2{
+     position: fixed;
+     background-color: #f59393;
+     color: white;
+     font-family: helvetica rounded;
+     height: 9%;
+     width: 100%;
+    }
+    .fundo-rosa{
+      background-color: #E3B4B4;
+     }
+     .fundo-branco{
+      background-color: white;
+     }
+    h2{
+     position: fixed;
+     bottom: 90%;
+     left: 5%;
+    }
+    .imagem-filtro{
+     width: 3%;
+     height: 8%;
+     position: fixed;
+     left: 89%;
+     bottom: 91%;
+    }
+    .imagem-casa{
+     width: 4%;
+     height: 8%;
+     position: fixed;
+     left: 93%;
+     bottom: 91%;
+    }
+    .imagem-seta{
+     position: fixed;
+     width: 4%;
+     height: 8%;
+     bottom: 91%;
+     left: 0.5%;
+    }
+    .vermelho{
+      color: rgb(156, 5, 5);
+    }
+    .preto{
+      color: black;
+    }
+    .cinza{
+      color: gray;
+    }
+    #filtro-estoque{
+      border: 1px solid white;
+      background-color: white;
+      width: 8%;
+      height: 50%;
+      position: fixed;
+      left: 84%;
+      box-shadow: 2px 2px 6px rgb(168, 167, 167);
+      text-align: left;
+      visibility: hidden;
+    }
+    a{
+      text-decoration: none;
+    }
+    </style>
+</head>
+<body class="fundo-branco">
+    <div class="header-tipo2">
+        <h2> Estoque </h2>
+        <a href="#pagina-anterior"><img src="imagens/icone-seta-branca.png" class="imagem-seta"/></a>
+        <img src="imagens/icone-filtro.png" class="imagem-filtro" onclick="filtroEstoque()"/>
+        <a href="#home-page"><img src="imagens/icone-casa.png" class="imagem-casa"/></a>
+        <div id="filtro-estoque">
+            <h3 class="preto">Filtrar por</h3>
+            <a href=""><h3 class="cinza">Nome</h3></a>
+            <a href=""><h3 class="cinza">Ingrediente</h3></a>
+            <a href=""><h3 class="cinza">Ordem Alfabética</h3></a>
+            <a href=""><h3 class="cinza">Ordem Contrária</h3></a>
+            <a href=""><h3 class="cinza">Categoria</h3></a>
+          </div>
+    </div>
+       
+    <script>
+        function filtroEstoque(){
+            var filtro = document.getElementById('filtro-estoque')
+            filtro.style.visibility = 'visible'
+        }
+    </script>
+</body>
+</html>
