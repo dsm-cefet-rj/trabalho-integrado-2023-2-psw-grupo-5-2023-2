@@ -1,11 +1,60 @@
-body {
-    background-color: #3D4244;
-}
-
-h1, h2, h3, h4, h5, h6 {
+/* HTML Tags/Elements Styles */
+h1, h3, h4, h5, h6 {
     padding-bottom: 1px;
     padding-left: 5%;
 }
+
+h2 {
+    position: fixed;
+    bottom: 90%;
+    left: 5%;
+} 
+
+input[type=text], input[type=password] {
+    text-align:left;
+    
+    display: block;
+    margin: 2% auto 2% auto;
+    width: 80%;
+    padding: 5px;
+}
+
+input {
+    height: 4.5%;
+    border: 0 none;
+    outline: 0;
+}
+
+select {
+    height: 4.5%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: helvetica;
+    background-color: #E3B4B4;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, input, textarea {
+    color: gray;
+    border-color: white;
+    border-radius: 12px;
+}
+
+button {
+    background-color: #B22828;
+    color: white;
+    border-color: #B22828;
+    width: 4%;
+    height: 4%;
+}
+
+/* Custom class styles*/
 
 .center-box {
     min-width: 60%;
@@ -31,26 +80,63 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #FFFFFF;
 }
 
-input[type=text]#user-login {
-    text-align:center;
-    display: block;
-    margin: 0 auto 1em auto;
-    width: 80%;
-    padding: 5px;
-}
-
-input[type=text], input[type=password] {
-    text-align:left;
-    
-    display: block;
-    margin: 2% auto 2% auto;
-    width: 80%;
-    padding: 5px;
-}
-
 .forgot-password {
     text-align: right;
     margin: 1 5% 1 5%;
     display: block;
     color: aliceblue;
+}
+
+.categoria{
+    width: 13%;
+}
+
+.medida, .var-padrao{
+    width: 10%;
+}
+
+.outras-categorias, .substitutos {
+    width: 20%;
+}
+
+.header-tipo1 {
+    background-color: #B22828;
+    color: white;
+    font-family: helvetica rounded;
+}
+    
+.outras-categorias, .substitutos{
+    width: 20%;
+}
+
+.header-tipo1 {
+    background-color: #B22828;
+    color: white;
+    font-family: helvetica rounded;
+    height: 9%;
+}
+
+.imagem-quadrado {
+    width: 6%;
+    height: 12%;
+}
+
+.fundo-rosa {
+    background-color: #E3B4B4;
+}
+
+.fundo-branco {
+    background-color: white;
+}
+
+.padding{
+    padding: 2%;
+}
+
+.imagem-seta {
+    position: fixed;
+    width: 4%;
+    height: 8%;
+    bottom: 91%;
+    left: 0.5%;
 }
