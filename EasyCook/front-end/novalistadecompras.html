@@ -1,0 +1,97 @@
+<html>
+    <html lang="pt-br">
+<head>
+   
+    
+    <title>Nova lista de compras</title>
+     <meta charset="UTF-8">
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: helvetica;
+        }
+        .header-tipo1{
+            background-color: #B22828;
+            color: white;
+            font-family: helvetica rounded;
+            height: 9%;
+        }
+        select, input, textarea{
+            color: gray;
+            border-color: white;
+            border-radius: 12px;
+            width: 13%;
+        }
+        .nome{
+            width: 20%;
+        }
+        .ingredientes{
+            width: 20%;
+        }
+        label, p{
+            font-weight: bold;
+        }
+        
+        .fundo-rosa{
+            background-color: #E3B4B4;
+        }
+        h2{
+            position: fixed;
+            bottom: 90%;
+            left: 5%;
+        }
+        .padding{
+            padding: 2%;
+        }
+        .imagem-seta{
+            position: fixed;
+            width: 4%;
+            height: 8%;
+            bottom: 91%;
+            left: 0.5%;
+        }
+        .qtd{
+            width: 40%;
+        }
+        section{
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            
+        }
+    </style>
+</head>
+<body class="fundo-rosa">
+    <div class="header-tipo1">
+        <a href="#pagina-anterior"><img src="imagens/icone-seta-branca.png" class="imagem-seta"/></a>
+        <h2>Nova Lista de Compras</h2> </div>
+   
+    <div class="container">
+        <div class="padding">
+        <form class="form">
+        <p>Nome</p>
+    <p><input type="text" name="txtnome" id="txtnome" placeholder="Nome"></p>
+        <p>Ingredientes</p>
+        <p><select class="opcao" name="select" id="select">
+            <option value="opcao1">Ingrediente 1</option>
+            <option value="opcao2">Ingrediente 2</option>
+            <option value="opcao2">Ingrediente 3</option>
+        </select></p>
+        <section>
+            <div style="color: gray;">
+               <p>Ingrediente  <input class="qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd"> Un</p> <br>
+               <label for="">Ingrediente  <input class="qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd"> Kg</label>
+            <label>Ingrediente  <input class="qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd"> mL</label>
+            </div>
+        </section>
+        <p>Descrição</p>
+        <textarea name="" id="" cols="33" rows="6" placeholder="Descrição da Lista de Compras"></textarea>
+    </form>
+        </div>
+    </div>
+    
+    
+</body>
+</html> 
