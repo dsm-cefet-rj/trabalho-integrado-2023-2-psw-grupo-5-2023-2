@@ -35,7 +35,7 @@ select {
 body {
     padding: 0;
     margin: 0;
-    font-family: helvetica;
+    font-family: helvetica, arial;
     background-color: #E3B4B4;
 }
 
@@ -181,6 +181,7 @@ button {
     border-color: #B22828;
     border-radius: 10px;
     text-align:center;
+    font-family: helvetica rounded;
     display: block;
     margin: 1em auto;
     min-width: 15em;
