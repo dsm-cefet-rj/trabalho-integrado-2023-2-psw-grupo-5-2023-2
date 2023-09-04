@@ -157,6 +157,24 @@ button {
     height: 42px;
 }
 
+.imagem-easycook {
+    position: fixed;
+    margin: auto -5;
+    padding: 4 8;
+    width: 98px;
+    height: 88px;
+}
+
+#tabela {
+    width: 20%;
+    height: 24%;
+    font-family: helvetica rounded;
+    font-size: 1.3em;
+    border-radius: 12px;  
+    border: 1px solid #dbdbdb; 
+    padding: 0.8%;
+}
+
 .login-button {
     background-color: #B22828;
     color: white;
@@ -171,4 +189,14 @@ button {
     max-height: 6%;
     padding: 0% 0%;
     
+}
+
+.footer-menu{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f59393;
+    color: white;
+    height: 8%;
 }
