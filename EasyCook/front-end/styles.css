@@ -26,6 +26,7 @@ input {
     height: 4.5%;
     border: 0 none;
     outline: 0;
+    font-family: helvetica;
 }
 
 select {
@@ -89,12 +90,14 @@ button {
     display: block;
     color: aliceblue;
     padding: 0% 0% 0% 55%;
+    font-family: helvetica;
 }
 
 .discrete-link {
     text-align: center;
     display: block;
     color: aliceblue;
+    font-family: helvetica;
 }
 
 .categoria{
@@ -200,4 +203,8 @@ button {
     background-color: #f59393;
     color: white;
     height: 8%;
+}
+
+.blend-mode{
+    mix-blend-mode: multiply;
 }
