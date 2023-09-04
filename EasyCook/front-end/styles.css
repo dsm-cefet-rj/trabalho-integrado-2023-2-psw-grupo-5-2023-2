@@ -208,3 +208,24 @@ button {
 .blend-mode{
     mix-blend-mode: multiply;
 }
+
+.vermelho{
+    color: rgb(156, 5, 5);
+  }
+  .preto{
+    color: black;
+  }
+  .cinza{
+    color: rgb(100, 100, 100);
+  }
+  #filtro-estoque{
+    border: 1px solid white;
+    background-color: white;
+    width: 8%;
+    height: 50%;
+    position: fixed;
+    left: 84%;
+    box-shadow: 2px 2px 6px rgb(168, 167, 167);
+    text-align: left;
+    visibility: hidden;
+  }

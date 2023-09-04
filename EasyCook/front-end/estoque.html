@@ -57,22 +57,45 @@
       color: black;
     }
     .cinza{
-      color: gray;
+      color: rgb(100, 100, 100);
+      font-family: helvetica rounded;
     }
     #filtro-estoque{
-      border: 1px solid white;
       background-color: white;
-      width: 10%;
-      height: 48%;
+      width: 14%;
+      height: 46%;
       position: fixed;
-      left: 84%;
+      left: 76%;
       box-shadow: 2px 2px 6px rgb(168, 167, 167);
       text-align: left;
       visibility: hidden;
+      padding: 1%;
     }
     a{
       text-decoration: none;
     }
+    .input-nome-filtro{
+      font-size: 110%;
+      color: rgb(61, 61, 61);
+      border-top: 0 none;
+      border-left: 0 none;
+      border-right: 0 none;
+      border-bottom: 1px solid rgb(190, 189, 189);
+      width: 55%;
+    }
+    .imagem-filtro-pesquisa, .imagem-filtro-ingrediente, .imagem-filtro-a-z, .imagem-filtro-z-a, .imagem-filtro-categoria{
+      width: 14%;
+      float: left;
+    }
+    #txt-filtro{
+      position: fixed;
+      bottom: 50%;
+    }
+    .select-ingrediente, .select-categoria{
+      border: 0 none;
+      font-size: 110%;
+    }
+
     </style>
 </head>
 <body class="fundo-branco">
@@ -82,13 +105,42 @@
         <img src="imagens/icone-filtro.png" class="imagem-filtro" onclick="filtroEstoque()"/>
         <a href="#home-page"><img src="imagens/icone-casa.png" class="imagem-casa"/></a>
         <div id="filtro-estoque">
-            <h3 class="preto">Filtrar por</h3>
-            <a href=""><h3 class="cinza">Nome</h3></a>
-            <a href=""><h3 class="cinza">Ingrediente</h3></a>
-            <a href=""><h3 class="cinza">Ordem Alfabética</h3></a>
-            <a href=""><h3 class="cinza">Ordem Contrária</h3></a>
-            <a href=""><h3 class="cinza">Categoria</h3></a>
+          <div id="txt-filtro">
+            <h3 class="preto" onclick="">Filtrar por</h3>
+            <div class="filtrar-nome">
+              <img src="imagens/filtro-pesquisa.png" class="imagem-filtro-pesquisa" onclick=""/>
+              <input class="cinza input-nome-filtro" placeholder="Nome">
+            </div>
+          </br>
+            <div class="filtrar-ingrediente">
+              <img src="imagens/filtro-ingrediente.png" class="imagem-filtro-ingrediente" onclick=""/>
+              <select class="cinza select-ingrediente" onclick="">
+                <option>Ingrediente 1</option>
+                <option>Ingrediente 2</option>
+                <option>Ingrediente 3</option>
+              </select>
+            </div>
+          </br>
+            <div class="filtrar-a-z">
+              <img src="imagens/filtro-a-z.png" class="imagem-filtro-a-z" onclick=""/>
+              <h3 class="cinza" onclick="">Ordem Alfabética</h3>
+            </div>
+          </br>
+            <div class="filtrar-z-a">
+              <img src="imagens/filtro-z-a.png" class="imagem-filtro-z-a" onclick=""/>
+              <h3 class="cinza" onclick="">Ordem Contrária</h3>
+            </div>
+          </br>
+            <div class="filtrar-categoria">
+              <img src="imagens/filtro-categoria.png" class="imagem-filtro-categoria" onclick=""/>
+              <select class="cinza select-categoria" onclick="">
+                <option>Categoria 1</option>
+                <option>Categoria 2</option>
+                <option>Categoria 3</option>
+              </select>
+            </div>
           </div>
+        </div>
     </div>
        
     <script>
