@@ -1,7 +1,8 @@
-body{
+    body{
     padding: 0;
     margin: 0;
     font-family: helvetica;
+    background-color: #E3B4B4;
    }
    .categoria{
     width: 13%;
@@ -45,19 +46,13 @@ body{
      background-color: white;
     }
     h2{
-     position: fixed;
-     bottom: 90%;
-     left: 5%;
+     
     } 
     .padding{
      padding: 2%;
     }
     .imagem-seta{
-     position: fixed;
-     width: 4%;
-     height: 8%;
-     bottom: 91%;
-     left: 0.5%;
+
     }
     input{
      height: 4.5%;
