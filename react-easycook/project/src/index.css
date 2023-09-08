@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+body{
+    padding: 0;
+    margin: 0;
+    font-family: helvetica;
+   }
+   .categoria{
+    width: 13%;
+   }
+   .medida, .var-padrao{
+    width: 10%;
+   }
+   .outras-categorias, .substitutos{
+    width: 20%;
+   }
+   .header-tipo1{
+    background-color: #B22828;
+    color: white;
+    font-family: helvetica rounded;
+    height: 9%;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+   }
+   label{
+    font-weight: bold;
+   }
+   select, input, textarea{
+    color: gray;
+    border-color: white;
+    border-radius: 12px;
+   }
+   button{
+    background-color: #B22828;
+    color: white;
+    border-color: #B22828;
+    width: 4%;
+    height: 4%;
+   }
+   .imagem-quadrado{
+    width: 6%;
+    height: 12%;
+   }
+    .fundo-rosa{
+     background-color: #E3B4B4;
+    }
+    .fundo-branco{
+     background-color: white;
+    }
+    h2{
+     position: fixed;
+     bottom: 90%;
+     left: 5%;
+    } 
+    .padding{
+     padding: 2%;
+    }
+    .imagem-seta{
+     position: fixed;
+     width: 4%;
+     height: 8%;
+     bottom: 91%;
+     left: 0.5%;
+    }
+    input{
+     height: 4.5%;
+     border: 0 none;
+     outline: 0;
+    }
+    select{
+     height: 4.5%;
+    }
