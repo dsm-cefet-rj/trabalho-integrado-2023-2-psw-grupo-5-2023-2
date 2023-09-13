@@ -108,3 +108,14 @@
         bottom: 115px;
         right: 8px;
     }
+    textarea:focus{
+        box-shadow: 0 0 0 0;
+        border: 0 none;
+        outline: 0;
+    }
+    select:hover, input:hover, textarea:hover{
+        background-color: #f0f0f0;
+    }
+    button:hover{
+        background-color: #a52525;
+    }
