@@ -1,0 +1,110 @@
+.Container{
+    background-color: #E3B4B4;
+    padding: 4%;
+}
+.quadrado{
+    float: left;
+    width: 8%;
+    height: 16%;
+    position: absolute;
+    top: 16%;
+} 
+.form{
+    position: absolute;
+    top: 40%;
+    width: 50%;
+
+}
+.categoria{
+    height: 31px;
+    width: 33%;
+    font-size: 98%;
+    padding: 5px;
+   }
+   .medida, .var-padrao{
+    height: 31px;
+    width: 27%;
+    font-size: 98%;
+    padding: 5px;
+   }
+   .outras-categorias, .substitutos{
+    height: 31px;
+    width: 55%;
+    font-size: 98%;
+    padding: 5px;
+   }
+   label{
+    font-weight: bold;
+    font-family: helvetica rounded;
+   }
+   select, input, textarea{
+    color: gray;
+    border-color: white;
+    border-radius: 10px;
+    font-family: helvetica;
+   }
+   textarea{
+    font-family: helvetica;
+    width: 55%;
+    height: 100px;
+    resize: none;
+    font-size: 16px;
+   }
+   button{
+    background-color: #B22828;
+    color: white;
+    border-color: #B22828;
+    width: 9%;
+    height: 30px;
+    position: relative;
+    bottom: 95px;
+    right: 8px;
+    font-family: helvetica;
+    font-size: 90%;
+   }
+    input{
+     border: 0 none;
+     outline: 0;
+    }
+    select{
+     font-size: 100%;
+    }
+    .area-nome, .area-categoria{
+        position: relative;
+        bottom: 175px;
+        left: 135px;
+        padding: 7px;
+    }
+    #criar-nome-ing{
+        height: 10px;
+        width: 30%;
+        font-size: 100%;
+        padding: 10px;
+        border-radius: 12px;
+    }
+    .area-medidas, .area-var-padrao{
+        position: relative;
+        bottom: 140px;
+    }
+    .area-medidas{
+        right: 8px;
+    }
+    .area-var-padrao{
+        left: 180px;
+        bottom: 190px;
+    }
+    .area-outras-categorias{
+        position: relative;
+        bottom: 165px;
+        right: 8px;
+    }
+    .area-substitutos{
+        position: relative;
+        bottom: 140px;
+        right: 8px;
+    }
+    .area-descricao{
+        position: relative;
+        bottom: 115px;
+        right: 8px;
+    }

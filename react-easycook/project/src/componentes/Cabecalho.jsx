@@ -6,7 +6,7 @@ export default function Cabecalho(props){
     return (
         <div className='Cabecalho'>
 
-            <img src={seta} className="icone-seta-branca" alt="icone-seta-branca"/>
+            <a href="#pagina-anterior"><img src={seta} className="icone-seta-branca" alt="icone-seta-branca"/></a>
             <h2 className="titulo"> {props.titulo} </h2>
             
         </div>
