@@ -1,0 +1,24 @@
+
+.Cabecalho{
+    background-color: #B22828;
+    color: white;
+    font-family: helvetica rounded;
+    height: 9%;
+    width: 100%;
+    position: fixed;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.icone-seta-branca{
+    width: 50px;
+    position: fixed;
+    top: 1%;
+}
+
+.titulo{
+    position: fixed;
+    left: 5%;
+    bottom: 90%;
+}

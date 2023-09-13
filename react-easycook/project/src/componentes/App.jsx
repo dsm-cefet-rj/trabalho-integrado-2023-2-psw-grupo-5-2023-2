@@ -5,10 +5,10 @@ import ContainerBody from './ContainerBody'
 export default function App(){
    return (
       <div>
-         <div className='header-tipo1'>
+         <div>
              <Cabecalho 
                titulo='Novo Ingrediente'
-         />
+            />
          </div>
         
          <ContainerBody></ContainerBody>

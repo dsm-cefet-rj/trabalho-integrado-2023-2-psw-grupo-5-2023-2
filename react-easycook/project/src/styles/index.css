@@ -3,6 +3,7 @@
     margin: 0;
     font-family: helvetica;
     background-color: #E3B4B4;
+    clear: both;
    }
    .categoria{
     width: 13%;
@@ -12,13 +13,6 @@
    }
    .outras-categorias, .substitutos{
     width: 20%;
-   }
-   .header-tipo1{
-    background-color: #B22828;
-    color: white;
-    font-family: helvetica rounded;
-    height: 9%;
-
    }
    label{
     font-weight: bold;
@@ -45,15 +39,11 @@
     .fundo-branco{
      background-color: white;
     }
-    h2{
-     
-    } 
+
     .padding{
      padding: 2%;
     }
-    .imagem-seta{
 
-    }
     input{
      height: 4.5%;
      border: 0 none;
