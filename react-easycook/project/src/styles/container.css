@@ -1,5 +1,5 @@
 .Container{
-    background-color: #E3B4B4;
+    
     padding: 4%;
 }
 .quadrado{
@@ -23,7 +23,7 @@
    }
    .medida, .var-padrao{
     height: 31px;
-    width: 27%;
+    width: 26%;
     font-size: 98%;
     padding: 5px;
    }
@@ -90,7 +90,7 @@
         right: 8px;
     }
     .area-var-padrao{
-        left: 180px;
+        left: 200px;
         bottom: 190px;
     }
     .area-outras-categorias{

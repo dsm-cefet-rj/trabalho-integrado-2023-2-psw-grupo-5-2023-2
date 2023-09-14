@@ -1,7 +1,7 @@
 import React from 'react'
-import Cabecalho from './Cabecalho'
-import ContainerBody from './ContainerBody'
-import '../styles/App.css'
+import Cabecalho from '../components/Cabecalho'
+import ContainerBody from '../components/ContainerBody'
+import '../styles/NovoIngrediente.css'
 
 export default function App(){
    return (

@@ -1,5 +1,5 @@
 import React from "react"
-import img from "../../src/imagens-icones/quadrado-vinho.jpg"
+import img from "../../src/images/quadrado-vinho.jpg"
 import '../styles/container.css'
 
 export default function ContainerBody(){
