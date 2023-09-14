@@ -6,16 +6,9 @@ import HomePage from './pages/HomePage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <div onResize={ajustaTamanho()}>
+  <div id='main'>
      <HomePage/>
      
   </div>
  
 )
-
-var height = 0
-var width = 0
-function ajustaTamanho(){
-  height = window.innerHeight
-  width = window.innerWidth
-}

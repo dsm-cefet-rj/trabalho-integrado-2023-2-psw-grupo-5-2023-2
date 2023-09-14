@@ -4,3 +4,6 @@
     font-family: helvetica;
     background-color: #E3B4B4;
     }
+    @media screen (min-width: 1024px) {
+        #main { min-width: 1000px }
+    }

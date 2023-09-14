@@ -6,10 +6,10 @@ import iconeIngrediente from '../images/menu-ingredientes.png'
 import iconeReceitas from '../images/menu-receitas.png'
 import iconeFavoritos from '../images/menu-favorito.png'
 
-export default function Rodape(props){
+export default function Rodape(){
     return (
         <div className='Rodape'>
-            Rodape
+            
             <img src={iconeHomePage} className='icone-home-page' alt='icone-home-page'></img>
             <img src={iconeCompras} className='icone-compras' alt='icone-compras'></img>
             <img src={iconeIngrediente} className='icone-ingrediente' alt='icone-ingrediente'></img>

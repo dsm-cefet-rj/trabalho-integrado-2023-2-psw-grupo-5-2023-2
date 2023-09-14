@@ -1,0 +1,12 @@
+@media screen and (min-width: 992px) {
+    .Rodape { 
+        min-width: 100%;
+        
+    }
+}
+@media screen and (min-width: 576px) {
+    .Rodape { 
+        min-width: 50%;
+        
+    }
+}
