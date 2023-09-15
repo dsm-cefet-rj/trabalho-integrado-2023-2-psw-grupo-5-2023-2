@@ -6,27 +6,20 @@ import '../src/styles/index.css'
 import { Route, BrowserRouter, createBrowserRouter, RouterProvider } from "react-router-dom"
 
 // PÁGINAS
-import Login from './pages/Login'
-import HomePage from './pages/HomePage'
-import NovoIngrediente from './pages/NovoIngrediente'
-import EditarIngrediente from './pages/EditarIngrediente'
+import Routes from './routes'
 
-const router = createBrowserRouter([
-   {
-    path: '/',
-    element: <HomePage/>
-   },
-   {
-    path: '/Novo Ingrediente',
-    element: <NovoIngrediente/>
-   }
-])
+  // Movido para routes.js porque fica mais limpo
+const router = createBrowserRouter(Routes)
+
+
+
+// Teste sua página colocando o path após o link! Por exemplo:
+//                  localhost:300/login
+// Consulte e adicione as páginas e caminhos no arquivo routes.js
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(      /*   
-              ESCOLHA RENDERIZAR A PÁGINA QUE QUER TESTAR ATÉ RESOLVERMOS O ROUTING   */
+root.render(
   <div>
     <RouterProvider router={router}/>
   </div>
- 
 )
