@@ -6,5 +6,6 @@
     margin: 2%;
 }
 .logo{
-    width: 10%;
+    max-width: 8em;
+    min-width: 8em;
 }

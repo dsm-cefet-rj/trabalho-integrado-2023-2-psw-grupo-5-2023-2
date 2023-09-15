@@ -2,7 +2,8 @@
     border: 1px solid #c5c4c4;
     background-color: white;
     box-shadow: 2px 2px 5px #9F9F9F;
-    width: 45%;
+    max-width:45%;
+    min-width: 45%;
     height: 250px;
     float: left;
     border-radius: 12px;
@@ -12,12 +13,14 @@
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
+    padding: 2%;
 }
 .bloco2{
     border: 1px solid #c5c4c4;
     background-color: white;
     box-shadow: 2px 2px 5px #9F9F9F;
-    width: 45%;
+    max-width:45%;
+    min-width: 45%;
     height: 250px;
     float: right;
     border-radius: 12px;
@@ -27,13 +30,14 @@
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
-    
+    padding: 2%;
 }
 .ContentHP{
-    padding: 5%;
-    position: relative;
-    bottom: 45px;
+    padding-left: 1%;
+    padding-right: 1%;
     font-family: helvetica;
+    display: flex;
+    justify-content: space-around;
 }
 ul{
     list-style-type: none;
@@ -47,8 +51,10 @@ ul{
     background-color: #B22828;
     color: white;
     border-color: #B22828;
-    width: 60%;
-    height: 40px;
+    max-width: 60%;
+    min-width: 60%;
+    min-height: 20%;
+    max-height: 50%;
     font-family: helvetica;
     font-size: 110%;
 }
