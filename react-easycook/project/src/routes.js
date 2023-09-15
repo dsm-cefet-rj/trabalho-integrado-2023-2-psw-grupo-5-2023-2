@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, BrowserRouter } from "react-router-dom"
 
-import NovoIngrediente from './componentes/App'
+import NovoIngrediente from './componentes/pages/NovoIngrediente'
 
 const Routes = () => {
     return(
