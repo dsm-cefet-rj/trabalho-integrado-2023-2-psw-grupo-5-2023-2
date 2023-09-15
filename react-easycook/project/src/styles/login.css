@@ -1,4 +1,4 @@
-input {
+#login-page input {
     width: 100%;
     height: 24px;
     margin: 10px auto;
@@ -6,7 +6,7 @@ input {
     display: block;
 }
 
-label#login {
+#login-page label#login {
     text-align: left;
     width: 100vw;
     margin: auto auto -1px;
@@ -14,7 +14,7 @@ label#login {
     opacity: 75%;
 }
 
-.login-forms {
+#login-page#login-page .login-forms {
     width: 85vw;
     display: block;
     margin: auto auto auto auto;
@@ -27,18 +27,18 @@ label#login {
     padding: auto;
 }
 
-a {
+#login-page a {
     color: aliceblue;
 }
 
-.esqueci-senha {
+#login-page .esqueci-senha {
     text-align: right;
     display: block;
 
 
 }
 
-a#cadastre-se {
+#login-page a#cadastre-se {
     text-align: center;
     display: block;
     font-weight: 700;

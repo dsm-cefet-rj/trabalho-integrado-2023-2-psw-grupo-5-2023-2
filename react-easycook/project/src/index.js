@@ -8,9 +8,11 @@ import HomePage from './pages/HomePage'
 import NovoIngrediente from './pages/NovoIngrediente'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
+root.render(      /*   
+              ESCOLHA RENDERIZAR A PÁGINA QUE QUER TESTAR ATÉ RESOLVERMOS O ROUTING   */
   <div id='main'>
-     <Login/>
+    
+    <Login/>
      
   </div>
  
