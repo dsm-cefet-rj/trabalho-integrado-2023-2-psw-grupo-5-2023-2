@@ -1,0 +1,21 @@
+
+.Cabecalho2{
+    background-color: #f59393;;
+    color: white;
+    font-family: helvetica rounded;
+    height: 9%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.icone-seta-branca{
+    max-width: 4em;
+    min-width: 4em;
+}
+

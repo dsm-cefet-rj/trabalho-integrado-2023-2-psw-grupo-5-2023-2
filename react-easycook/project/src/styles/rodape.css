@@ -10,5 +10,17 @@
 }
 .icone-home-page, .icone-compras, .icone-ingrediente, .icone-receita, .icone-favorito{
     margin-top: 1%;
+    
 }
+.icone-home-page{
+   
+   max-height: 4em;
+   min-height: 4.5em;
+}
+
+.icone-ingrediente{
+    max-height: 4em;
+    min-height: 4.5em;
+}
+
 

@@ -6,16 +6,17 @@ import iconeIngrediente from '../images/menu-ingredientes.png'
 import iconeReceitas from '../images/menu-receitas.png'
 import iconeFavoritos from '../images/menu-favorito.png'
 
+//LINK do ROUTER
+import {Link} from 'react-router-dom'
+
 export default function Rodape(){
     return (
         <nav className='Rodape'>
-            
-            <img src={iconeHomePage} className='icone-home-page' alt='icone-home-page'></img>
-            <img src={iconeCompras} className='icone-compras' alt='icone-compras'></img>
-            <img src={iconeIngrediente} className='icone-ingrediente' alt='icone-ingrediente'></img>
-            <img src={iconeReceitas} className='icone-receita' alt='icone-receita'></img>
-            <img src={iconeFavoritos} className='icone-favorito' alt='icone-favorito'></img>
-            
+            <Link to='/'><img src={iconeHomePage} className='icone-home-page' alt='icone-home-page'></img></Link>
+            <Link to=''><img src={iconeCompras} className='icone-compras' alt='icone-compras'></img></Link>
+            <Link to=''><img src={iconeIngrediente} className='icone-ingrediente' alt='icone-ingrediente'></img></Link>
+            <Link to=''><img src={iconeReceitas} className='icone-receita' alt='icone-receita'></img></Link>
+            <Link to=''><img src={iconeFavoritos} className='icone-favorito' alt='icone-favorito'></img></Link>
         </nav>
     )
 }
