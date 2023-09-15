@@ -1,6 +1,7 @@
 .Cabecalho{
     z-index: 1;
 }
-body{
-  background-color: #E3B4B4;
+.ContainerBody{
+    display: block;
+    margin: auto auto;
 }

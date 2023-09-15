@@ -6,6 +6,12 @@
     height: 250px;
     float: left;
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
 .bloco2{
     border: 1px solid #c5c4c4;
@@ -15,6 +21,12 @@
     height: 250px;
     float: right;
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
     
 }
 .ContentHP{
@@ -25,9 +37,31 @@
 }
 ul{
     list-style-type: none;
+    position: relative;
+    right: 20px;
+    margin-top: 0;
 
 }
-button{
+.ContentHP button{
     border-radius: 12px;
-    
+    background-color: #B22828;
+    color: white;
+    border-color: #B22828;
+    width: 60%;
+    height: 40px;
+    font-family: helvetica;
+    font-size: 110%;
+}
+h1{
+    font-family: helvetica rounded;
+    color: #790000;
+}
+ul{
+    color: #616161;
+    font-size: 140%;
+}
+p{
+    color: #616161;
+    font-size: 110%;
+    margin-top: 0;
 }

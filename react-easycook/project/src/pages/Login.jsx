@@ -7,7 +7,7 @@ export default function Login(){
     return (
         <div id='login-page'>
           <div className='login-forms'>
-            <img src={logo} alt="Easy Cook logo" className='imagem-centralizada' />
+            <img src={logo} alt="Easy Cook logo" className='blend-mode imagem-centralizada' />
             <label id="login">Login</label>
             <input placeholder='Seu e-mail' />
             <input placeholder='Sua senha' /> 
@@ -15,9 +15,7 @@ export default function Login(){
             <button className="login-button">Login</button>
             <a href='localhost:3000' id="cadastre-se">Cadastre-se</a>
           </div>
-          <div>
-            <Rodape></Rodape>
-          </div>
+          
         </div>
     )
 }

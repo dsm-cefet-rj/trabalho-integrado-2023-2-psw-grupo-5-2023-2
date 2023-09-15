@@ -8,7 +8,7 @@ import iconeFavoritos from '../images/menu-favorito.png'
 
 export default function Rodape(){
     return (
-        <div className='Rodape'>
+        <nav className='Rodape'>
             
             <img src={iconeHomePage} className='icone-home-page' alt='icone-home-page'></img>
             <img src={iconeCompras} className='icone-compras' alt='icone-compras'></img>
@@ -16,6 +16,6 @@ export default function Rodape(){
             <img src={iconeReceitas} className='icone-receita' alt='icone-receita'></img>
             <img src={iconeFavoritos} className='icone-favorito' alt='icone-favorito'></img>
             
-        </div>
+        </nav>
     )
 }

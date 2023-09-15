@@ -9,9 +9,7 @@ export default function App(){
              <Cabecalho 
                titulo='Novo Ingrediente'
             />
-            <ContainerBody
-              
-            />
+            <ContainerBody/>
          
       </div>
    )

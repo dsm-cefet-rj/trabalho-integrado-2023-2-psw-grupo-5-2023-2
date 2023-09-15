@@ -5,29 +5,10 @@
     position: fixed;
     bottom: 0;
     left: 0;
+    display: flex;
+    justify-content: space-around;
 }
-.icone-home-page{
-    position: fixed;
-    left: 4%;
-    top: 87%;
+.icone-home-page, .icone-compras, .icone-ingrediente, .icone-receita, .icone-favorito{
+    margin-top: 1%;
 }
-.icone-compras{
-    position: fixed;
-    left: 25%;
-    top: 89%;
-}
-.icone-ingrediente{
-    position: fixed;
-    left: 47%;
-    top: 91%;
-}
-.icone-receita{
-    position: fixed;
-    left: 70%;
-    top: 90%;
-}
-.icone-favorito{
-    position: fixed;
-    left: 90%;
-    top: 90%;
-}
+
