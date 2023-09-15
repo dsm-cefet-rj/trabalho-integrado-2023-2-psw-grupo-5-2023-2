@@ -5,8 +5,12 @@ import '../styles/container.css'
 export default function ContainerBody(){
     return (
         <div className="Container">
-            <img src={img} className="quadrado" alt="imagem-ingrediente"/>
-            <form className="form">
+            
+            <form className="grid" id="form">
+                <div>
+                    <img src={img} className="quadrado" alt="imagem-ingrediente"/>
+                </div>
+            <div className="area1">
                 <div className="area-nome">
                     <label> Nome </label>
                     <br></br>
@@ -23,7 +27,8 @@ export default function ContainerBody(){
                     <option> Categoria 4 </option>
                 </select>
                 </div>
-                
+        </div>
+        <div className="area2">
                 <div className="area-medidas">
                     <label> Medidas </label>
                     <br></br>
@@ -45,7 +50,8 @@ export default function ContainerBody(){
                     <option> Variação 4 </option>
                     </select>
                 </div>
-                
+               </div> 
+               <div className="area3">
                 <div className="area-outras-categorias">
                     <label> Outras Categorias </label>
                     <br></br>
@@ -73,7 +79,10 @@ export default function ContainerBody(){
                 <br></br>
                     <textarea cols="33" rows="6"></textarea>
                </div>
-               <button type="submit"> Criar </button>
+               
+                    <button type="submit"> Criar </button>
+               
+        </div>
             </form>
         </div>
     )

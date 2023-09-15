@@ -1,35 +1,33 @@
 .Container{
-    
     padding: 4%;
+    
 }
 .quadrado{
-    float: left;
-    width: 8%;
+    
+    max-width: 7em;
+    min-width: 7em;
     height: 16%;
-    position: absolute;
-    top: 16%;
+    
 } 
-.form{
-    position: absolute;
-    top: 40%;
-    width: 50%;
 
-}
 .categoria{
     height: 31px;
-    width: 33%;
+    max-width: 15em;
+    min-width: 15em;
     font-size: 98%;
     padding: 5px;
    }
    .medida, .var-padrao{
     height: 31px;
-    width: 26%;
+    max-width: 12em;
+    min-width: 12em;
     font-size: 98%;
     padding: 5px;
    }
    .outras-categorias, .substitutos{
     height: 31px;
-    width: 55%;
+    max-width: 15em;
+    min-width: 25em;
     font-size: 98%;
     padding: 5px;
    }
@@ -45,7 +43,8 @@
    }
    textarea{
     font-family: helvetica;
-    width: 55%;
+    max-width: 24em;
+    min-width: 24em;
     height: 100px;
     resize: none;
     font-size: 16px;
@@ -54,13 +53,12 @@
     background-color: #B22828;
     color: white;
     border-color: #B22828;
-    width: 9%;
+    max-width: 6em;
+    min-width: 6em;
     height: 30px;
-    position: relative;
-    bottom: 95px;
-    right: 8px;
     font-family: helvetica;
     font-size: 90%;
+    margin-left: 21em;
    }
     input{
      border: 0 none;
@@ -69,45 +67,16 @@
     select{
      font-size: 100%;
     }
-    .area-nome, .area-categoria{
-        position: relative;
-        bottom: 175px;
-        left: 135px;
-        padding: 7px;
-    }
+   
     #criar-nome-ing{
         height: 10px;
-        width: 30%;
+        max-width: 13.5em;
+        min-width: 13.5em;
         font-size: 100%;
         padding: 10px;
         border-radius: 12px;
     }
-    .area-medidas, .area-var-padrao{
-        position: relative;
-        bottom: 140px;
-    }
-    .area-medidas{
-        right: 8px;
-    }
-    .area-var-padrao{
-        left: 200px;
-        bottom: 190px;
-    }
-    .area-outras-categorias{
-        position: relative;
-        bottom: 165px;
-        right: 8px;
-    }
-    .area-substitutos{
-        position: relative;
-        bottom: 140px;
-        right: 8px;
-    }
-    .area-descricao{
-        position: relative;
-        bottom: 115px;
-        right: 8px;
-    }
+    
     textarea:focus{
         box-shadow: 0 0 0 0;
         border: 0 none;
@@ -118,4 +87,80 @@
     }
     button:hover{
         background-color: #a52525;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 12em 10em;
+        margin: 0 auto;
+        grid-gap: 1em;
+        align-items: flex-start;
+        padding-top: 4%;
+
+    }
+    .area-nome{
+        grid-column: 2;
+        grid-row: 1;
+        margin: 3%;
+    }
+    .area-categoria{
+        grid-column: 2;
+        grid-row: 2;
+        margin: 3%;
+    }
+    .area-medidas{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .area-var-padrao{
+        grid-column: 2;
+        grid-row: 3;
+    }
+    .area-outras-categorias{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .area-substitutos{
+        grid-column: 1;
+        grid-row: 5;
+    }
+    .area-descricao{
+        grid-column: 1;
+        grid-row: 6;
+    }
+    .Container button{
+        grid-column: 1;
+        grid-row: 7;
+    }
+    .grid > div.quadrado{
+        grid-column: 1;
+        grid-row: 1 / 2;
+    }
+    .area1{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: 4em;
+        bottom: 1em;
+        width: 200%;
+    }
+    .area2{
+        display: flex;
+        flex-direction: row;
+        width: 200%;
+        justify-content: space-between;
+        position: relative;
+        bottom: 1em;
+    }
+    .area3{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 3em;
+        right: 13em;
+        gap: 1em;
+    }
+    #form{
+        justify-content: center;
+        position: relative;
+        top: 1em;
     }

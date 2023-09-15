@@ -6,19 +6,16 @@
     height: 9%;
     width: 100%;
     position: fixed;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 body{
     padding: 0;
     margin: 0;
 }
 .icone-seta-branca{
-    width: 4%;
-    position: fixed;
-    top: 1%;
+    max-width: 4em;
+    min-width: 4em;
 }
 
-.titulo{
-    position: fixed;
-    left: 5%;
-    bottom: 90%;
-}

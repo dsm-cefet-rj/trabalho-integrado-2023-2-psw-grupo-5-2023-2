@@ -38,6 +38,7 @@
     font-family: helvetica;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 ul{
     list-style-type: none;

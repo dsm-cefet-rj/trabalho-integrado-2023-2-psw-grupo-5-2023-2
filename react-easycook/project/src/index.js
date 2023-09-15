@@ -12,7 +12,7 @@ root.render(      /*
               ESCOLHA RENDERIZAR A PÁGINA QUE QUER TESTAR ATÉ RESOLVERMOS O ROUTING   */
   <div id='main'>
     
-    <HomePage/>
+    <NovoIngrediente/>
      
   </div>
  
