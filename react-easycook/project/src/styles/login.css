@@ -65,6 +65,16 @@
     padding: 0% 0%;
 }
 
+#login-page h1 {
+    text-align: center;
+}
+
+#login-page .link {
+    text-decoration: none;
+    font-style: normal;
+    color: aqua;
+}
+
 * {
     font-family: Helvetica, arial, sans-serif;
 }

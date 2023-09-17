@@ -11,10 +11,10 @@ import Routes from './routes'
   // Movido para routes.js porque fica mais limpo
 const router = createBrowserRouter(Routes)
 
-
+const autenticado = false;
 
 // Teste sua página colocando o path após o link! Por exemplo:
-//                  localhost:300/login
+//                  localhost:3000/login
 // Consulte e adicione as páginas e caminhos no arquivo routes.js
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
