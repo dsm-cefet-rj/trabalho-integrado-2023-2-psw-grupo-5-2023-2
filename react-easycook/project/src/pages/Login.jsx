@@ -35,7 +35,7 @@ export default function Login(){
           <Link className="link" to="/esqueci-minha-senha">
             <a href='localhost:3000' className="esqueci-userPassword">Esqueci minha senha</a>
           </Link>
-          <Link className="link" to="/cadastro">
+          <Link className="link" to="/cadastre-se">
             <a href='localhost:3000' id="cadastre-se">Cadastre-se</a>
           </Link>
         </div>

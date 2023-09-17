@@ -1,0 +1,83 @@
+#login-page input {
+    width: 100%;
+    height: 24px;
+    margin: 10px auto;
+    padding: 5px 5px;
+    display: block;
+}
+
+#login-page label#login {
+    text-align: left;
+    width: 100vw;
+    margin: auto auto -1px;
+    display: flex;
+    opacity: 75%;
+}
+
+#login-page#login-page .login-forms {
+    width: 85vw;
+    display: block;
+    margin: auto auto auto auto;
+    padding: auto auto;
+}
+
+#login-page button {
+    display: block;
+    margin: auto auto;
+    padding: auto;
+}
+
+#login-page a {
+    color: aliceblue;
+}
+
+#login-page .esqueci-senha {
+    text-align: right;
+    display: block;
+
+
+}
+
+#login-page a#cadastre-se {
+    text-align: center;
+    display: block;
+    font-weight: 700;
+}
+
+#login-page .imagem-centralizada {
+    display: block;
+    margin: auto auto;
+}
+
+#login-page .login-button {
+    background-color: #B22828;
+    color: white;
+    border-color: #B22828;
+    border-radius: 10px;
+    text-align:center;
+    font-family: helvetica rounded;
+    display: block;
+    margin: 1em auto;
+    min-width: 15em;
+    max-width: 15em;
+    min-height: 2em;
+    max-height: 6%;
+    padding: 0% 0%;
+}
+
+#login-page h1 {
+    text-align: center;
+}
+
+#login-page .link {
+    text-decoration: none;
+    font-style: normal;
+    color: aqua;
+}
+
+* {
+    font-family: Helvetica, arial, sans-serif;
+}
+.blend-mode{
+    mix-blend-mode: multiply;
+}

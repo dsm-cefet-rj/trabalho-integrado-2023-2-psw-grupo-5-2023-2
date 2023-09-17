@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import NovoIngrediente from './pages/NovoIngrediente'
 import EditarIngrediente from './pages/EditarIngrediente'
 import Estoque from './pages/Estoque'
+import Cadastro from "./pages/Cadastro"
 import NotFound from "./pages/NotFound"
 
     // path: 'caminho após o link'
@@ -31,6 +32,10 @@ const Routes = [
     {
         path: 'estoque',
         element: <Estoque/>
+    },
+    {
+        path: 'cadastre-se',
+        element: <Cadastro/>
     },
     {
         path: '*',
