@@ -19,12 +19,14 @@ export default function Ingrediente() {
     const tmp = ">";
     return(
         <div id="ingrediente" className="componente">
-            <label htmlFor="">Ingrediente</label>
-            <label htmlFor="">15</label>
-            <label htmlFor="">un</label>
-            <button>+</button>
-            <button>-</button>
-            <button>{tmp}</button>
+            <label id="nome">Ingrediente</label>
+            <label id="qtd">15</label>
+            <label id="medida">un</label>
+            <div className="buttons">
+                <button>+</button>
+                <button>-</button>
+                <button>{tmp}</button>
+            </div>
         </div>
     )
 }

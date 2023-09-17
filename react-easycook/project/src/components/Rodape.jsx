@@ -14,7 +14,7 @@ export default function Rodape(){
         <nav className='Rodape'>
             <Link to='/'><img src={iconeHomePage} className='icone-home-page' alt='icone-home-page'></img></Link>
             <Link to=''><img src={iconeCompras} className='icone-compras' alt='icone-compras'></img></Link>
-            <Link to=''><img src={iconeIngrediente} className='icone-ingrediente' alt='icone-ingrediente'></img></Link>
+            <Link to='estoque'><img src={iconeIngrediente} className='icone-ingrediente' alt='icone-ingrediente'></img></Link>
             <Link to=''><img src={iconeReceitas} className='icone-receita' alt='icone-receita'></img></Link>
             <Link to=''><img src={iconeFavoritos} className='icone-favorito' alt='icone-favorito'></img></Link>
         </nav>

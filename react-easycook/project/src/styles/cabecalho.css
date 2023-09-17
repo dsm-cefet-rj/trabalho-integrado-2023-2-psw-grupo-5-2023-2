@@ -3,19 +3,40 @@
     background-color: #B22828;
     color: white;
     font-family: helvetica rounded;
-    height: 9%;
+    height: 9vh;
     width: 100%;
-    position: fixed;
+    display: flex;
+    text-align: left;
+}
+
+.Cabecalho .leftSide{
+    flex: 1;
     display: flex;
     justify-content: left;
-    align-items: center;
 }
+.Cabecalho .rightSide{
+    justify-content: right;
+    justify-items: right;
+    justify-self: right;
+    min-width: fit-content;
+    max-width: fit-content;
+}
+
 body{
     padding: 0;
     margin: 0;
 }
-.icone-seta-branca{
-    max-width: 4em;
-    min-width: 4em;
+
+.Cabecalho .leftSide .icone-seta-branca{
+    max-height: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+.Cabecalho .leftSide .titulo {
+    display: flex;
+    flex: 1;
+    padding: auto;
+    margin: auto;
 }
 
