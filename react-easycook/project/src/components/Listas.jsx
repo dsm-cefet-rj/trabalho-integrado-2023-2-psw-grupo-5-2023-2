@@ -6,7 +6,7 @@ export function Lista({novo, nomeObjetos}) {
     
     return (
         <div id="listas">
-            <button className="novo-objeto">Novo {nomeObjetos}</button>
+            <button className="novo-objeto">{nomeObjetos}</button>
             <Ingrediente></Ingrediente>
             <Ingrediente></Ingrediente>
             <Ingrediente></Ingrediente>

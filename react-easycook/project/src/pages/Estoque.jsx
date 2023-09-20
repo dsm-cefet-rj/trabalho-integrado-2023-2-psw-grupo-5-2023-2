@@ -13,7 +13,8 @@ export default function Estoque(){
             </div>
             <div id='estoque'>
                 <div className='lista-ingredientes'>
-                    <Lista nome="estoque" nomeObjetos="Ingrediente"></Lista>
+                    <Lista nome="estoque" nomeObjetos="Novo Ingrediente"></Lista>
+                    <Rodape></Rodape>
                 </div>
             </div>
         </div>

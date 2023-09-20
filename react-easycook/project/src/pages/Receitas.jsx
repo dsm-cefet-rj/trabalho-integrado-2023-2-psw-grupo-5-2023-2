@@ -1,9 +1,8 @@
 import React from 'react'
-import logo from '../images/easycook1-nobg.png'
 import '../styles/estoque.css'
-import Rodape from '../components/Rodape'
-import Ingrediente from '../components/Ingrediente'
 import Cabecalho from '../components/Cabecalho'
+import { Lista } from '../components/Listas'
+import Rodape from '../components/Rodape'
 
 export default function Receitas(){
     return (
@@ -13,10 +12,8 @@ export default function Receitas(){
             </div>
             <div id='receitas'>
                 <div className='lista-receitas'>
-                    <button>Nova Receita</button>
-                    <Ingrediente></Ingrediente>
-                    <Ingrediente></Ingrediente>
-                    <Ingrediente></Ingrediente>
+                    <Lista nomeObjetos="Nova Receita"></Lista>
+                    <Rodape></Rodape>
                 </div>
             </div>
         </div>
