@@ -8,6 +8,7 @@ export default function App(){
       <div>
              <Cabecalho 
                titulo='Novo Ingrediente'
+               fundo='escuro'
             />
             <ContainerBody/>
          

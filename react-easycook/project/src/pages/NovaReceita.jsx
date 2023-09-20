@@ -7,7 +7,7 @@ export default function NovaListaDeCompras(){
     return (
         <div>
             <Cabecalho 
-                titulo="Nova Lista De Compras"
+                titulo="Nova Receita"
                 fundo="escuro"
             ></Cabecalho>
             <ContainerBodyLC></ContainerBodyLC>

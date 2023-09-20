@@ -1,0 +1,20 @@
+{
+    "users": [
+        {
+            "userEmail": "@.com",
+            "userPassword": "asd"
+        }
+    ],
+
+    "ingredientes": [
+        {
+            
+        }
+    ],
+    "receitas": [
+
+    ],
+    "listas": [
+
+    ]
+}

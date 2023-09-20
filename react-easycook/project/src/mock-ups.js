@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 class UserLoginData {
     userEmail;
     senha;

@@ -12,7 +12,10 @@ export default function Receitas(){
             </div>
             <div id='receitas'>
                 <div className='lista-receitas'>
-                    <Lista nomeObjetos="Nova Receita"></Lista>
+                    <Lista 
+                        nomeObjetos="Nova Receita"
+                        rotaNovoObj="/nova-receita"
+                    ></Lista>
                     <Rodape></Rodape>
                 </div>
             </div>

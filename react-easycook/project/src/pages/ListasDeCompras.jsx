@@ -13,7 +13,10 @@ export default function ListaDeCompras(){
             </div>
             <div id='lista-de-compras'>
                 <div className='lista-ingredientes'>
-                    <Lista nome="listas-de-compras" nomeObjetos="Nova Lista de Compras"></Lista>
+                    <Lista
+                        nomeObjetos="Nova Lista de Compras"
+                        rotaNovoObj="/nova-lista-de-compras"
+                    ></Lista>
                     <Rodape></Rodape>
                 </div>
             </div>

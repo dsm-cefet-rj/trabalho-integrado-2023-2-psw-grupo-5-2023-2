@@ -3,11 +3,14 @@ import '../styles/listas.css'
 import Ingrediente from './Ingrediente'
 import { Link } from "react-router-dom"
 
-export function Lista({novo, nomeObjetos}) {
+export function Lista({rotaNovoObj, nomeObjetos}) {
      
     return (
         <div id="listas">
-            <button className="novo-objeto">{nomeObjetos}</button>
+            <Link to={rotaNovoObj}>
+                <button id="novo-objeto">{nomeObjetos}</button>
+            </Link>
+            <Ingrediente></Ingrediente>
             <Ingrediente></Ingrediente>
             <Ingrediente></Ingrediente>
             <Ingrediente></Ingrediente>
