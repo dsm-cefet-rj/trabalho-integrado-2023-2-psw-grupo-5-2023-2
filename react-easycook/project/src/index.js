@@ -11,7 +11,6 @@ import Routes from './routes'
   // Movido para routes.js porque fica mais limpo
 const router = createBrowserRouter(Routes)
 
-const autenticado = false;
 
 // Teste sua página colocando o path após o link! Por exemplo:
 //                  localhost:3000/login

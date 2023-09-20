@@ -5,14 +5,21 @@ import filtroAZ from "../../src/images/filtro-a-z.png"
 import homeButton from "../../src/images/icone-casa.png"
 import favoritoButton from "../../src/images/menu-favorito.png"
 import "../../src/styles/cabecalho.css"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Cabecalho({titulo, outros, filtro, home, favorito}) {
+
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);
+    }
 
     return (
         <div className='Cabecalho'>
             <div className="leftSide">
-            <img src={seta} className="icone-seta-branca" alt="icone-seta-branca"/>
+                <button onClick={goBack} className="nada">
+                    <img src={seta} className="icone-seta-branca" alt="icone-seta-branca"/>
+                </button>
                 <h2 className="titulo">{titulo}</h2>
             </div>
             <div className="rightSide">
@@ -29,4 +36,6 @@ export default function Cabecalho({titulo, outros, filtro, home, favorito}) {
             
         </div>
     )
+
+    
 }

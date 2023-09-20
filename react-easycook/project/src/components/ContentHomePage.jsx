@@ -1,5 +1,6 @@
 import React from "react"
 import '../styles/contentHP.css'
+import { Link } from "react-router-dom"
 
 export default function ContentHP(){
     return (
@@ -11,12 +12,12 @@ export default function ContentHP(){
                     <li>Ingrediente 2</li>
                     <li>Ingrediente 3</li>
                  </ul>
-                 <button>Nova Lista de Compras</button>
+                 <Link to='nova-lista-de-compras'><button>Nova Lista de Compras</button></Link>
             </div>
             <div className="bloco2">
                 <h1>Em falta!</h1>
                  <p>Lista de ingredientes ou modo de preparo da receita selecionada nesse painel.</p>
-                 <button>Nova Lista de Compras</button>
+                 <Link to='nova-lista-de-compras'><button>Nova Lista de Compras</button></Link>
             </div>
         </div>
     )

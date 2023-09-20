@@ -1,0 +1,102 @@
+#listas input {
+    width: 100%;
+    height: 24px;
+    margin: 10px auto;
+    padding: 5px 5px;
+    display: block;
+}
+
+#listas label#login {
+    text-align: left;
+    width: 100vw;
+    margin: auto auto -1px;
+    display: flex;
+    opacity: 75%;
+}
+
+#listas#listas .login-forms {
+    width: 85vw;
+    display: block;
+    margin: auto auto auto auto;
+    padding: auto auto;
+}
+
+#listas button {
+    display: block;
+    margin: auto auto;
+    padding: auto;
+}
+
+#listas a {
+    color: aliceblue;
+}
+
+#listas .esqueci-senha {
+    text-align: right;
+    display: block;
+
+
+}
+
+#listas a#cadastre-se {
+    text-align: center;
+    display: block;
+    font-weight: 700;
+}
+
+#listas .imagem-centralizada {
+    display: block;
+    margin: auto auto;
+}
+
+#listas .login-button {
+    background-color: #B22828;
+    color: white;
+    border-color: #B22828;
+    border-radius: 10px;
+    text-align:center;
+    font-family: helvetica rounded;
+    display: block;
+    margin: 1em auto;
+    min-width: 15em;
+    max-width: 15em;
+    min-height: 2em;
+    max-height: 6%;
+    padding: 0% 0%;
+}
+
+#listas h1 {
+    text-align: center;
+}
+
+#listas .link {
+    text-decoration: none;
+    font-style: normal;
+    color: aqua;
+}
+
+* {
+    font-family: Helvetica, arial, sans-serif;
+}
+.blend-mode{
+    mix-blend-mode: multiply;
+}
+
+
+#listas button {
+    width: 100%;
+    height: 80px;
+    align-content: center;
+    background-color: azure;
+    border: 0px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border-color: darkred;
+    border-bottom-width: 2px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-style: solid;
+}

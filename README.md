@@ -3,3 +3,8 @@
 <h2>Fluxo do github</h2>
 
 [Pequeno guia sobre como colaborar usando git e github](https://docs.github.com/pt/get-started/quickstart/github-flow)
+
+<h2> JSON Server
+slice do JSON
+Ele contém funções de PUT, DELETE, GET, UPDATE
+<h2>

@@ -9,6 +9,9 @@ import EditarIngrediente from './pages/EditarIngrediente'
 import Estoque from './pages/Estoque'
 import Cadastro from "./pages/Cadastro"
 import NotFound from "./pages/NotFound"
+import NovaListaDeCompras from "./pages/NovaListaDeCompras"
+import ListaDeCompras from "./pages/ListasDeCompras"
+import Receitas from "./pages/Receitas"
 
     // path: 'caminho após o link'
     //element: <Página/>
@@ -36,6 +39,18 @@ const Routes = [
     {
         path: 'cadastre-se',
         element: <Cadastro/>
+    },
+    {
+        path: 'nova-lista-de-compras',
+        element: <NovaListaDeCompras/>
+    },
+    {
+        path: 'listas-de-compras',
+        element: <ListaDeCompras/>
+    },
+    {
+        path: 'receitas',
+        element: <Receitas/>
     },
     {
         path: '*',
