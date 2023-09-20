@@ -155,8 +155,8 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        top: 3em;
-        right: 13em;
+        top: 9em;
+        right: 16.2em;
         gap: 1em;
     }
     #form{

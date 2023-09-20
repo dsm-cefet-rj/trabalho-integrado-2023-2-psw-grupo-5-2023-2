@@ -5,12 +5,13 @@
     align-items: center;
     background-color: azure;
     font-family: Arial, Helvetica, sans-serif;
-    border-color: darkred;
-    border-bottom-width: 2px;
+    border-color: rgb(218, 218, 218);
+    border-bottom-width: 1px;
     border-top-width: 0px;
     border-left-width: 0px;
     border-right-width: 0px;
     border-style: solid;
+    color: #616161;
 }
 
 #ingrediente .componente {
@@ -44,17 +45,17 @@
     color: aliceblue;
     text-align: center;
     font-size: 32px;
-    background-color: red;
+    background-color: #FF2323;
     display: block;
     border-style: solid;
-    border-color: darkred;
-    border-width: 1px;
+    border-color:  #F2AEAE;
+    border-width: 2px;
     border-radius: 5px;
 }
 
 #ingrediente .buttons button:hover {
-    background-color: darkred;
+    background-color: #d42121;
 }
 #ingrediente .buttons button:active {
-    background-color: darkgray;
+    background-color: rgb(187, 27, 27);
 }

@@ -1,9 +1,9 @@
 
 .Cabecalho{
-    background-color: #B22828;
+    background-color: #fa7e7e;
     color: white;
     font-family: helvetica rounded;
-    height: 9vh;
+    height: 5em;
     width: 100%;
     display: flex;
     text-align: left;
@@ -16,7 +16,7 @@
 }
 
 .Cabecalho .leftSide button {
-    background-color: #B22828;
+    background-color: #fa7e7e;
     border-width: 0px;
 }
 
@@ -109,4 +109,9 @@ body{
     border: 0 none;
     font-size: 110%;
   }
-
+  .Cabecalho .icone-filtro{
+    width: 3.5em;
+  }
+  .Cabecalho .icone-home{
+    width: 5em;
+  }
