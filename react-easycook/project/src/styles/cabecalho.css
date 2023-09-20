@@ -1,5 +1,5 @@
 
-.Cabecalho{
+.Cabecalho.claro{
     background-color: #fa7e7e;
     color: white;
     font-family: helvetica rounded;
@@ -8,6 +8,15 @@
     display: flex;
     text-align: left;
 }
+.Cabecalho.escuro{
+  background-color: #B22828;
+  color: white;
+  font-family: helvetica rounded;
+  height: 5em;
+  width: 100%;
+  display: flex;
+  text-align: left;
+}
 
 .Cabecalho .leftSide{
     flex: 1;
@@ -15,9 +24,14 @@
     justify-content: left;
 }
 
-.Cabecalho .leftSide button {
+.Cabecalho.claro .leftSide button {
     background-color: #fa7e7e;
     border-width: 0px;
+}
+
+.Cabecalho.escuro .leftSide button {
+  background-color: #B22828;
+  border-width: 0px;
 }
 
 .Cabecalho .rightSide{
