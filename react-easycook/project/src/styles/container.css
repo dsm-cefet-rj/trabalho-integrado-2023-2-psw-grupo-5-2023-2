@@ -82,10 +82,10 @@
         border: 0 none;
         outline: 0;
     }
-    select:hover, input:hover, textarea:hover{
+    #container select:hover, #container input:hover, #container textarea:hover{
         background-color: #f0f0f0;
     }
-    button:hover{
+    #container button:hover{
         background-color: #a52525;
     }
     .grid{

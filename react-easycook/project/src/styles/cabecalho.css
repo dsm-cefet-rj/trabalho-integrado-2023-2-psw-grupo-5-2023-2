@@ -35,6 +35,7 @@ body{
 
 .Cabecalho .leftSide .icone-seta-branca{
     max-height: fit-content;
+    width: 65px;
     margin: auto;
     padding: auto;
 }
@@ -45,4 +46,67 @@ body{
     padding: auto;
     margin: auto;
 }
+#popup-3-pontos{
+    border: 1px solid white;
+    background-color: white;
+    max-width: 8em;
+    min-width: 8em;
+    height: 15%;
+    position: fixed;
+    left: 71em;
+    bottom: 34em;
+    box-shadow: 2px 2px 6px rgb(168, 167, 167);
+    text-align: center;
+    visibility: hidden;
+  }
+  .preto{
+    color: black;
+  }
+  .vermelho{
+    color: rgb(156, 5, 5);
+  }
+  .preto{
+    color: black;
+  }
+  .cinza{
+    color: rgb(100, 100, 100);
+    font-family: helvetica rounded;
+  }
+  #filtro-estoque{
+    background-color: white;
+    max-width: 16em;
+    min-width: 16em;
+    height: 19.5em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 6px rgb(168, 167, 167);
+    text-align: left;
+    visibility: hidden;
+    padding: 1%;
+    position: fixed;
+    left: 62em;
+    bottom: 19em;
+    
+  }
+  a{
+    text-decoration: none;
+  }
+  .input-nome-filtro{
+    font-size: 110%;
+    color: rgb(61, 61, 61);
+    border-top: 0 none;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-bottom: 1px solid rgb(190, 189, 189);
+    width: 55%;
+  }
+  .imagem-filtro-pesquisa, .imagem-filtro-ingrediente, .imagem-filtro-a-z, .imagem-filtro-z-a, .imagem-filtro-categoria{
+    width: 14%;
+    float: left;
+  }
+
+  .select-ingrediente, .select-categoria{
+    border: 0 none;
+    font-size: 110%;
+  }
 

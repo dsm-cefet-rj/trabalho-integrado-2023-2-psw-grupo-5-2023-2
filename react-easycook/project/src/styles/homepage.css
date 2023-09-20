@@ -12,3 +12,9 @@
     max-width: 8em;
     min-width: 8em;
 }
+#home select:hover, #home input:hover, #home textarea:hover{
+    background-color: #f0f0f0;
+}
+#home button:hover{
+    background-color: #a52525;
+}

@@ -81,3 +81,9 @@
 .blend-mode{
     mix-blend-mode: multiply;
 }
+#login-page select:hover, #login-page input:hover, #login-page textarea:hover{
+    background-color: #f0f0f0;
+}
+#login-page button:hover{
+    background-color: #a52525;
+}

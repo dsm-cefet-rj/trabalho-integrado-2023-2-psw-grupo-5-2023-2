@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 
 export default function HomePage(){
     return (
-        <div className='HomePage'>
+        <div className='HomePage' id='home'>
           <div className='HeaderHP'>
             <img src={logo} className="logo blend-mode"></img>  
         </div>
