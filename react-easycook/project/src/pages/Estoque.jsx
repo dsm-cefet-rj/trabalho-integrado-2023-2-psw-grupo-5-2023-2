@@ -5,6 +5,7 @@ import Ingrediente from '../components/Ingrediente'
 import Cabecalho from '../components/Cabecalho'
 import { Lista } from '../components/Listas'
 
+
 export default function Estoque(){
     return (
         <div>
@@ -17,6 +18,13 @@ export default function Estoque(){
                         rotaNovoObj="/novo-ingrediente" 
                         nomeObjetos="Novo Ingrediente"
                     ></Lista>
+                    <div className='listas'>
+                        <Ingrediente></Ingrediente>
+                        <Ingrediente></Ingrediente>
+                        <Ingrediente></Ingrediente>
+                        <Ingrediente></Ingrediente>
+                    </div>
+                    
                     <Rodape></Rodape>
                 </div>
             </div>
