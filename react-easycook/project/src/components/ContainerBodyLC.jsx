@@ -9,7 +9,7 @@ export default function ContainerBodyLC(){
                     <div className='area-nome'>
                         <label> Nome </label>
                         <br></br>
-                        <input placeholder='Nome' type='text' id='criar-nome-ing'></input>
+                        <input placeholder='Nome' type='text' class='criar-nome-ing'></input>
                     </div>
                     <div className='area-ingredientes'>
                         <label> Ingredientes </label>

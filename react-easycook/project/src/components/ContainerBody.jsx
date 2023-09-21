@@ -19,7 +19,7 @@ export default function ContainerBody(){
                 
                 <div className="area-categoria">
                     <label> Categoria Principal </label>
-                    <br></br>
+                    
                     <select className="categoria"> 
                     <option> Categoria 1</option>
                     <option> Categoria 2 </option>
