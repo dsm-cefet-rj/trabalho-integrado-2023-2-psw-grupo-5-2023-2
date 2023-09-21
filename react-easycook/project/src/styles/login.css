@@ -29,6 +29,7 @@
 
 #login-page a {
     color: aliceblue;
+    
 }
 
 #login-page .esqueci-senha {
@@ -70,7 +71,7 @@
 }
 
 #login-page .link {
-    text-decoration: none;
+    
     font-style: normal;
     color: aqua;
 }

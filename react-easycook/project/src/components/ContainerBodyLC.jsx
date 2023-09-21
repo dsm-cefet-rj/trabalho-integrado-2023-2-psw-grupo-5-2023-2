@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/container.css'
+import '../styles/containerLC.css'
 
 export default function ContainerBodyLC(){
     return (
@@ -11,10 +11,10 @@ export default function ContainerBodyLC(){
                         <br></br>
                         <input placeholder='Nome' type='text' id='criar-nome-ing'></input>
                     </div>
-                    <div className='area-categoria'>
+                    <div className='area-ingredientes'>
                         <label> Ingredientes </label>
                         <br></br>
-                        <select className='categoria'>
+                        <select className='ingredientes'>
                             <option>Ingrediente 1</option>
                             <option>Ingrediente 2</option>
                             <option>Ingrediente 3</option>
@@ -22,18 +22,13 @@ export default function ContainerBodyLC(){
                     </div>
                 </div>
                 <div className='area3'>
-                <section style={{
-                backgroundColor: 'white',
-                borderRadius: '10px',
-                padding: '15px',
-                width: '190px'
-                }}>
-                <div style={{color: 'gray'}}>
-                <label for="">Ingrediente  <input  style={{width: '60px'}} class="qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd"/> Un</label><br />
-                <label for="">Ingrediente  <input style={{width: '60px'}}class="qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd"/> Kg</label><br />
-            <label>Ingrediente  <input style={{width: '60px'}}class="qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd"/> mL</label>
-            </div>
-                </section>
+                <div className='section'>
+                   <div className='div-ing'>
+                        <label for="Qtd">Ingrediente </label>
+                        <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="1" step="1"/>
+                        <label for="Qtd">Un</label>
+                   </div>
+                </div>
                 
               
                     <div className='area-descricao'>

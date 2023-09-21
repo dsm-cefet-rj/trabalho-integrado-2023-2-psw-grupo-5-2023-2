@@ -24,7 +24,7 @@ export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home
       popup.style.visibility = 'visible'
     }
   function excluir(){
-      var popup = document.getElementById('popup-3pontos')
+      var popup = document.getElementById('popup-3-pontos')
       popup.style.visibility = 'hidden'
   }
   function filtroEstoque(){

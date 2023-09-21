@@ -59,6 +59,7 @@ body{
     flex: 1;
     padding: auto;
     margin: auto;
+    font-family: Helvetica rounded, Arial, sans-serif;
 }
 #popup-3-pontos{
     border: 1px solid white;
