@@ -19,7 +19,7 @@ export default function ContainerBody(){
                 
                 <div className="area-categoria">
                     <label> Categoria Principal </label>
-                    
+                    <br></br>
                     <select className="categoria"> 
                     <option> Categoria 1</option>
                     <option> Categoria 2 </option>
@@ -27,32 +27,25 @@ export default function ContainerBody(){
                     <option> Categoria 4 </option>
                 </select>
                 </div>
+                
+                <div className="area-ingrediente">
+                    <label> Ingredientes </label>
+                    <br></br>
+                    <select style={{width:'70%'}} className="ingrediente"> 
+                    <option> Ingrediente 1</option>
+                    <option> Ingrediente 2 </option>
+                    <option> Ingrediente 3 </option>
+                    <option> Ingrediente 4 </option>
+                </select>
+                <div id= "buttons" style={{width:'15%'}}className="buttons">
+                <button>+</button>
+                <button>-</button>
+                </div>
+                </div>
         </div>
         <div className="area2">
-                <div className="area-medidas">
-                    <label> Medidas </label>
-                    <br></br>
-                    <select className="medida"> 
-                    <option> Kg</option>
-                    <option> g </option>
-                    <option> unidade </option>
-                    <option> mL </option>
-                    </select>
-                </div>
                 
-                <div className="area-var-padrao">
-                    <label> Variação Padrão? </label>
-                    <br></br>
-                    <select className="var-padrao"> 
-                    <option> Variação 1 </option>
-                    <option> Variação 2 </option>
-                    <option> Variação 3 </option>
-                    <option> Variação 4 </option>
-                    </select>
-                </div>
-               </div> 
-               <div className="area3">
-                <div className="area-outras-categorias">
+                 <div className="area-outras-categorias">
                     <label> Outras Categorias </label>
                     <br></br>
                     <select className="outras-categorias"> 
@@ -62,6 +55,11 @@ export default function ContainerBody(){
                     <option> Outras Categorias 4 </option>
                 </select>
                 </div>
+               
+               </div> 
+               
+               <div className="area3">
+               
                 
                <div className="area-substitutos">
                 <label> Substitutos </label>
@@ -75,9 +73,9 @@ export default function ContainerBody(){
                </div>
                 
                <div className="area-descricao">
-                <label> Descrição </label>
+                <label> Descrição e Modo de Preparo </label>
                 <br></br>
-                    <textarea cols="33" rows="6"></textarea>
+                    <textarea cols="33" rows="6">Descrição e Modo de Preparo</textarea>
                </div>
                
                     <button type="submit"> Criar </button>

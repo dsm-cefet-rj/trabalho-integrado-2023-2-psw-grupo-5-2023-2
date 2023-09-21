@@ -4,6 +4,7 @@ import Ingrediente from '../components/Ingrediente'
 import Cabecalho from '../components/Cabecalho'
 import { Lista } from '../components/Listas'
 import Rodape from '../components/Rodape'
+import Compras from '../components/ListasCompras'
 
 export default function ListaDeCompras(){
     let listasDeCompras = [];
@@ -19,6 +20,12 @@ export default function ListaDeCompras(){
                         rotaNovoObj="/nova-lista-de-compras"
                         objetos={listasDeCompras}
                     ></Lista>
+                    <div className='listas'>
+                        <Compras/>
+                        <Compras/>
+                        <Compras/>
+                        <Compras/>
+                    </div>
                     <Rodape></Rodape>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/container.css'
+import '../styles/containerLC.css'
 
 export default function ContainerBodyLC(){
     return (
@@ -9,12 +9,12 @@ export default function ContainerBodyLC(){
                     <div className='area-nome'>
                         <label> Nome </label>
                         <br></br>
-                        <input placeholder='Nome' type='text' id='criar-nome-ing'></input>
+                        <input placeholder='Nome' type='text' class='criar-nome-ing'></input>
                     </div>
-                    <div className='area-categoria'>
+                    <div className='area-ingredientes'>
                         <label> Ingredientes </label>
                         <br></br>
-                        <select className='categoria'>
+                        <select className='ingredientes'>
                             <option>Ingrediente 1</option>
                             <option>Ingrediente 2</option>
                             <option>Ingrediente 3</option>
@@ -22,6 +22,27 @@ export default function ContainerBodyLC(){
                     </div>
                 </div>
                 <div className='area3'>
+                <div className='section'>
+                   <div className='div-ing'>
+                        <label for="Qtd">Ingrediente </label>
+                        <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="1" step="1"/>
+                        <label for="Qtd">Un</label>
+                   </div>
+                   <br></br>
+                   <div className='div-ing'>
+                   <label for="Qtd">Ingrediente </label>
+                        <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="1" step="1"/>
+                        <label for="Qtd">Kg</label>
+                    </div>
+                    <br></br>
+                    <div className='div-ing'>
+                   <label for="Qtd">Ingrediente </label>
+                        <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="1" step="1"/>
+                        <label for="Qtd">mL</label>
+                    </div>
+                </div>
+                
+              
                     <div className='area-descricao'>
                         <label> Descrição </label>
                         <br></br>

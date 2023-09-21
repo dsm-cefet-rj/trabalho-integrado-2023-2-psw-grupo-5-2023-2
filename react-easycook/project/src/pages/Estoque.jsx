@@ -5,6 +5,7 @@ import Ingrediente from '../components/Ingrediente'
 import Cabecalho from '../components/Cabecalho'
 import { Lista } from '../components/Listas'
 
+
 export default function Estoque(){
 
     const [ingredientes, setIngredientes] = useState([]);
@@ -33,6 +34,13 @@ export default function Estoque(){
                         nomeObjetos="Novo Ingrediente"
                         objetos={ingredientes}
                     ></Lista>
+                    <div className='listas'>
+                        <Ingrediente></Ingrediente>
+                        <Ingrediente></Ingrediente>
+                        <Ingrediente></Ingrediente>
+                        <Ingrediente></Ingrediente>
+                    </div>
+                    
                     <Rodape></Rodape>
                 </div>
             </div>

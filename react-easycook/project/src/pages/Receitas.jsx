@@ -3,6 +3,8 @@ import '../styles/estoque.css'
 import Cabecalho from '../components/Cabecalho'
 import { Lista } from '../components/Listas'
 import Rodape from '../components/Rodape'
+import Receita from '../components/Receita'
+import '../styles/listas.css'
 
 export default function Receitas(){
     let receitas = [];
@@ -18,6 +20,13 @@ export default function Receitas(){
                         rotaNovoObj="/nova-receita"
                         objetos={receitas}
                     ></Lista>
+                    <div className='listas'>
+                        <Receita></Receita>
+                        <Receita></Receita>
+                        <Receita></Receita>
+                        <Receita></Receita>
+                    </div>
+                    
                     <Rodape></Rodape>
                 </div>
             </div>

@@ -1,4 +1,29 @@
 
-.EditarIngrediente{
+.corpo{
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+input, select{
+    border: 0 none;
+    outline: 0;
+    font-family: helvetica;
+}
+#edit-nome-ingrediente{
+    font-size: 150%;
+    font-family: helvetica rounded;
+    text-align: center;
+}
+#edit-categoria-ingrediente{
+    font-size: 100%;
+
+}
+.edit-select-ingrediente{
+    font-size: 100%;
+    font-family: helvetica rounded;
+    color: #9e9e9e;
 }

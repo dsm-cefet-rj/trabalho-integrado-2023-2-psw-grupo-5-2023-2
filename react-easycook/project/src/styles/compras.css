@@ -1,4 +1,4 @@
-#ingrediente {
+#compras {
     display: flex;
     min-height: 80px;
     max-height: 80px;
@@ -15,36 +15,26 @@
     color: #616161;
 }
 
-#ingrediente .componente {
+#compras .componente {
     display: block;
     width: 100%;
     height: 100%;
 
 }
 
-#ingrediente #nome {
-    flex: 0.5;
-    font-family: Helvetica regular;
-    font-weight: normal;
-}
-#ingrediente #qtd {
-    flex: 0.1;
-    font-family: Helvetica regular;
-    font-weight: normal;
-}
-#ingrediente #medida {
-    flex: 0.1;
+#compras #nome {
+    flex: 1;
     font-family: Helvetica regular;
     font-weight: normal;
 }
 
-#ingrediente .buttons {
-    flex: 0.3;
+#compras .buttons {
+    flex: 0;
     display: flex;
     height: 100%;
 }
 
-#ingrediente .buttons button {
+#compras .buttons button {
     margin: 0 16px 0 0px;
     height: 100%;
     flex: 1;
@@ -60,29 +50,9 @@
 }
 
 
-#ingrediente .buttons button:hover {
+#compras .buttons button:hover {
     background-color: #d42121;
 }
-#ingrediente .buttons button:active {
+#compras .buttons button:active {
     background-color: rgb(187, 27, 27);
 }
-#popup-detalhes-excluir{
-    border: 1px solid white;
-    background-color: white;
-    max-width: 8em;
-    min-width: 8em;
-    height: 15%;
-    box-shadow: 2px 2px 6px rgb(168, 167, 167);
-    visibility: hidden;
-    position: fixed;
-    right: 38em;
-    bottom: 20em;
-    text-align: center;
-  }
-  .cinza{
-     color: #474747;
-  }
-  .vermelho{
-    color: #FF2323;
-  }
- 

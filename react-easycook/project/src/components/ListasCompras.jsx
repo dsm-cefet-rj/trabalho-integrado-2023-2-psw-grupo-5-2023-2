@@ -2,20 +2,10 @@ import { useState } from "react";
 import '../styles/ingrediente.css';
 import '../styles/receita.css';
 import { Link } from "react-router-dom";
+import '../styles/compras.css';
 
-export default function Ingrediente() {
-    let [nome, setNome] = useState(null);
-    let [categoriaPrincipal, setCategoriaPrincipal] = useState(null);
-    let [medida, setMedida] = useState(null);
-    let [variacao, setVariacao] = useState(null);
-    let [descricao, setDescricao] = useState(null);
-
-    function onCreateIngrediente() {
-        setNome();
-        setCategoriaPrincipal();
-        Map()
-        setDescricao();
-    }
+export default function ListaCompras() {
+    
     function popupDetalhesExcluir(){
         var popup = document.getElementById('popup-detalhes-excluir')
         popup.style.visibility = 'visible'
@@ -26,8 +16,8 @@ export default function Ingrediente() {
     }
     const tmp = ">";
     return(
-        <div id="receita" className="componente">
-            <label id="nome">Receita</label>
+        <div id="compras" className="componente">
+            <label id="nome">Lista de Compras</label>
             
             <div className="buttons">
                 

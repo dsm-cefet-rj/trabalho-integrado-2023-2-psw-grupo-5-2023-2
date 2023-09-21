@@ -1,6 +1,6 @@
 import React from 'react'
 import Cabecalho from '../components/Cabecalho'
-import ContainerBodyLC from '../components/ContainerBodyLC'
+import ContainerBodyNR from '../components/ContainerBodyNR'
 
 
 export default function NovaListaDeCompras(){
@@ -10,7 +10,7 @@ export default function NovaListaDeCompras(){
                 titulo="Nova Receita"
                 fundo="escuro"
             ></Cabecalho>
-            <ContainerBodyLC></ContainerBodyLC>
+            <ContainerBodyNR></ContainerBodyNR>
         </div>
     )
 }
