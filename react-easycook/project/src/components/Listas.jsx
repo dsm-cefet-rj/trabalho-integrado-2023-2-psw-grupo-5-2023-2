@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../styles/listas.css'
 import Ingrediente from './Ingrediente'
-import React from "react";
 import { Link } from "react-router-dom"
 
 export function Lista({rotaNovoObj, nomeObjetos, objetos}) {

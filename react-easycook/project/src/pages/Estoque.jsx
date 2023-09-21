@@ -35,10 +35,6 @@ export default function Estoque(){
                         objetos={ingredientes}
                     ></Lista>
                     <div className='listas'>
-                        <Ingrediente></Ingrediente>
-                        <Ingrediente></Ingrediente>
-                        <Ingrediente></Ingrediente>
-                        <Ingrediente></Ingrediente>
                     </div>
                     
                     <Rodape></Rodape>
