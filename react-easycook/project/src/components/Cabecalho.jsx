@@ -13,7 +13,7 @@ import AZFiltro from '../images/filtro-a-z.png'
 import ZAFiltro from '../images/filtro-z-a.png'
 import categoriaFiltro from '../images/filtro-categoria.png'
 
-export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home, favorito}) {
+export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home, favorito, cancelar, salvar}) {
   
   const navigate = useNavigate();
   const goBack = () => {
@@ -53,6 +53,10 @@ export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home
                   <Link to='/editar-ingrediente'><h3 className="vermelho">Editar</h3></Link>
                   <h3 className="preto" onClick={excluir}>Excluir</h3>
               </div>
+              <div id="edicao">
+                <Link to="/detalhes-ingrediente" hidden={!salvar} className="salvar"><a href="localhost:3000/">Salvar</a></Link>
+                <Link to="/detalhes-ingrediente" hidden={!cancelar} className="cancelar"><a href="localhost:3000/">Cancelar</a></Link>
+              </div>   
       <div id="filtro-estoque">
         <div id="txt-filtro">
           <h3 className="preto" onclick="">Filtrar por</h3>

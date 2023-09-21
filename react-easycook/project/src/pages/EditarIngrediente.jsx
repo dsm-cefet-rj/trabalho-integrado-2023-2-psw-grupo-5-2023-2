@@ -7,25 +7,18 @@ import img from '../images/quadrado-vinho.jpg'
 export default function EditarIngrediente(){
     return(
         <div className="EditarIngrediente">
-            <Cabecalho titulo="Detalhes (EDITANDO)"></Cabecalho>
+            <Cabecalho titulo="Detalhes (EDITANDO)" salvar cancelar></Cabecalho>
             <div className="corpo">
-                
-                
-                <img src={img} class="imagem-quadrado"/>
-                
-                
-                <input id="edit-nome-ingrediente" type="text" placeholder="Nome do Ingrediente" />
-                
-                <span> Categoria </span>
 
+                <img src={img} class="imagem-quadrado"/>
+                <input id="edit-nome-ingrediente" type="text" placeholder="Nome do Ingrediente" />
+                <span> Categoria </span>
                 <select id="edit-categoria-ingrediente"> 
                     <option> Categoria  </option>
                     <option> Categoria 2 </option>
                     <option> Categoria 3 </option>
                 </select>
-
                 <span> Substitutos </span>
-                
                 <table id="tabela-substitutos">
                     <tr>
                         <td>

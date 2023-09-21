@@ -103,7 +103,7 @@ body{
     bottom: 19em;
     
   }
-  a{
+  .Cabecalho a{
     text-decoration: none;
   }
   .input-nome-filtro{
@@ -130,3 +130,25 @@ body{
   .Cabecalho .icone-home{
     width: 5em;
   }
+
+#edicao a:link, #edicao a:visited{
+  color: white;
+}
+#edicao{
+  position: fixed;
+  top: 2%;
+  width: 100%;
+  right: 3%;
+}
+.salvar{
+  float: right;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 12px;
+  background-color: #f74040;
+}
+.cancelar{
+  float: right;
+}
+#edicao a{
+  padding: 1%;
+}
