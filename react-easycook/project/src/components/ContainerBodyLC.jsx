@@ -28,6 +28,18 @@ export default function ContainerBodyLC(){
                         <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="1" step="1"/>
                         <label for="Qtd">Un</label>
                    </div>
+                   <br></br>
+                   <div className='div-ing'>
+                   <label for="Qtd">Ingrediente </label>
+                        <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="1" step="1"/>
+                        <label for="Qtd">Kg</label>
+                    </div>
+                    <br></br>
+                    <div className='div-ing'>
+                   <label for="Qtd">Ingrediente </label>
+                        <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="1" step="1"/>
+                        <label for="Qtd">mL</label>
+                    </div>
                 </div>
                 
               
