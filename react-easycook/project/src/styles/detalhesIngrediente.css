@@ -1,0 +1,49 @@
+.corpo{
+    background-color: white;
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    max-height: 100%;
+}
+.corpo h1{
+    font-size: 1.5em;
+    color: #666666;
+    font-family: helvetica rounded;
+   }
+   .corpo span{
+    font-family: helvetica rounded;
+    color: #f74040;
+    font-size: 1.3em;
+   }
+  .corpo p{
+    color: gray;
+  }
+  .corpo h2{
+   position: fixed;
+   bottom: 90%;
+   left: 5%;
+  }
+  #tabela-substitutos{
+   width: 20%;
+   height: 24%;
+   font-family: helvetica rounded;
+   font-size: 1.3em;
+   border-radius: 12px;  
+   border: 1px solid #dbdbdb; 
+   padding: 0.8%;
+  }
+  .corpo a{
+   text-decoration: none;
+  }
+  a:link, a:visited{
+   color: #a6a6a6;
+  }
+  a:hover{
+   color: #b3b3b3;
+  }
+  .imagem-quadrado{
+    width: 6%;
+    height: 12%;
+   }

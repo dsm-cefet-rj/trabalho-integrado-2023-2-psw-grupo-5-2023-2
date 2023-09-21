@@ -13,6 +13,8 @@ import NovaListaDeCompras from "./pages/NovaListaDeCompras"
 import ListaDeCompras from "./pages/ListasDeCompras"
 import Receitas from "./pages/Receitas"
 import NovaReceita from "./pages/NovaReceita"
+import DetalhesIngredientes from "./pages/DetalhesIngredientes"
+import DetalhesReceita from "./pages/DetalhesReceita"
 
     // path: 'caminho após o link'
     //element: <Página/>
@@ -60,6 +62,10 @@ const Routes = [
     {
         path: '*',
         element: <NotFound/>
+    },
+    {
+        path: 'detalhes-ingrediente',
+        element: <DetalhesIngredientes/>
     },
 ]
 
