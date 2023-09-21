@@ -4,6 +4,7 @@ import Ingrediente from '../components/Ingrediente'
 import Cabecalho from '../components/Cabecalho'
 import { Lista } from '../components/Listas'
 import Rodape from '../components/Rodape'
+import Compras from '../components/ListasCompras'
 
 export default function ListaDeCompras(){
     return (
@@ -17,6 +18,12 @@ export default function ListaDeCompras(){
                         nomeObjetos="Nova Lista de Compras"
                         rotaNovoObj="/nova-lista-de-compras"
                     ></Lista>
+                    <div className='listas'>
+                        <Compras/>
+                        <Compras/>
+                        <Compras/>
+                        <Compras/>
+                    </div>
                     <Rodape></Rodape>
                 </div>
             </div>
