@@ -50,7 +50,7 @@ export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home
                   <img src={homeButton} hidden={!home} alt="icone-home" className="icone-home"/>
               </Link>
               <div id="popup-3-pontos">
-                  <Link to=''><h3 className="vermelho">Editar</h3></Link>
+                  <Link to='/editar-ingrediente'><h3 className="vermelho">Editar</h3></Link>
                   <h3 className="preto" onClick={excluir}>Excluir</h3>
               </div>
       <div id="filtro-estoque">

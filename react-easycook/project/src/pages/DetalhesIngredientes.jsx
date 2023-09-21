@@ -6,11 +6,12 @@ import img from '../images/quadrado-vinho.jpg'
 export default function DetalhesIngrediente(){
     return (
         <div className='DetalhesIngrediente'>
-            <Cabecalho titulo="Detalhes" fundo='claro'/>
+            <Cabecalho titulo="Detalhes" fundo='claro' outros home/>
             <div className='corpo'>
-                <img src={img} class="imagem-quadrado" alt='img-igrediente'/>
+                <img src={img} className="imagem-quadrado" alt='img-igrediente'/>
                 <h1> Nome do Ingrediente </h1>
                 <span> Categoria </span>
+                
                 <p> Categoria </p>
                 <span> Substitutos </span>
                 
