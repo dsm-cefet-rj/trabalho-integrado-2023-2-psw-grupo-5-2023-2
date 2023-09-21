@@ -11,6 +11,7 @@
           "nome": "Ovo",
           "categoriaPrincipal": "Derivados",
           "medida": "Un",
+          "qtd": 6,
           "variacao": 1,
           "descricao": "",
           "id": 0
@@ -19,6 +20,7 @@
           "nome": "Leite",
           "categoriaPrincipal": "Derivados",
           "medida": "mL",
+          "qtd": 1000,
           "variacao": 500,
           "descricao": "",
           "id": 1
@@ -27,6 +29,7 @@
           "nome": "Arroz",
           "categoriaPrincipal": "Derivados",
           "medida": "Kg",
+          "qtd": 2,
           "variacao": 1,
           "descricao": "",
           "id": 2

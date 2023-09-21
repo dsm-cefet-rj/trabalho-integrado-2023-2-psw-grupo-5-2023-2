@@ -6,6 +6,7 @@ import { Lista } from '../components/Listas'
 import Rodape from '../components/Rodape'
 
 export default function ListaDeCompras(){
+    let listasDeCompras = [];
     return (
         <div>
             <div>
@@ -16,6 +17,7 @@ export default function ListaDeCompras(){
                     <Lista
                         nomeObjetos="Nova Lista de Compras"
                         rotaNovoObj="/nova-lista-de-compras"
+                        objetos={listasDeCompras}
                     ></Lista>
                     <Rodape></Rodape>
                 </div>
