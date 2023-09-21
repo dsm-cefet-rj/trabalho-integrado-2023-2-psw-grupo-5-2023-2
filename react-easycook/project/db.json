@@ -1,0 +1,41 @@
+{
+  "users": [
+      {
+          "userEmail": "@.com",
+          "userPassword": "asd"
+      }
+  ],
+
+  "ingredientes": [
+      {
+          "nome": "Ovo",
+          "categoriaPrincipal": "Derivados",
+          "medida": "Un",
+          "variacao": 1,
+          "descricao": "",
+          "id": 0
+      },
+      {
+          "nome": "Leite",
+          "categoriaPrincipal": "Derivados",
+          "medida": "mL",
+          "variacao": 500,
+          "descricao": "",
+          "id": 1
+      },
+      {
+          "nome": "Arroz",
+          "categoriaPrincipal": "Derivados",
+          "medida": "Kg",
+          "variacao": 1,
+          "descricao": "",
+          "id": 2
+      }
+  ],
+  "receitas": [
+
+  ],
+  "listas": [
+
+  ]
+}
