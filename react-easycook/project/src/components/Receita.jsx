@@ -34,7 +34,7 @@ export default function Ingrediente() {
                 <button onClick={popupDetalhesExcluir}>{tmp}</button>
             </div>
             <div id="popup-detalhes-excluir">
-                  <Link to='/detalhes-ingrediente'><h3 className="cinza">Detalhes</h3></Link>
+                  <Link to='/detalhes-receita'><h3 className="cinza">Detalhes</h3></Link>
                   <h3 className="vermelho" onClick={excluir}>Remover</h3>
             </div>
         </div>

@@ -27,6 +27,7 @@ const Routes = [
         path: 'novo-ingrediente',
         element: <NovoIngrediente/>
     },
+    
     {
         path: 'login',
         element: <Login/>
@@ -66,6 +67,10 @@ const Routes = [
     {
         path: 'detalhes-ingrediente',
         element: <DetalhesIngredientes/>
+    },
+    {
+        path: 'detalhes-receita',
+        element: <DetalhesReceita/>
     },
 ]
 
