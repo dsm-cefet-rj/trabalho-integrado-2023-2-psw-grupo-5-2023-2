@@ -119,13 +119,18 @@ body{
     width: 14%;
     float: left;
   }
-
+  .filtrar-nome:hover, .filtrar-ingrediente:hover, .filtrar-a-z:hover, .filtrar-z-a:hover, .filtrar-categoria:hover{
+    cursor: pointer;
+  }
   .select-ingrediente, .select-categoria{
     border: 0 none;
     font-size: 110%;
   }
   .Cabecalho .icone-filtro{
     width: 3.5em;
+  }
+  .Cabecalho .icone-filtro:hover{
+    cursor: pointer;
   }
   .Cabecalho .icone-home{
     width: 5em;
@@ -151,4 +156,7 @@ body{
 }
 #edicao a{
   padding: 1%;
+}
+.Cabecalho button:hover {
+  cursor: pointer;
 }

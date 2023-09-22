@@ -1,12 +1,14 @@
 .Container{
-    padding: 4%;
+    margin: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
     
 }
 .quadrado{
     
     max-width: 7em;
     min-width: 7em;
-    height: 16%;
     
 } 
 
@@ -15,21 +17,20 @@
     max-width: 15em;
     min-width: 15em;
     font-size: 98%;
-    padding: 5px;
    }
    .medida, .var-padrao{
     height: 31px;
     max-width: 12em;
     min-width: 12em;
     font-size: 98%;
-    padding: 5px;
+    
    }
    .outras-categorias, .substitutos{
     height: 31px;
     max-width: 15em;
     min-width: 25em;
     font-size: 98%;
-    padding: 5px;
+    
    }
    label{
     font-weight: bold;
@@ -60,6 +61,9 @@
     font-size: 90%;
     margin-left: 21em;
    }
+   .Container button:hover{
+    cursor: pointer;
+   }
     input{
      border: 0 none;
      outline: 0;
@@ -75,6 +79,7 @@
         font-size: 100%;
         padding: 10px;
         border-radius: 12px;
+        
     }
     
     textarea:focus{
@@ -88,85 +93,3 @@
     #container button:hover{
         background-color: #a52525;
     }
-    .grid{
-        display: grid;
-        grid-template-columns: 12em 10em;
-        margin: 0 auto;
-        grid-gap: 1em;
-        align-items: flex-start;
-        padding-top: 4%;
-
-    }
-    .area-nome{
-        grid-column: 2;
-        grid-row: 1;
-        margin: 3%;
-    }
-    .area-categoria{
-        grid-column: 2;
-        grid-row: 2;
-        margin: 3%;
-    }
-    .area-ingredientes{
-        grid-column: 2;
-        grid-row: 2;
-        margin: 3%;
-    }
-    .area-medidas{
-        grid-column: 1;
-        grid-row: 3;
-    }
-    .area-var-padrao{
-        grid-column: 2;
-        grid-row: 3;
-    }
-    .area-outras-categorias{
-        grid-column: 1;
-        grid-row: 4;
-    }
-    .area-substitutos{
-        grid-column: 1;
-        grid-row: 5;
-    }
-    .area-descricao{
-        grid-column: 1;
-        grid-row: 6;
-    }
-    .Container button{
-        grid-column: 1;
-        grid-row: 7;
-    }
-    .grid > div.quadrado{
-        grid-column: 1;
-        grid-row: 1 / 2;
-    }
-    .area1{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        right: 4em;
-        bottom: 1em;
-        width: 200%;
-    }
-    .area2{
-        display: flex;
-        flex-direction: row;
-        width: 200%;
-        justify-content: space-between;
-        position: relative;
-        bottom: 1em;
-    }
-    .area3{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        top: 9em;
-        right: 16.2em;
-        gap: 1em;
-    }
-    #form{
-        justify-content: center;
-        position: relative;
-        top: 1em;
-    }
-    

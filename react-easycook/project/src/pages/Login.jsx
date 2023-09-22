@@ -33,7 +33,7 @@ export default function Login(){
             <button className="login-button" onClick={clickLogin}>Login</button>
           </Link>
           <Link className="link" to="/esqueci-minha-senha">
-            <a href='localhost:3000' className="esqueci-userPassword">Esqueci minha senha</a>
+            <a href='localhost:3000' className="esqueci-userPassword" hidden={true}>Esqueci minha senha</a>
           </Link>
           <Link className="link" to="/cadastre-se">
             <a href='localhost:3000' id="cadastre-se">Cadastre-se</a>

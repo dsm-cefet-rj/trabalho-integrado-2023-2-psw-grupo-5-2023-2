@@ -1,6 +1,6 @@
 .Container{
-    padding: 4%;
-    
+    padding: 0;
+    height: 100%;
 }
 .quadrado{
     
@@ -95,7 +95,7 @@
         grid-gap: 1em;
         align-items: flex-start;
         padding-top: 4%;
-
+        
     }
     .area-nome{
         grid-column: 2;
@@ -155,6 +155,7 @@
         justify-content: space-between;
         position: relative;
         bottom: 1em;
+        
     }
     .area3{
         display: flex;

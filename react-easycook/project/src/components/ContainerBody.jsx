@@ -4,13 +4,13 @@ import '../styles/container.css'
 
 export default function ContainerBody(){
     return (
-        <div className="Container" id="container">
+        <div id="container" className="Container">
             
-            <form className="grid" id="form">
-                <div>
+            <form>
+                <div className="area-img">
                     <img src={img} className="quadrado" alt="imagem-ingrediente"/>
                 </div>
-            <div className="area1">
+            
                 <div className="area-nome">
                     <label> Nome </label>
                     <br></br>
@@ -19,16 +19,16 @@ export default function ContainerBody(){
                 
                 <div className="area-categoria">
                     <label> Categoria Principal </label>
-                    
+                    <br></br>
                     <select className="categoria"> 
                     <option> Categoria 1</option>
                     <option> Categoria 2 </option>
                     <option> Categoria 3 </option>
                     <option> Categoria 4 </option>
                 </select>
-                </div>
-        </div>
-        <div className="area2">
+                
+            </div>
+        
                 <div className="area-medidas">
                     <label> Medidas </label>
                     <br></br>
@@ -50,8 +50,8 @@ export default function ContainerBody(){
                     <option> Variação 4 </option>
                     </select>
                 </div>
-               </div> 
-               <div className="area3">
+               
+               
                 <div className="area-outras-categorias">
                     <label> Outras Categorias </label>
                     <br></br>
@@ -80,9 +80,9 @@ export default function ContainerBody(){
                     <textarea cols="33" rows="6"></textarea>
                </div>
                
-                    <button type="submit"> Criar </button>
+                    <button className="botao" type="submit"> Criar </button>
                
-        </div>
+               
             </form>
         </div>
     )
