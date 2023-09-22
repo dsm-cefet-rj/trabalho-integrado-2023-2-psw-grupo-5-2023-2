@@ -61,16 +61,16 @@ const Routes = [
         element: <NovaReceita/>
     },
     {
-        path: '*',
-        element: <NotFound/>
-    },
-    {
-        path: 'detalhes-ingrediente',
+        path: '/detalhes-ingrediente/:id',
         element: <DetalhesIngredientes/>
     },
     {
         path: 'detalhes-receita',
         element: <DetalhesReceita/>
+    },    
+    {
+        path: '*',
+        element: <NotFound/>
     },
 ]
 

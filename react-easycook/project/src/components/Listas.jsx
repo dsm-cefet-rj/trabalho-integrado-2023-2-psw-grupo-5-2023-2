@@ -25,6 +25,7 @@ export function Lista({tipoObjeto, rotaNovoObj, nomeObjetos, objetos}) {
                     nome={obj.nome}
                     qtd={obj.qtd}
                     medida={obj.medida}
+                    id={obj.id}
                     ></Ingrediente>
                 ))
             );
