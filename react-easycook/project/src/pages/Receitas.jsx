@@ -13,9 +13,9 @@ export default function Receitas(){
     const getApiData = async () => {
         const response = await fetch(
             "http://localhost:3002/receitas"
-        ).then((response) => response.json());
-
-        setreceitas(response);
+        ).then((response) => response.json())
+        .then((res) => setreceitas(res))
+        .catch(console.log);
     }
 
     useEffect(() => {

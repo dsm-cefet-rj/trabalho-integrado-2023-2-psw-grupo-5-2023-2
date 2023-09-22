@@ -13,9 +13,9 @@ export default function Estoque(){
     const getApiData = async () => {
         const response = await fetch(
             "http://localhost:3002/ingredientes"
-        ).then((response) => response.json());
-
-        setIngredientes(response);
+        ).then((response) => response.json())
+        .then((res) => setIngredientes(res))
+        .catch(console.log);
     }
 
     useEffect(() => {

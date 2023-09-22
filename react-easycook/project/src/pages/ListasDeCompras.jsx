@@ -13,9 +13,9 @@ export default function ListaDeCompras(){
     const getApiData = async () => {
         const response = await fetch(
             "http://localhost:3002/listas"
-        ).then((response) => response.json());
-
-        setListasDeCompras(response);
+        ).then((response) => response.json())
+        .then((res) => setListasDeCompras(res))
+        .catch(console.log);
     }
 
     useEffect(() => {
