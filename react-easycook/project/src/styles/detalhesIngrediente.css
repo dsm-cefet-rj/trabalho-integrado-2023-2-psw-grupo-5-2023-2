@@ -54,3 +54,13 @@
     padding: 20px;
     justify-content: space-between;
    }
+   .ingsReceita{
+    list-style-type: disc;
+    color:#808080;
+    font-family: helvetica ;
+
+   }
+   .preparo{
+    color:#808080;
+    font-family: helvetica ;
+   }
