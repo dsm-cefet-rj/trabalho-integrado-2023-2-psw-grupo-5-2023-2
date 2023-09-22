@@ -45,9 +45,69 @@
     }
   ],
   "receitas": [
-
+    {
+        "nome": "Arroz com Ovo",
+        "categoriaPrincipal": "Fruta",
+        "idReceita": 0,
+        "descricao": "Mistura de arroz com ovo",
+        "ingredientes": [
+            {
+                "id":0,
+                "medida": "Un",
+                "qtd": 10
+            }, {
+                "id":2,
+                "medida": "Kg",
+                "qtd": 1
+            }
+        ]
+    }
   ],
   "listas": [
-
+    {
+        "nome": "Lista1",
+        "idLista": 0,
+        "ingredientes": [{
+            "nome": "Ovo",
+            "categoriaPrincipal": "Derivados",
+            "medida": "Un",
+            "qtd": 6,
+            "variacao": 1,
+            "descricao": "",
+            "id": 0
+        },
+        {
+            "nome": "Leite",
+            "categoriaPrincipal": "Derivados",
+            "medida": "mL",
+            "qtd": 1000,
+            "variacao": 500,
+            "descricao": "",
+            "id": 1
+        }
+        ]
+    }, {
+        "nome": "Lista2",
+        "idLista": 1,
+        "ingredientes": [{
+            "nome": "Arroz",
+            "categoriaPrincipal": "Derivados",
+            "medida": "Kg",
+            "qtd": 2,
+            "variacao": 1,
+            "descricao": "",
+            "id": 2
+        },
+        {
+          "nome": "Abacaxi",
+          "categoriaPrincipal": "Fruta",
+          "medida": "Un",
+          "qtd": 20,
+          "variacao": 1,
+          "descricao": "",
+          "id": 3
+      }
+        ]
+    }
   ]
 }

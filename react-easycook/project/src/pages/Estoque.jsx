@@ -33,6 +33,7 @@ export default function Estoque(){
                         rotaNovoObj="/novo-ingrediente" 
                         nomeObjetos="Novo Ingrediente"
                         objetos={ingredientes}
+                        tipoObjeto="ingrediente"
                     ></Lista>
                     <div className='listas'>
                     </div>

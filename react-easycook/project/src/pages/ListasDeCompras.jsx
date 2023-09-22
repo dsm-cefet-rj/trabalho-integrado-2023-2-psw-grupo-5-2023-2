@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/estoque.css'
 import Ingrediente from '../components/Ingrediente'
 import Cabecalho from '../components/Cabecalho'
@@ -7,7 +7,21 @@ import Rodape from '../components/Rodape'
 import Compras from '../components/ListasCompras'
 
 export default function ListaDeCompras(){
-    let listasDeCompras = [];
+    
+    const [listasDeCompras, setListasDeCompras] = useState([]);
+
+    const getApiData = async () => {
+        const response = await fetch(
+            "http://localhost:3002/listas"
+        ).then((response) => response.json());
+
+        setListasDeCompras(response);
+    }
+
+    useEffect(() => {
+        getApiData();
+    }, []);
+
     return (
         <div>
             <div>
@@ -19,12 +33,9 @@ export default function ListaDeCompras(){
                         nomeObjetos="Nova Lista de Compras"
                         rotaNovoObj="/nova-lista-de-compras"
                         objetos={listasDeCompras}
+                        tipoObjeto={"listaDeCompras"}
                     ></Lista>
                     <div className='listas'>
-                        <Compras/>
-                        <Compras/>
-                        <Compras/>
-                        <Compras/>
                     </div>
                     <Rodape></Rodape>
                 </div>

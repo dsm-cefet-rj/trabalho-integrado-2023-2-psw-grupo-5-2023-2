@@ -3,19 +3,8 @@ import '../styles/ingrediente.css';
 import '../styles/receita.css';
 import { Link } from "react-router-dom";
 
-export default function Ingrediente() {
-    let [nome, setNome] = useState(null);
-    let [categoriaPrincipal, setCategoriaPrincipal] = useState(null);
-    let [medida, setMedida] = useState(null);
-    let [variacao, setVariacao] = useState(null);
-    let [descricao, setDescricao] = useState(null);
-
-    function onCreateIngrediente() {
-        setNome();
-        setCategoriaPrincipal();
-        Map()
-        setDescricao();
-    }
+export default function Receita({nome, categoriaPrincipal, idReceita, descricao, ingredientes}) {
+    
     function popupDetalhesExcluir(){
         var popup = document.getElementById('popup-detalhes-excluir')
         popup.style.visibility = 'visible'
@@ -27,7 +16,9 @@ export default function Ingrediente() {
     const tmp = ">";
     return(
         <div id="receita" className="componente">
-            <label id="nome">Receita</label>
+            <label id="nome">{nome}</label>
+            <label id="descricao">{descricao}</label>
+
             
             <div className="buttons">
                 

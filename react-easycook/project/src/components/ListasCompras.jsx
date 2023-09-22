@@ -4,7 +4,7 @@ import '../styles/receita.css';
 import { Link } from "react-router-dom";
 import '../styles/compras.css';
 
-export default function ListaCompras() {
+export default function ListaCompras({nome, idLista, ingredientes}) {
     
     function popupDetalhesExcluir(){
         var popup = document.getElementById('popup-detalhes-excluir')
@@ -17,7 +17,13 @@ export default function ListaCompras() {
     const tmp = ">";
     return(
         <div id="compras" className="componente">
-            <label id="nome">Lista de Compras</label>
+            <label id="nome">{nome}</label>
+            <label id="nome">{idLista}</label>
+            {
+                ingredientes.map((ing) => (
+                    <label>{ing.nome}</label>
+                    ))
+            }
             
             <div className="buttons">
                 
