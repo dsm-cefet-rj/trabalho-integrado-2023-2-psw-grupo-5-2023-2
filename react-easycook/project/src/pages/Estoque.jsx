@@ -17,6 +17,39 @@ export default function Estoque(){
         .then((res) => setIngredientes(res))
         .catch(console.log);
     }
+    
+    const aumentarQtd = (id, qtd) => {
+        const novaQtd = qtd +1;
+        atualizarQtdDB(id, novaQtd);
+    }
+    const diminuirQtd = (id, qtd) => {
+        if(qtd > 0){
+            const novaQtd = qtd -1;
+            atualizarQtdDB(id, novaQtd);
+        }
+    }
+    const atualizarQtdDB = async (ingredienteId, novaQtd) => {
+        try{
+            const result = await fetch(`http://localhost:3002/ingredientes/${ingredienteId}`, {
+              method: 'PATCH',
+              body: JSON.stringify({ qtd: novaQtd }),
+               headers: {
+                'Content-Type': 'application/json',
+               },
+            });
+
+            if (result.ok) {
+            console.log('Quantidade atualizada com sucesso no banco de dados.');
+            getApiData();
+            } else {
+                console.error('Falha ao atualizar a quantidade no banco de dados.');
+            }
+        } catch (error) {
+            console.error('Erro ao atualizar a quantidade no banco de dados:', error);
+        }
+    }
+    
+    
 
     useEffect(() => {
         getApiData();
@@ -34,6 +67,8 @@ export default function Estoque(){
                         nomeObjetos="Novo Ingrediente"
                         objetos={ingredientes}
                         tipoObjeto="ingrediente"
+                        aumentarQtd={aumentarQtd} 
+                        diminuirQtd={diminuirQtd}
                     ></Lista>
                     <div className='listas'>
                     </div>
