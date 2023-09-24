@@ -6,7 +6,7 @@ import ListaCompras from "./ListasCompras";
 import Ingrediente from './Ingrediente'
 import Receita from "./Receita";
 
-export function Lista({tipoObjeto, rotaNovoObj, nomeObjetos, objetos, aumentarQtd, diminuirQtd}) {
+export function Lista({tipoObjeto, rotaNovoObj, nomeObjetos, objetos, aumentarQtd, diminuirQtd, atualizarQtdDB}) {
      
     return (
         <div id="listas">
@@ -24,10 +24,10 @@ export function Lista({tipoObjeto, rotaNovoObj, nomeObjetos, objetos, aumentarQt
                     <Ingrediente
                     nome={obj.nome}
                     qtd={obj.qtd}
+                    variacao={obj.variacao}
                     medida={obj.medida}
                     id={obj.id}
-                    aumentarQtd={aumentarQtd} 
-                    diminuirQtd={diminuirQtd}
+                    atualizarQtdDB={atualizarQtdDB}
                     ></Ingrediente>
                 ))
             );

@@ -14,20 +14,10 @@ export default function Estoque(){
         const response = await fetch(
             "http://localhost:3002/ingredientes"
         ).then((response) => response.json())
-        .then((res) => setIngredientes(res))
+        .then((data) => setIngredientes(data))
         .catch(console.log);
     }
-    
-    const aumentarQtd = (id, qtd, variacao) => {
-        const novaQtd = qtd + variacao;
-        atualizarQtdDB(id, novaQtd);
-    }
-    const diminuirQtd = (id, qtd, variacao) => {
-        if(qtd > 0){
-            const novaQtd = qtd - variacao;
-            atualizarQtdDB(id, novaQtd);
-        }
-    }
+
     const atualizarQtdDB = async (ingredienteId, novaQtd) => {
         try{
             const result = await fetch(`http://localhost:3002/ingredientes/${ingredienteId}`, {
@@ -40,7 +30,6 @@ export default function Estoque(){
 
             if (result.ok) {
             console.log('Quantidade atualizada com sucesso no banco de dados.');
-            getApiData();
             } else {
                 console.error('Falha ao atualizar a quantidade no banco de dados.');
             }
@@ -67,8 +56,7 @@ export default function Estoque(){
                         nomeObjetos="Novo Ingrediente"
                         objetos={ingredientes}
                         tipoObjeto="ingrediente"
-                        aumentarQtd={aumentarQtd} 
-                        diminuirQtd={diminuirQtd}
+                        atualizarQtdDB={atualizarQtdDB}
                     ></Lista>
                     <div className='listas'>
                     </div>

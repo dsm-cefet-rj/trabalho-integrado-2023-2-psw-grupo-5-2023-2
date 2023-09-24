@@ -1,6 +1,6 @@
 import React from 'react'
 import Cabecalho from '../components/Cabecalho'
-import ContainerBody from '../components/ContainerBody'
+import ContainerBodyNovaPagina from '../components/ContainerBody'
 import '../styles/NovoIngrediente.css'
 
 export default function App(){
@@ -10,8 +10,7 @@ export default function App(){
                titulo='Novo Ingrediente'
                fundo='escuro'
             />
-            <ContainerBody/>
-         
+            <ContainerBodyNovaPagina tipoBody='novo-ingrediente'></ContainerBodyNovaPagina>
       </div>
    )
 }
