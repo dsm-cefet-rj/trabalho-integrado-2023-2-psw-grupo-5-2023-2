@@ -23,7 +23,7 @@ export default function ListaCompras({nome, idLista, ingredientes}) {
                 <button onClick={e => setPopup(!popup)}>{tmp}</button>
             </div>
             <div id="popup-detalhes-excluir" hidden={popup}>
-                  <Link to='/detalhes-ingrediente'><h3 className="cinza">Detalhes</h3></Link>
+                  <Link to={'/detalhes-lista-de-compras/${idLista}'}><h3 className="cinza">Detalhes</h3></Link>
                   <h3 className="vermelho" onClick={e => setPopup(!popup)}>Remover</h3>
             </div>
         </div>

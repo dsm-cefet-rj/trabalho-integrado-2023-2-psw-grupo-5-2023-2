@@ -15,7 +15,7 @@ import Receitas from "./pages/Receitas"
 import NovaReceita from "./pages/NovaReceita"
 import DetalhesIngredientes from "./pages/DetalhesIngredientes"
 import DetalhesReceita from "./pages/DetalhesReceita"
-
+import DetalhesListaDeCompras from "./pages/DetalhesListaDeCompras"
     // path: 'caminho após o link'
     //element: <Página/>
 const Routes = [
@@ -67,7 +67,11 @@ const Routes = [
     {
         path: '/detalhes-receita/:id',
         element: <DetalhesReceita/>
-    },    
+    },
+    {
+        path: '/detalhes-lista-de-compras/:id',
+        element: <DetalhesListaDeCompras/>
+    },       
     {
         path: '*',
         element: <NotFound/>
