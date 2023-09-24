@@ -18,13 +18,13 @@ export default function Estoque(){
         .catch(console.log);
     }
     
-    const aumentarQtd = (id, qtd) => {
-        const novaQtd = qtd +1;
+    const aumentarQtd = (id, qtd, variacao) => {
+        const novaQtd = qtd + variacao;
         atualizarQtdDB(id, novaQtd);
     }
-    const diminuirQtd = (id, qtd) => {
+    const diminuirQtd = (id, qtd, variacao) => {
         if(qtd > 0){
-            const novaQtd = qtd -1;
+            const novaQtd = qtd - variacao;
             atualizarQtdDB(id, novaQtd);
         }
     }

@@ -14,8 +14,8 @@ export default function Ingrediente({nome = '', qtd = 0, categoriaPrincipal = ''
             <label id="qtd">{qtd}</label>
             <label id="medida">{medida}</label>
             <div className="buttons">
-                <button onClick={() => aumentarQtd(id, qtd)}>+</button>
-                <button onClick={() => diminuirQtd(id, qtd)}>-</button>
+                <button onClick={() => aumentarQtd(id, qtd, variacao)}>+</button>
+                <button onClick={() => diminuirQtd(id, qtd, variacao)}>-</button>
                 <div>
                     <button onClick={e => setPopup(!popup)}>{tmp}</button>
                     <div className="popup-detalhes-excluir" hidden={popup}>
