@@ -1,12 +1,12 @@
-import React, { useState, ChangeEvent, FC } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/easycook1-nobg.png'
 import '../styles/login.css'
-import Rodape from '../components/Rodape'
 import { loginsTeste } from '../mock-ups'
-import HomePage from './HomePage'
 
 export default function Login(){
+
+  let navigate = useNavigate();
 
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -29,9 +29,7 @@ export default function Login(){
             name='userPassword'
             onChange={ event => setUserPassword(event.target.value)}
           /> 
-          <Link className="link" to="/">
-            <button className="login-button" onClick={clickLogin}>Login</button>
-          </Link>
+          <button className="login-button" onClick={clickLogin}>Login</button>
           <Link className="link" to="/esqueci-minha-senha">
             <a href='localhost:3000' className="esqueci-userPassword" hidden={true}>Esqueci minha senha</a>
           </Link>
@@ -56,6 +54,7 @@ export default function Login(){
     }
     if ((userEmail === loginsTeste[0].userEmail) && (userPassword === loginsTeste[0].userPassword)) {
       setLogando("Autenticado!");
+      navigate("/");
       return;
     }
     else {
