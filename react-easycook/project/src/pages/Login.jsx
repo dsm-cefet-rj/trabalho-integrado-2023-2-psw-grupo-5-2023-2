@@ -11,7 +11,14 @@ export default function Login(){
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [logando, setLogando] = useState('');
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([{
+    "id": "11111111111",
+    "userNome": "usuarioTeste",
+    "userEmail": "@.com",
+    "userCpf": "11111111111",
+    "userPassword": "asd",
+    "userDataNasc": "2023-09-24"
+  }]);
 
   let emailValue = '';
   let passwordValue = '';
@@ -33,6 +40,7 @@ const getApiData = async () => {
         <div className='login-forms'>
           <img src={logo} alt="Easy Cook logo" className='blend-mode imagem-centralizada' />
           <h1>Use '@.com' e 'asd'  para autenticar</h1>
+          <h1>ou se cadastre (JSON Server necessario)</h1>
           <label id="login">Login</label>
           <input id='userEmail' placeholder='Seu e-mail' type='email' 
             name='userEmail'
