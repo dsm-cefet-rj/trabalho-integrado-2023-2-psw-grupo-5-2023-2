@@ -1,8 +1,20 @@
 {
   "users": [
     {
+      "id": "11111111111",
+      "userNome": "usuarioTeste",
       "userEmail": "@.com",
-      "userPassword": "asd"
+      "userCpf": "11111111111",
+      "userPassword": "asd",
+      "userDataNasc": "2023-09-24"
+    },
+    {
+      "id": 9999999999,
+      "userNome": "johnata",
+      "userEmail": "john.ata@hotmail.com",
+      "userCpf": "99999999999",
+      "userPassword": "fraca",
+      "userDataNasc": "1998-12-10"
     }
   ],
   "ingredientes": [
@@ -51,23 +63,23 @@
       "descricao": "Mistura de arroz com ovo",
       "ingredientes": [
         {
-            "nome": "Ovo",
-            "categoriaPrincipal": "Derivados",
-            "medida": "Un",
-            "qtd": 5,
-            "variacao": 1,
-            "descricao": "",
-            "id": 0
-          },
-          {
-            "nome": "Arroz",
-            "categoriaPrincipal": "Derivados",
-            "medida": "Kg",
-            "qtd": 2,
-            "variacao": 1,
-            "descricao": "",
-            "id": 2
-          }
+          "nome": "Ovo",
+          "categoriaPrincipal": "Derivados",
+          "medida": "Un",
+          "qtd": 5,
+          "variacao": 1,
+          "descricao": "",
+          "id": 0
+        },
+        {
+          "nome": "Arroz",
+          "categoriaPrincipal": "Derivados",
+          "medida": "Kg",
+          "qtd": 2,
+          "variacao": 1,
+          "descricao": "",
+          "id": 2
+        }
       ]
     }
   ],

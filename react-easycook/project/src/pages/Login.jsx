@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/easycook1-nobg.png'
 import '../styles/login.css'
@@ -11,9 +11,22 @@ export default function Login(){
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [logando, setLogando] = useState('');
+  const [users, setUsers] = useState([]);
 
   let emailValue = '';
   let passwordValue = '';
+
+  useEffect(() => {
+    getApiData();
+}, []);
+
+const getApiData = async () => {
+  const response = await fetch(
+      "http://localhost:3002/users"
+  ).then((response) => response.json())
+  .then((data) => setUsers(data))
+  .catch(console.log);
+}
 
   return (
       <div id='login-page'>
@@ -52,7 +65,21 @@ export default function Login(){
     if (!userEmail.includes('@') || !userEmail.includes('.com')) {
       temp = temp + "Formato inválido de e-mail.";
     }
-    if ((userEmail === loginsTeste[0].userEmail) && (userPassword === loginsTeste[0].userPassword)) {
+    console.log(users);
+    let i = 0;
+    for (i; i <= users.length; i++) {
+      console.log(i);
+      if (i == users.length) {
+        i = -1;
+        break;
+      }
+      const e = users[i];
+      if (e.userEmail === userEmail) {
+        break;
+      }
+    }
+
+    if ((i > -1) && (userPassword === users[i].userPassword)) {
       setLogando("Autenticado!");
       navigate("/");
       return;
