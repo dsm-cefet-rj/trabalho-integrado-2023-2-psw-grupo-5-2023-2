@@ -5,11 +5,11 @@
 O projeto é dividido em duas pastas:
 
 * Prototipagem -> Protótipos de HTML/JS/CSS
-* react-easycook/projeto. -> Projeto desenvolvido com o framework React
+* react-easycook/project. -> Projeto desenvolvido com o framework React
 
 Para iniciar o projeto, navegue pelo seu terminal até a pasta:
 
-    //react-easycook/projeto
+    //react-easycook/project
 
 Nesta páginas, caso não tenha instalado, instale as dependências com o comando:
 
@@ -29,7 +29,7 @@ Por padrão, o frontend do projeto está sendo executado na porta localhost:3000
 
 ## Executando o DB de mockup
 
-Execute o seguinte comando com o terminal na pasta do projeto (`...//react-easycook/projeto/`)
+Execute o seguinte comando com o terminal na pasta do projeto (`...//react-easycook/project/`)
 
     json-server --watch db.json --port 3002
 
