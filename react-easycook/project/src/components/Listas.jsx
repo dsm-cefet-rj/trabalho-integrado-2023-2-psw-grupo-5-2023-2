@@ -24,6 +24,7 @@ export function Lista({tipoObjeto, rotaNovoObj, nomeObjetos, objetos}) {
                     <Ingrediente
                     nome={obj.nome}
                     qtd={obj.qtd}
+                    variacao={obj.variacao}
                     medida={obj.medida}
                     id={obj.id}
                     ></Ingrediente>

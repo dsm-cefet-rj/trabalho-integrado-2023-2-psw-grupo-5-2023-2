@@ -14,7 +14,15 @@ export default function Estoque(){
         const response = await fetch(
             "http://localhost:3002/ingredientes"
         ).then((response) => response.json())
-        .then((res) => setIngredientes(res))
+        .then((data) => setIngredientes(data))
+        .catch(console.log);
+    }
+
+    const putApiData = () => {
+        const response = fetch(
+            "http://localhost:3002/ingredientes"
+        ).then((response) => response.json())
+        .then((data) => setIngredientes(data))
         .catch(console.log);
     }
 
