@@ -65,7 +65,7 @@ const Routes = [
         element: <DetalhesIngredientes/>
     },
     {
-        path: 'detalhes-receita',
+        path: '/detalhes-receita/:id',
         element: <DetalhesReceita/>
     },    
     {

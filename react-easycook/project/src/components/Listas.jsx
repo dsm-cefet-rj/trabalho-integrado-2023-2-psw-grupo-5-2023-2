@@ -38,7 +38,7 @@ export function Lista({tipoObjeto, rotaNovoObj, nomeObjetos, objetos, aumentarQt
                     <Receita
                     nome={obj.nome}
                     categoriaPrincipal={obj.categoriaPrincipal}
-                    idReceita={obj.idReceita}
+                    id={obj.id}
                     descricao={obj.descricao}
                     ingredientes={obj.ingredientes}
                     ></Receita>

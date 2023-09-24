@@ -6,14 +6,7 @@ import '../styles/compras.css';
 
 export default function ListaCompras({nome, idLista, ingredientes}) {
     
-    function popupDetalhesExcluir(){
-        var popup = document.getElementById('popup-detalhes-excluir')
-        popup.style.visibility = 'visible'
-    }
-    function excluir(){
-        var popup = document.getElementById('popup-detalhes-excluir')
-        popup.style.visibility = 'hidden'
-    }
+    var [popup, setPopup] = useState(true);
     const tmp = ">";
     return(
         <div id="compras" className="componente">
@@ -27,11 +20,11 @@ export default function ListaCompras({nome, idLista, ingredientes}) {
             
             <div className="buttons">
                 
-                <button onClick={popupDetalhesExcluir}>{tmp}</button>
+                <button onClick={e => setPopup(!popup)}>{tmp}</button>
             </div>
-            <div id="popup-detalhes-excluir">
+            <div id="popup-detalhes-excluir" hidden={popup}>
                   <Link to='/detalhes-ingrediente'><h3 className="cinza">Detalhes</h3></Link>
-                  <h3 className="vermelho" onClick={excluir}>Remover</h3>
+                  <h3 className="vermelho" onClick={e => setPopup(!popup)}>Remover</h3>
             </div>
         </div>
     )
