@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/easycook1-nobg.png'
 import '../styles/login.css'
-import { loginsTeste } from '../mock-ups'
 
 export default function Login(){
 

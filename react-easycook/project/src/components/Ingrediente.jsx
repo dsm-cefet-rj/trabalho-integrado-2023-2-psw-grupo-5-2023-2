@@ -31,7 +31,7 @@ export default function Ingrediente({
             <label id="qtd">{qtd}</label>
             <label id="medida">{medida}</label>
             <div className="buttons">
-                <button onClick={() => {atualizarQtdDB(id, qtd+variacao); setQtd(qtd + variacao)}}>+</button>
+                <button onClick={() => {atualizarQtdDB(id, Number(qtd+variacao)); setQtd(qtd + variacao)}}>+</button>
                 <button onClick={() => {if (qtd > (variacao - 1)) {atualizarQtdDB(id, qtd-variacao); setQtd(qtd - variacao)}}}>-</button>
                 <div>
                     <button onClick={e => setPopup(!popup)}>{tmp}</button>
