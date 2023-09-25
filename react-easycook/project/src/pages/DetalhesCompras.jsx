@@ -10,14 +10,32 @@ export default function DetalhesCompras(){
     
     const [ingredientes, setIngredientes] = useState([]);
     
+    const { id } = useParams();
+
+    const [lista, setLista] = useState([]);
+    //var [ingredientes, setIngredientes] = useState(receita['ingredientes'])
 
     const getApiData = async () => {
         const response = await fetch(
-            "http://localhost:3002/ingredientes"
+            "http://localhost:3002/listas/" + id
         ).then((response) => response.json())
-        .then((data) => setIngredientes(data))
+        .then((res) => {
+            console.log(res['listas'][0].qtd);
+            setLista(res);})
+        .catch(console.log);
+
+        const response2 = await fetch(
+            "http://localhost:3002/listas/"
+        ).then((response) => response.json())
+        .then((data) => setIngredientes(['ingredientes']))
         .catch(console.log);
     }
+    
+
+    useEffect(() => {
+        getApiData();
+    }, []);
+
     
     
 
@@ -40,12 +58,6 @@ export default function DetalhesCompras(){
             console.error('Erro ao atualizar a quantidade no banco de dados:', error);
         }
     }
-    
-    
-
-    useEffect(() => {
-        getApiData();
-    }, []);
 
     return (
         <div>

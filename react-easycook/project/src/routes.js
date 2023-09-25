@@ -74,7 +74,7 @@ const Routes = [
         element: <NotFound/>
     },
     {
-        path: '/detalhes-lista-compras:id',
+        path: '/detalhes-lista-compras/:id',
         element: <DetalhesCompras/>
     }
 ]

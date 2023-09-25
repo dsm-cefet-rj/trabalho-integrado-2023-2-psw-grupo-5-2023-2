@@ -42,6 +42,7 @@ export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home
                   <img src={seta} className="icone-seta-branca" alt="icone-seta-branca"/>
               </button>
               <h2 className="titulo">{titulo}</h2>
+              
           </div>
           <div className="rightSide">
               <img src={tresPontos} hidden={!outros} alt="icone-tres-pontos" className="icone-tres-pontos"  onClick={popupConsultaIngrediente}/>
