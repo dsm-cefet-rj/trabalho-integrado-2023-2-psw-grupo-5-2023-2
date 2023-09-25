@@ -15,6 +15,7 @@ import Receitas from "./pages/Receitas"
 import NovaReceita from "./pages/NovaReceita"
 import DetalhesIngredientes from "./pages/DetalhesIngredientes"
 import DetalhesReceita from "./pages/DetalhesReceita"
+import DetalhesCompras from "./pages/DetalhesCompras"
 
     // path: 'caminho após o link'
     //element: <Página/>
@@ -72,6 +73,10 @@ const Routes = [
         path: '*',
         element: <NotFound/>
     },
+    {
+        path: '/detalhes-lista-compras:id',
+        element: <DetalhesCompras/>
+    }
 ]
 
 const autenticado = false;

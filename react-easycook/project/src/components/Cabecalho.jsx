@@ -5,7 +5,8 @@ import homeButton from "../../src/images/icone-casa.png"
 import filtroTotal from "../../src/images/icone-filtro.png"
 import favoritoButton from "../../src/images/menu-favorito.png"
 import "../../src/styles/cabecalho.css"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate} from "react-router-dom"
+import {useState} from 'react'
 
 import nomeFiltro from '../images/filtro-pesquisa.png'
 import ingredienteFiltro from '../images/filtro-ingrediente.png'
@@ -15,6 +16,8 @@ import categoriaFiltro from '../images/filtro-categoria.png'
 
 export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home, favorito, cancelar, salvar}) {
   
+  let [popup, setPopup] = useState(true);
+
   const navigate = useNavigate();
   const goBack = () => {
       navigate(-1);
@@ -44,7 +47,7 @@ export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home
               <img src={tresPontos} hidden={!outros} alt="icone-tres-pontos" className="icone-tres-pontos"  onClick={popupConsultaIngrediente}/>
               <img src={favoritoButton} hidden={!favorito} alt="icone-favoritar" className="icone-favoritar"/>
               
-              <img src={filtroTotal} hidden={!filtro} alt="icone-filtro" className="icone-filtro" onClick={filtroEstoque}/>
+              <img src={filtroTotal} hidden={!filtro} alt="icone-filtro" className="icone-filtro" onClick={e => setPopup(!popup)}/>
           
               <Link to="/" hidden={!home}>
                   <img src={homeButton} hidden={!home} alt="icone-home" className="icone-home"/>

@@ -37,7 +37,7 @@ export default function ContainerBodyLC(){
                     <br></br>
                     <div className='div-ing'>
                    <label for="Qtd">Ingrediente </label>
-                        <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="1" step="1"/>
+                        <input className="Qtd" type="number" name="Qtd" id="Qtd" placeholder="Qtd" min="100" step="50"/>
                         <label for="Qtd">mL</label>
                     </div>
                 </div>
