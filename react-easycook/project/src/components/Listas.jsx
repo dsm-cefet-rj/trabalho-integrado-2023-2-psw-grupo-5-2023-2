@@ -17,6 +17,7 @@ export function Lista({tipoObjeto, rotaNovoObj, nomeObjetos, objetos, aumentarQt
         </div>
     )
 
+
     function escolheElemento() {
         if (tipoObjeto === "ingrediente") {
             return (

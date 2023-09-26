@@ -23,25 +23,62 @@
       "userCpf": "",
       "userPassword": "",
       "userDataNasc": null
-    },
-    {
-      "id": 152627828,
-      "userNome": "luisa",
-      "userEmail": "luisa@.com",
-      "userCpf": "1526278284",
-      "userPassword": "grtgreggtretg",
-      "userDataNasc": "2004-02-05"
     }
   ],
   "ingredientes": [
     {
-      "nome": "Abacaxi",
-      "categoriaPrincipal": "Fruta",
+      "nome": "Ovo",
+      "categoriaPrincipal": "Derivados",
       "medida": "Un",
+      "qtd": 5,
+      "variacao": 1,
+      "descricao": "",
+      "id": 0
+    },
+    {
+      "nome": "Leite",
+      "categoriaPrincipal": "Derivados",
+      "medida": "mL",
+      "qtd": 3000,
+      "variacao": 500,
+      "descricao": "",
+      "id": 1
+    },
+    {
+      "nome": "Arroz",
+      "categoriaPrincipal": "Derivados",
+      "medida": "Kg",
       "qtd": 15,
       "variacao": 1,
       "descricao": "",
+      "id": 2
+    },
+    {
+      "nome": "Abacaxi",
+      "categoriaPrincipal": "Fruta",
+      "medida": "Un",
+      "qtd": 9,
+      "variacao": 1,
+      "descricao": "",
       "id": 3
+    },
+    {
+      "nome": "Morango",
+      "categoriaPrincipal": "Fruta",
+      "medida": "Un",
+      "qtd": 12,
+      "variacao": 1,
+      "descricao": "",
+      "id": 4
+    },
+    {
+      "nome": "Manga",
+      "categoriaPrincipal": "Fruta",
+      "medida": "Un",
+      "qtd": 5,
+      "variacao": 1,
+      "descricao": "",
+      "id": 5
     }
   ],
   "receitas": [

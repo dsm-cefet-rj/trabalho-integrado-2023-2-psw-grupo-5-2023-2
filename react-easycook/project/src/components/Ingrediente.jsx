@@ -12,6 +12,7 @@ export default function Ingrediente({
     descricao = '',
     id, 
     atualizarQtdDB,
+   
 }){
     
     var [popup, setPopup] = useState(true);
@@ -24,6 +25,31 @@ export default function Ingrediente({
     var [id, setId] = useState(id);
 
     const tmp = ">";
+
+    const removeIngrediente = async () => {
+        const apiUrl = `http://localhost:3002/ingredientes/${id}`;
+        const requestOptions = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        try {
+            const response = await fetch(apiUrl, requestOptions);
+            if (response.ok) {
+                console.log(`Ingrediente com ID ${id} removido com sucesso.`);
+                // Adicione aqui qualquer ação que você deseja executar após a remoção
+            } else {
+                console.error(`Erro ao remover o ingrediente com ID ${id}.`);
+            }
+        } catch (error) {
+            console.error(`Erro na solicitação DELETE: ${error}`);
+        }
+    };
+    const handleRemoveClick = () =>{
+        removeIngrediente(id)
+    }
     return(
     <div id="ingrediente" className="componente">
             <label id="id">{id}</label>
@@ -39,7 +65,7 @@ export default function Ingrediente({
                         <Link to={`/detalhes-ingrediente/${id}`}>
                             <h3 className="cinza">Detalhes</h3>
                         </Link>
-                        <h3 className="vermelho" onClick={e => setPopup(!popup)}>Remover</h3>
+                        <h3 className="vermelho" onClick={handleRemoveClick}>Remover</h3>
                     </div>
                 </div>
             </div>
