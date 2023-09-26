@@ -15,30 +15,41 @@
       "userCpf": "99999999999",
       "userPassword": "fraca",
       "userDataNasc": "1998-12-10"
-    },
-    {
-      "id": "-nE7E2z",
-      "userNome": "",
-      "userEmail": "",
-      "userCpf": "",
-      "userPassword": "",
-      "userDataNasc": null
-    },
-    {
-      "id": 152627828,
-      "userNome": "luisa",
-      "userEmail": "luisa@.com",
-      "userCpf": "1526278284",
-      "userPassword": "grtgreggtretg",
-      "userDataNasc": "2004-02-05"
     }
   ],
   "ingredientes": [
     {
+      "nome": "Ovo",
+      "categoriaPrincipal": "Derivados",
+      "medida": "Un",
+      "qtd": 3,
+      "variacao": 1,
+      "descricao": "",
+      "id": 0
+    },
+    {
+      "nome": "Leite",
+      "categoriaPrincipal": "Derivados",
+      "medida": "mL",
+      "qtd": 1000,
+      "variacao": 500,
+      "descricao": "",
+      "id": 1
+    },
+    {
+      "nome": "Arroz",
+      "categoriaPrincipal": "Derivados",
+      "medida": "Kg",
+      "qtd": 8,
+      "variacao": 1,
+      "descricao": "",
+      "id": 2
+    },
+    {
       "nome": "Abacaxi",
       "categoriaPrincipal": "Fruta",
       "medida": "Un",
-      "qtd": 15,
+      "qtd": 10,
       "variacao": 1,
       "descricao": "",
       "id": 3
@@ -47,7 +58,7 @@
   "receitas": [
     {
       "nome": "Arroz com Ovo",
-      "categoriaPrincipal": "Almoço",
+      "categoriaPrincipal": "Fruta",
       "id": 0,
       "descricao": "Mistura de arroz com ovo",
       "ingredientes": [
@@ -68,41 +79,6 @@
           "variacao": 1,
           "descricao": "",
           "id": 2
-        }
-      ]
-    },
-    {
-      "nome": "Salada de Frutas",
-      "categoriaPrincipal": "Lanche",
-      "id": 1,
-      "descricao": "Três frutas cortadas numa deliciosa salada de frutas.",
-      "ingredientes": [
-        {
-          "nome": "Abacaxi",
-          "categoriaPrincipal": "Fruta",
-          "medida": "Un",
-          "qtd": 10,
-          "variacao": 1,
-          "descricao": "",
-          "id": 3
-        },
-        {
-          "nome": "Morango",
-          "categoriaPrincipal": "Fruta",
-          "medida": "Un",
-          "qtd": 8,
-          "variacao": 1,
-          "descricao": "",
-          "id": 4
-        },
-        {
-          "nome": "Manga",
-          "categoriaPrincipal": "Fruta",
-          "medida": "Un",
-          "qtd": 5,
-          "variacao": 1,
-          "descricao": "",
-          "id": 5
         }
       ]
     }

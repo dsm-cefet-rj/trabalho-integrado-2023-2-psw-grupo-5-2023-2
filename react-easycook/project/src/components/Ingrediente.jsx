@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import '../styles/ingrediente.css';
-import { Link, Navigate, useNavigate, useBeforeUnload } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Ingrediente({
     nome = '',
@@ -12,7 +12,7 @@ export default function Ingrediente({
     descricao = '',
     id, 
     atualizarQtdDB,
-   
+    refreshPageWithKey,
 }){
     
     var [popup, setPopup] = useState(true);
@@ -25,6 +25,8 @@ export default function Ingrediente({
     var [id, setId] = useState(id);
 
     const tmp = ">";
+
+    let navigate = useNavigate();
 
     const removeIngrediente = async () => {
         const apiUrl = `http://localhost:3002/ingredientes/${id}`;
@@ -48,7 +50,10 @@ export default function Ingrediente({
         }
     };
     const handleRemoveClick = () =>{
-        removeIngrediente(id)
+        removeIngrediente(id);
+        setTimeout(() => {
+            refreshPageWithKey(id);
+        }, 100);
     }
     return(
     <div id="ingrediente" className="componente">

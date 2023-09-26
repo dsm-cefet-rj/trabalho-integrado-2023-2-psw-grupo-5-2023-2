@@ -9,6 +9,10 @@ import { Lista } from '../components/Listas'
 export default function Estoque(){
 
     const [ingredientes, setIngredientes] = useState([]);
+    const [refreshKey, setRefreshKey] = useState(0);
+    const refreshPageWithKey = (key) => {
+        setRefreshKey(key);
+    }
 
     const getApiData = async () => {
         const response = await fetch(
@@ -42,7 +46,7 @@ export default function Estoque(){
 
     useEffect(() => {
         getApiData();
-    }, []);
+    }, [refreshKey]);
 
     return (
         <div>
@@ -57,6 +61,7 @@ export default function Estoque(){
                         objetos={ingredientes}
                         tipoObjeto="ingrediente"
                         atualizarQtdDB={atualizarQtdDB}
+                        refreshPageWithKey={refreshPageWithKey}
                     ></Lista>
                     <div className='listas'>
                     </div>
