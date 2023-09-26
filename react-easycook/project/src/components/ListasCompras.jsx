@@ -1,6 +1,4 @@
 import { useState } from "react";
-import '../styles/ingrediente.css';
-import '../styles/receita.css';
 import { Link } from "react-router-dom";
 import '../styles/compras.css';
 
@@ -23,7 +21,7 @@ export default function ListaCompras({nome, id, ingredientes}) {
                 
                 <button onClick={e => setPopup(!popup)}>{tmp}</button>
             </div>
-            <div id="popup-detalhes-excluir" hidden={popup}>
+            <div hidden={popup}>
                   <Link to={`/detalhes-lista-compras/${id}`}><h3 className="cinza">Detalhes</h3></Link>
                   <h3 className="vermelho" onClick={e => setPopup(!popup)}>Remover</h3>
             </div>

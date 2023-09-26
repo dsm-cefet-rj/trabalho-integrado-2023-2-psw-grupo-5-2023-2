@@ -13,21 +13,16 @@ export default function DetalhesCompras(){
     const { id } = useParams();
 
     const [lista, setLista] = useState([]);
-    //var [ingredientes, setIngredientes] = useState(receita['ingredientes'])
 
     const getApiData = async () => {
         const response = await fetch(
             "http://localhost:3002/listas/" + id
         ).then((response) => response.json())
         .then((res) => {
-            console.log(res['listas'][0].qtd);
-            setLista(res);})
-        .catch(console.log);
-
-        const response2 = await fetch(
-            "http://localhost:3002/listas/"
-        ).then((response) => response.json())
-        .then((data) => setIngredientes(['ingredientes']))
+            console.log(res);
+            setLista(res);
+            setIngredientes(res['ingredientes']);
+        })
         .catch(console.log);
     }
     

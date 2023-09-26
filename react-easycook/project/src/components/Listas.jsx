@@ -59,7 +59,7 @@ export function Lista({
                 objetos.map((obj) => (
                     <ListaCompras
                     nome={obj.nome}
-                    idLista={obj.idLista}
+                    id={obj.id}
                     ingredientes={obj.ingredientes}
                     ></ListaCompras>
                 ))

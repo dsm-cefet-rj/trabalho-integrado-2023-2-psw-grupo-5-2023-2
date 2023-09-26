@@ -9,7 +9,7 @@ O projeto é dividido em duas pastas:
 
 Para iniciar o projeto, navegue pelo seu terminal até a pasta:
 
-    //react-easycook/project
+    ./react-easycook/project
 
 Nesta páginas, caso não tenha instalado, instale as dependências com o comando:
 
@@ -29,7 +29,7 @@ Por padrão, o frontend do projeto está sendo executado na porta localhost:3000
 
 ## Executando o DB de mockup
 
-Execute o seguinte comando com o terminal na pasta do projeto (`...//react-easycook/project/`)
+Execute o seguinte comando com o terminal na pasta do projeto (`./react-easycook/project/`)
 
     json-server --watch db.json --port 3002
 
