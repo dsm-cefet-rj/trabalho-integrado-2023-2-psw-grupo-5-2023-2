@@ -56,3 +56,13 @@
 #receita .buttons button:active {
     background-color: rgb(187, 27, 27);
 }
+#receita .favoritar{
+    color: #fcb0b0;
+    box-shadow: 1px 1px 4px rgb(238, 52, 52);
+    margin-left: 10px;
+    background-color: #FF2323;
+}
+#receita #popup-detalhes-excluir{
+    background-color: white;
+    box-shadow: 2px 2px 5px grey;
+}
