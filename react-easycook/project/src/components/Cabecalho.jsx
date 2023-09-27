@@ -55,11 +55,11 @@ export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home
               </Link>
               <div id="popup-3-pontos">
                   <Link to='/editar-ingrediente'><h3 className="vermelho">Editar</h3></Link>
-                  <h3 className="preto" onClick={excluir}>Excluir</h3>
+                  <h3 className="preto excluir" onClick={excluir}>Excluir</h3>
               </div>
               <div id="edicao">
-                <Link to="/detalhes-ingrediente" hidden={!salvar} className="salvar"><a href="localhost:3000/">Salvar</a></Link>
-                <Link to="/detalhes-ingrediente" hidden={!cancelar} className="cancelar"><a href="localhost:3000/">Cancelar</a></Link>
+                <Link to="/detalhes-ingrediente/:id" hidden={!salvar} className="salvar"><a href="localhost:3000/">Salvar</a></Link>
+                <Link to="/detalhes-ingrediente/:id" hidden={!cancelar} className="cancelar"><a href="localhost:3000/">Cancelar</a></Link>
               </div>   
       <div id="filtro-estoque">
         <div id="txt-filtro">

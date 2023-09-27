@@ -9,7 +9,7 @@
         font-family: helvetica;
     }
     
-    /*@media screen (min-width: 1024px) {
-        #main { min-width: 1000px }
+    ::selection {
+        background-color: rgb(255, 90, 90);
+        color: rgb(255, 255, 255);
     }
-    */

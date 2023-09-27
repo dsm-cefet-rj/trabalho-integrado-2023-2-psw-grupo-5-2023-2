@@ -29,7 +29,7 @@ export default function Receita({nome, categoriaPrincipal, id, descricao, ingred
             console.error(`Erro na solicitação DELETE: ${error}`);
         }
     };
-    const removeClick = () =>{
+    const HandleRemoveReceitaClick = () =>{
         removeReceita(id)
     }
     return(
@@ -44,7 +44,7 @@ export default function Receita({nome, categoriaPrincipal, id, descricao, ingred
             </div>
             <div id="popup-detalhes-excluir" hidden={popup}>
                   <Link to={`/detalhes-receita/${id}`}><h3 className="cinza">Detalhes</h3></Link>
-                  <h3 className="vermelho" onClick={removeClick}>Remover</h3>
+                  <h3 className="vermelho" onClick={HandleRemoveReceitaClick}>Remover</h3>
             </div>
         </div>
     )

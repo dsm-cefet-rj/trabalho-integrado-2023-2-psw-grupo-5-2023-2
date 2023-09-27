@@ -160,3 +160,7 @@ body{
 .Cabecalho button:hover {
   cursor: pointer;
 }
+.icone-tres-pontos, .excluir{
+  cursor: pointer;
+}
+

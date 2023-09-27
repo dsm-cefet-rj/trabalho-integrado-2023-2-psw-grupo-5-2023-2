@@ -7,6 +7,10 @@ O projeto é dividido em duas pastas:
 * Prototipagem -> Protótipos de HTML/JS/CSS
 * react-easycook/project. -> Projeto desenvolvido com o framework React
 
+Para ter uma melhor visualização do projeto, recomenda-se baixar a fonte de texto utilizada:
+
+    https://freefontsfamily.com/helvetica-font-family/
+
 Para iniciar o projeto, navegue pelo seu terminal até a pasta:
 
     ./react-easycook/project

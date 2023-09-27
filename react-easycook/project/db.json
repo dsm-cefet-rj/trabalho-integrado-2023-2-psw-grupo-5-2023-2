@@ -44,15 +44,6 @@
       "variacao": 1,
       "descricao": "",
       "id": 2
-    },
-    {
-      "nome": "Abacaxi",
-      "categoriaPrincipal": "Fruta",
-      "medida": "Un",
-      "qtd": 10,
-      "variacao": 1,
-      "descricao": "",
-      "id": 3
     }
   ],
   "receitas": [

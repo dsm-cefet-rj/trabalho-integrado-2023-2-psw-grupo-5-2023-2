@@ -49,7 +49,7 @@ export default function Ingrediente({
             console.error(`Erro na solicitação DELETE: ${error}`);
         }
     };
-    const handleRemoveClick = () =>{
+    const handleRemoveIngredienteClick = () =>{
         removeIngrediente(id);
         setTimeout(() => {
             refreshPageWithKey(id);
@@ -70,7 +70,7 @@ export default function Ingrediente({
                         <Link to={`/detalhes-ingrediente/${id}`}>
                             <h3 className="cinza">Detalhes</h3>
                         </Link>
-                        <h3 className="vermelho" onClick={handleRemoveClick}>Remover</h3>
+                        <h3 className="vermelho excluir" onClick={handleRemoveIngredienteClick}>Remover</h3>
                     </div>
                 </div>
             </div>
