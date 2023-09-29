@@ -34,8 +34,8 @@ const getApiData = async () => {
 }
 
   return (
-      <div className='mb-3 p-5'>
-        <img src={logo} alt="Easy Cook logo"/>
+      <div className='p-5 vh-100 bg-fundo-rosa'>
+        <img src={logo} alt="Easy Cook logo" className='mx-auto d-block'/>
         <div className="form-outline mb-4">
           <label id="login" class="form-label">Login</label>
           <input id='userEmail' placeholder='Seu e-mail' type='email' class="form-control"
@@ -52,20 +52,24 @@ const getApiData = async () => {
         </div>
         
         <div class="row mb-4">
-          <div className="col d-flex justify-content-left">
+
+          <div className="col text-center">
             <Link to="/cadastre-se">
-              <a href='localhost:3000' id="cadastre-se">Cadastre-se</a>
+              <a className="link-aliceblue justify-content-end" href='localhost:3000' id="cadastre-se">Cadastre-se</a>
             </Link>
           </div>
-          
-          <div className="col d-flex justify-content-right">
-              <Link to="/esqueci-minha-senha">
-                <a href='localhost:3000'>Esqueci minha senha</a>
-              </Link>
+
+          <div className="col text-center">
+            <Link to="/esqueci-minha-senha">
+              <a className="link-aliceblue" href='localhost:3000'>Esqueci minha senha</a>
+            </Link>
           </div>
+            
+          
         </div>
-        <div>
-          <button class="btn btn-primary btn-block mb-4" onClick={clickLogin}>Login</button>
+
+        <div className="row justify-content-center">
+          <button className="btn btn-primary col-6" onClick={clickLogin}>Login</button>
         </div>
       </div>
   )

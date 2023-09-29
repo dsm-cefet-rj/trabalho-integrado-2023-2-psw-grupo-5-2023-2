@@ -1,5 +1,4 @@
 import React from "react"
-import '../styles/index.css'
 import Cabecalho from "../components/Cabecalho"
 import '../styles/editarIngrediente.css'
 import img from '../images/quadrado-vinho.jpg'
