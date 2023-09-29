@@ -35,15 +35,6 @@
       "variacao": 500,
       "descricao": "",
       "id": 1
-    },
-    {
-      "nome": "Arroz",
-      "categoriaPrincipal": "Derivados",
-      "medida": "Kg",
-      "qtd": 8,
-      "variacao": 1,
-      "descricao": "",
-      "id": 2
     }
   ],
   "receitas": [
