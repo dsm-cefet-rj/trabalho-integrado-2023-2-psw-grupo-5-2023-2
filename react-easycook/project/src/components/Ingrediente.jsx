@@ -71,6 +71,7 @@ export default function Ingrediente({
                             <h3 className="cinza">Detalhes</h3>
                         </Link>
                         <h3 className="vermelho excluir" onClick={handleRemoveIngredienteClick}>Remover</h3>
+                      
                     </div>
                 </div>
             </div>
