@@ -21,6 +21,13 @@
     border-style: solid;
     color: #616161;
     cursor: pointer;
+     
+
+
+}
+#novo-objeto:hover {
+    background-color: rgb(243, 230, 232);
+    transition: 0.3s;
 }
 
 #novo-objeto:active {
