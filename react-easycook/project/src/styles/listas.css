@@ -20,6 +20,7 @@
     border-right-width: 0px;
     border-style: solid;
     color: #616161;
+    cursor: pointer;
 }
 
 #novo-objeto:active {
