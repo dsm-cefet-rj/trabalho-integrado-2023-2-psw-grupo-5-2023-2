@@ -1,7 +1,7 @@
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 
-// $body-bg: #E3B4B4;
+
 
 $custom-colors: (
     "primary": #B22828,
@@ -14,6 +14,8 @@ $custom-colors: (
     "aliceblue": aliceblue,
     "branco": white,
 );
+
+$body-bg: #E3B4B4;
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 

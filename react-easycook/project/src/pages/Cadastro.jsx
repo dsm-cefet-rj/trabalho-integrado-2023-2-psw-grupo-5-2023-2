@@ -27,50 +27,73 @@ export default function Login(){
   }
 
   return (
-      <div id='login-page'>
-        <div className='login-forms'>
-            <img src={logo} alt="Easy Cook logo" className='blend-mode imagem-centralizada' />
-            <h1>Use '@.com' e 'asd'  para autenticar</h1>
+      <div className='container'>
 
+        <div className="row">
+          <div className='col-2 mx-auto'>
+            <img src={logo} alt="Easy Cook logo" className='img-fluid'/>
+          </div>
+        </div>
+
+        <div className='row'>
+          <div className="col-8 mx-auto">
             <label htmlFor="nome">Nome</label>
             <input id='nome' placeholder='Nome Completo' type='text' 
               name='userEmail'
               onChange={ event => setUserNome(event.target.value)}
+              className="form-control bg-branco"
             />
+          </div>
+        </div>
 
+        <div className="row">
+          <div className="col-8 mx-auto">
             <label htmlFor="userEmail">E-mail</label>
-            <input id='userEmail' placeholder='Seu e-mail' type='email' 
-              name='userEmail'
-              onChange={ event => setUserEmail(event.target.value)}
-            />
+              <input id='userEmail' placeholder='Seu e-mail' type='email' 
+                name='userEmail'
+                onChange={ event => setUserEmail(event.target.value)}
+                className="form-control bg-branco"
+              />
+          </div>
+        </div>
 
+        <div className="row">
+          <div className="col-8 mx-auto">
             <label htmlFor="userCpf">CPF</label>
             <input id='userCpf' placeholder='Seu Cadastro de Pessoa Física' type='number' 
               name='userEmail'
               onChange={ event => {setUserCpf(event.target.value); setId(Number(userCpf)); }}
+              className="form-control bg-branco"
             />
+          </div>
+        </div>
 
+        <div className="row">
+          <div className="col-8 mx-auto">
             <label htmlFor="userDataNasc">Data de Nascimento</label>
             <input id='userDataNasc' placeholder='Sua data de nascimento' type='date' 
               name='userDataNasc'
               onChange={ event => setUserDataNasc(event.target.value)}
+              className="form-control bg-branco"
             />
+          </div>
+        </div>
 
+        <div className="row">
+          <div className="col-8 mx-auto">
             <label htmlFor="userPassword">Senha</label>
             <input id='userPassword' placeholder='Sua senha' type='password'
               name='userPassword'
               onChange={ event => setUserPassword(event.target.value)}
+              className="form-control bg-branco"
             /> 
-              
-             <button className="login-button" onClick={submitCadastro}>Cadastrar-se</button>
-             <Link to="/login" className='link'>
-               <button className="login-button">Voltar</button>
-             </Link>
-          
+          </div>
         </div>
-        <h2>nome: {userNome}</h2>
-        <h2>email: {userEmail} | senha: {userPassword}</h2>
-        <h2>CPF: {userCpf} | Nascimento: {userDataNasc}</h2>
+        <div className="row justify-content-center mt-3">
+            <button className="btn btn-primary col-3 mx-2" onClick={submitCadastro}>Cadastrar-se</button>
+            <Link to="/login" className="btn btn-primary col-3 text-white mx-2">Voltar</Link>
+        </div>
+        
       </div>
   )
 

@@ -34,18 +34,18 @@ const getApiData = async () => {
 }
 
   return (
-      <div className='p-5 vh-100 bg-fundo-rosa'>
+      <div className='p-5 vh-100 mx-auto col-lg-6 col-12'>
         <img src={logo} alt="Easy Cook logo" className='mx-auto d-block'/>
         <div className="form-outline mb-4">
           <label id="login" class="form-label">Login</label>
-          <input id='userEmail' placeholder='Seu e-mail' type='email' class="form-control"
+          <input id='userEmail' placeholder='Seu e-mail' type='email' className="form-control bg-branco"
             name='userEmail'
             onChange={ event => setUserEmail(event.target.value)}
           />
         </div>  
 
         <div className="form-outline mb-4">
-          <input id='userPassword' placeholder='Sua senha' type='password' class="form-control"
+          <input id='userPassword' placeholder='Sua senha' type='password' className="form-control bg-branco"
             name='userPassword'
             onChange={ event => setUserPassword(event.target.value)}
           />
