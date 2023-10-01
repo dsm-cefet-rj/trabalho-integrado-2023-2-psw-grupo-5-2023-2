@@ -4,24 +4,21 @@ import '../styles/containerLC.css'
 export default function ContainerBodyLC(){
     return (
         <div className='Container'>
-            <form className='grid' id='form'>
-                <div className='area1'>
-                    <div className='area-nome'>
-                        <label> Nome </label>
-                        <br></br>
-                        <input placeholder='Nome' type='text' class='criar-nome-ing'></input>
-                    </div>
-                    <div className='area-ingredientes'>
-                        <label> Ingredientes </label>
-                        <br></br>
-                        <select className='ingredientes'>
-                            <option>Ingrediente 1</option>
-                            <option>Ingrediente 2</option>
-                            <option>Ingrediente 3</option>
-                        </select>
-                    </div>
+            <form>
+                <div className="mb-3 row mb-3">
+                    <label for="nome-lista" className="form-label">Nome</label>
+                    <input type="text" className="form-control width" id="nome-lista" aria-describedby="nome-lista"/>
                 </div>
-                <div className='area3'>
+                <div className="mb-3 row mb-3">
+                    <label for="ingrediente-form" className="form-label">Ingredientes</label>
+                    <select className="form-select width" id="ingredientes-form" aria-describedby="ingredientes-form">
+                        <option>Escolha os ingredientes</option>
+                        <option>Ingrediente 1</option>
+                        <option>Ingrediente 2</option>
+                        <option>Ingrediente 3</option>
+                    </select>
+                </div>
+                <div className='row mb-3'>
                 <div className='section'>
                    <div className='div-ing'>
                         <label for="Qtd">Ingrediente </label>
@@ -43,12 +40,14 @@ export default function ContainerBodyLC(){
                 </div>
                 
               
-                    <div className='area-descricao'>
-                        <label> Descrição </label>
-                        <br></br>
-                        <textarea cols="33" rows="6" placeholder="Descrição da Lista de Compras"></textarea>
-                    </div>
-                    <button type='submit'> Criar </button>
+                <div className="mb-3 row mb-3">
+                    <label for="descricao-lista" className="form-label">Descrição</label>
+                    <textarea className="form-control width" id="descricao-lista" rows="3"></textarea>
+                </div>
+                <div className="">
+                    <button type="submit" className="btn btn-primary row mb-3" >Criar</button>
+                </div>
+                    
                 </div>
             </form>
         </div>

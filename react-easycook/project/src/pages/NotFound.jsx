@@ -1,6 +1,5 @@
 import React, { useState, ChangeEvent, FC } from 'react'
 import logo from '../images/easycook1-nobg.png'
-import '../styles/login.css'
 
 export default function NotFound(){
 

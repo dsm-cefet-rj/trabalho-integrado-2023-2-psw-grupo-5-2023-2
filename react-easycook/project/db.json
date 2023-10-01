@@ -22,7 +22,7 @@
       "nome": "Ovo",
       "categoriaPrincipal": "Derivados",
       "medida": "Un",
-      "qtd": 7,
+      "qtd": 3,
       "variacao": 1,
       "descricao": "",
       "id": 0
@@ -44,12 +44,21 @@
       "variacao": 1,
       "descricao": "",
       "id": 2
+    },
+    {
+      "nome": "Abacaxi",
+      "categoriaPrincipal": "Fruta",
+      "medida": "Un",
+      "qtd": 10,
+      "variacao": 1,
+      "descricao": "",
+      "id": 3
     }
   ],
   "receitas": [
     {
       "nome": "Arroz com Ovo",
-      "categoriaPrincipal": "Almoço",
+      "categoriaPrincipal": "Fruta",
       "id": 0,
       "descricao": "Mistura de arroz com ovo",
       "ingredientes": [

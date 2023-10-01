@@ -1,19 +1,136 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "11111111111",
+      "userNome": "usuarioTeste",
+      "userEmail": "@.com",
+      "userCpf": "11111111111",
+      "userPassword": "asd",
+      "userDataNasc": "2023-09-24"
+    },
+    {
+      "id": 9999999999,
+      "userNome": "johnata",
+      "userEmail": "john.ata@hotmail.com",
+      "userCpf": "99999999999",
+      "userPassword": "fraca",
+      "userDataNasc": "1998-12-10"
     }
   ],
-  "comments": [
+  "ingredientes": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nome": "Ovo",
+      "categoriaPrincipal": "Derivados",
+      "medida": "Un",
+      "qtd": 3,
+      "variacao": 1,
+      "descricao": "",
+      "id": 0
+    },
+    {
+      "nome": "Leite",
+      "categoriaPrincipal": "Derivados",
+      "medida": "mL",
+      "qtd": 1000,
+      "variacao": 500,
+      "descricao": "",
+      "id": 1
+    },
+    {
+      "nome": "Arroz",
+      "categoriaPrincipal": "Derivados",
+      "medida": "Kg",
+      "qtd": 8,
+      "variacao": 1,
+      "descricao": "",
+      "id": 2
+    },
+    {
+      "nome": "Abacaxi",
+      "categoriaPrincipal": "Fruta",
+      "medida": "Un",
+      "qtd": 10,
+      "variacao": 1,
+      "descricao": "",
+      "id": 3
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "receitas": [
+    {
+      "nome": "Arroz com Ovo",
+      "categoriaPrincipal": "Fruta",
+      "id": 0,
+      "descricao": "Mistura de arroz com ovo",
+      "ingredientes": [
+        {
+          "nome": "Ovo",
+          "categoriaPrincipal": "Derivados",
+          "medida": "Un",
+          "qtd": 5,
+          "variacao": 1,
+          "descricao": "",
+          "id": 0
+        },
+        {
+          "nome": "Arroz",
+          "categoriaPrincipal": "Derivados",
+          "medida": "Kg",
+          "qtd": 2,
+          "variacao": 1,
+          "descricao": "",
+          "id": 2
+        }
+      ]
+    }
+  ],
+  "listas": [
+    {
+      "nome": "Lista1",
+      "id": 0,
+      "ingredientes": [
+        {
+          "nome": "Ovo",
+          "categoriaPrincipal": "Derivados",
+          "medida": "Un",
+          "qtd": 6,
+          "variacao": 1,
+          "descricao": "",
+          "id": 0
+        },
+        {
+          "nome": "Leite",
+          "categoriaPrincipal": "Derivados",
+          "medida": "mL",
+          "qtd": 1000,
+          "variacao": 500,
+          "descricao": "",
+          "id": 1
+        }
+      ]
+    },
+    {
+      "nome": "Lista2",
+      "id": 1,
+      "ingredientes": [
+        {
+          "nome": "Arroz",
+          "categoriaPrincipal": "Derivados",
+          "medida": "Kg",
+          "qtd": 2,
+          "variacao": 1,
+          "descricao": "",
+          "id": 2
+        },
+        {
+          "nome": "Abacaxi",
+          "categoriaPrincipal": "Fruta",
+          "medida": "Un",
+          "qtd": 20,
+          "variacao": 1,
+          "descricao": "",
+          "id": 3
+        }
+      ]
+    }
+  ]
 }
