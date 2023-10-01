@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import '../styles/ingrediente.css';
 import { Link, useNavigate } from "react-router-dom"
+import DetalhesPopup from "./DetalhesPopup";
 
 export default function Ingrediente({
     nome = '',
@@ -56,7 +56,8 @@ export default function Ingrediente({
         }, 100);
     }
     return(
-        <div className="row w-100 align-items-center text-center border-bottom mt-3 py-3" >
+        <div className="row w-100 align-items-center text-center border-bottom mt-3 py-3">
+
             <div className="col-9 d-flex">
                 <label id="id" className="col-1 my-auto">{id}</label>
                 <label id="nome" className="col-2 my-auto">{nome}</label>
@@ -65,21 +66,21 @@ export default function Ingrediente({
                 <label id="qtd" className="col-2 my-auto">{qtd}</label>
                 <label id="medida" className="col-1 my-auto">{medida}</label>
             </div>
+
             <div className="col-3">
                 <div className="row d-flex justify-content-center">
                     <button className="col-3 mx-1 btn btn-primary" onClick={() => {atualizarQtdDB(id, Number(qtd+variacao)); setQtd(qtd + variacao)}}>+</button>
                     <button className="col-3 mx-1 btn btn-primary" onClick={() => {if (qtd > (variacao - 1)) {atualizarQtdDB(id, qtd-variacao); setQtd(qtd - variacao)}}}>-</button>
-                    <button className="col-3 mx-1 btn btn-primary" onClick={e => setPopup(!popup)}>{tmp}</button>
+                    <DetalhesPopup 
+                        id={id}
+                        favoritavel={true}
+                        removeObjeto={handleRemoveIngredienteClick}
+                        favoritaObjeto={""}
+                        rotaConsulta={"detalhes-ingrediente"} 
+                        ></DetalhesPopup>
                 </div>
             </div>
-            
-                    <div className="popup-detalhes-excluir" hidden={popup}>
-                        <Link to={`/detalhes-ingrediente/${id}`}>
-                            <h3 className="cinza">Detalhes</h3>
-                        </Link>
-                        <h3 className="vermelho excluir" onClick={handleRemoveIngredienteClick}>Remover</h3>
-                    </div>
-                </div>
+        </div>
     )
 
     

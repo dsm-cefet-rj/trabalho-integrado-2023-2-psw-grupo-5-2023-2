@@ -2,23 +2,47 @@ import { useState } from "react";
 import '../styles/ingrediente.css';
 import '../styles/receita.css';
 import { Link } from "react-router-dom";
+import Routes from "../routes";
 
-export default function DetalhesPopup({id, tipoObjeto}) {
+export default function DetalhesPopup({
+    id, 
+    favoritavel,
+    removeObjeto,
+    favoritaObjeto,
+    rotaConsulta,
+}) {
     
-    var [popup, setPopup] = useState(true);
-
+    var [popup, setPopup] = useState(false);
+    var [favoritavel, setFavoritavel] = useState(favoritavel);
+    
     return(
-        <div id="receita" className="btn btn-primary">
-            <label id="nome">{nome}</label>
-            <label id="descricao">{descricao}</label>
-            <div className="buttons">
-                <button onClick={e => setPopup(!popup)}>...</button>
+        <>
+        <div className="col-3 mx-1 btn btn-primary" onClick={e => setPopup(!popup)}>
+        
+            <div className="" hidden={popup}>
+                <i className="bi bi-three-dots-vertical"></i>
             </div>
-            <div id="popup-detalhes-excluir" hidden={popup}>
-                  <Link to={`/${tipoObjeto}/${id}`}><h3 className="cinza">Detalhes</h3></Link>
-                  <h3 className="vermelho" onClick={HandleRemoveReceitaClick}>Remover</h3>
-                  <h3 className="favoritar" onClick=''>Favoritar</h3>
+
+            <div className="my-1 py-1" hidden={!popup}>
+                <i className="bi bi-three-dots-vertical"></i>
             </div>
-        </div>
+            </div>
+            <div className="row mb-2 justify-content-center mt-3">
+                <Link 
+                    className="btn btn-primary col py-3 mx-1 my-1" 
+                    hidden={!popup}
+                    to={`/${rotaConsulta}/${id}`}>
+                    <i className="bi bi-search"></i>
+                </Link>
+                <div className="btn btn-primary col py-3 mx-1 my-1" hidden={!(popup && favoritavel)}>
+                    <i className="img-fluid bi bi-heart"></i>
+                </div>
+                <button className="btn btn-primary col py-3 mx-1 my-1" 
+                    hidden={!popup} 
+                    onClick={removeObjeto}>
+                    <i className="bi bi-trash"></i>
+                </button>
+            </div>
+        </>
     )
 }

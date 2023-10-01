@@ -19,7 +19,7 @@ import DetalhesCompras from "./pages/DetalhesCompras"
 
     // path: 'caminho após o link'
     //element: <Página/>
-const Routes = [
+export const Routes = [
     {
         path: '/',
         element: <HomePage/>
