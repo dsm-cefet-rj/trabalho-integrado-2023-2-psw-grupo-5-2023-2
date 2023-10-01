@@ -56,27 +56,30 @@ export default function Ingrediente({
         }, 100);
     }
     return(
-    <div id="ingrediente" className="componente">
-            <label id="id">{id}</label>
-            <label id="nome">{nome}</label>
-            <label id="qtd">{qtd}</label>
-            <label id="medida">{medida}</label>
-            <div className="buttons">
-                <button onClick={() => {atualizarQtdDB(id, Number(qtd+variacao)); setQtd(qtd + variacao)}}>+</button>
-                <button onClick={() => {if (qtd > (variacao - 1)) {atualizarQtdDB(id, qtd-variacao); setQtd(qtd - variacao)}}}>-</button>
-                <div>
-                    <button onClick={e => setPopup(!popup)}>{tmp}</button>
+        <div className="row w-100 align-items-center text-center border-bottom mt-3 py-3" >
+            <div className="col-9 d-flex">
+                <label id="id" className="col-1 my-auto">{id}</label>
+                <label id="nome" className="col-2 my-auto">{nome}</label>
+                <p id="descricao" className="col-5 text-start my-auto">{descricao} </p>
+                <label id="categoriaPrincipal" className="col-1 my-auto">{categoriaPrincipal}</label>
+                <label id="qtd" className="col-2 my-auto">{qtd}</label>
+                <label id="medida" className="col-1 my-auto">{medida}</label>
+            </div>
+            <div className="col-3">
+                <div className="row d-flex justify-content-center">
+                    <button className="col-3 mx-1 btn btn-primary" onClick={() => {atualizarQtdDB(id, Number(qtd+variacao)); setQtd(qtd + variacao)}}>+</button>
+                    <button className="col-3 mx-1 btn btn-primary" onClick={() => {if (qtd > (variacao - 1)) {atualizarQtdDB(id, qtd-variacao); setQtd(qtd - variacao)}}}>-</button>
+                    <button className="col-3 mx-1 btn btn-primary" onClick={e => setPopup(!popup)}>{tmp}</button>
+                </div>
+            </div>
+            
                     <div className="popup-detalhes-excluir" hidden={popup}>
                         <Link to={`/detalhes-ingrediente/${id}`}>
                             <h3 className="cinza">Detalhes</h3>
                         </Link>
                         <h3 className="vermelho excluir" onClick={handleRemoveIngredienteClick}>Remover</h3>
-                      
                     </div>
                 </div>
-            </div>
-            
-        </div>
     )
 
     

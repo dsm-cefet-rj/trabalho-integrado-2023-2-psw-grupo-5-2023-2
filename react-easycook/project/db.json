@@ -22,25 +22,25 @@
       "nome": "Ovo",
       "categoriaPrincipal": "Derivados",
       "medida": "Un",
-      "qtd": 3,
+      "qtd": 8,
       "variacao": 1,
-      "descricao": "",
+      "descricao": "Um Ovo",
       "id": 0
     },
     {
       "nome": "Leite",
       "categoriaPrincipal": "Derivados",
       "medida": "mL",
-      "qtd": 1000,
+      "qtd": 4500,
       "variacao": 500,
-      "descricao": "",
+      "descricao": "Uma caixa de leite",
       "id": 1
     },
     {
       "nome": "Arroz",
       "categoriaPrincipal": "Derivados",
       "medida": "Kg",
-      "qtd": 8,
+      "qtd": 12,
       "variacao": 1,
       "descricao": "",
       "id": 2
@@ -51,8 +51,27 @@
       "medida": "Un",
       "qtd": 10,
       "variacao": 1,
-      "descricao": "",
+      "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, cumque incidunt doloremque obcaecati magnam aperiam voluptate animi ipsam quis sunt officia, quibusdam necessitatibus tempora asperiores natus numquam cum quae illum.",
       "id": 3
+    },
+    {
+      "id": 4,
+      "nome": "Teste",
+      "categoriaPrincipal": "Verduras e Legumes",
+      "outrasCategorias": "Carnes e Ovos",
+      "medida": "Un",
+      "qtd": 300,
+      "variacao": 100,
+      "substitutos": {
+        "nome": "Leite",
+        "categoriaPrincipal": "Derivados",
+        "medida": "mL",
+        "qtd": 4500,
+        "variacao": 500,
+        "descricao": "",
+        "id": 1
+      },
+      "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, cumque incidunt doloremque obcaecati magnam aperiam voluptate animi ipsam quis sunt officia, quibusdam necessitatibus tempora asperiores natus numquam cum quae illum."
     }
   ],
   "receitas": [

@@ -16,9 +16,9 @@ export function Lista({
 }) {
      
     return (
-        <div id="listas" className="min-vh-100">
+        <div id="listas" className="container-fluid border-black border-black min-vh-100 my-0">
             <Link to={rotaNovoObj}>
-                <button id="novo-objeto">{nomeObjetos}</button>
+                <button className="" id="novo-objeto">{nomeObjetos}</button>
             </Link>
             {escolheElemento()}
         </div>
@@ -34,6 +34,7 @@ export function Lista({
                     qtd={obj.qtd}
                     variacao={obj.variacao}
                     medida={obj.medida}
+                    descricao={obj.descricao}
                     id={obj.id}
                     atualizarQtdDB={atualizarQtdDB}
                     refreshPageWithKey={refreshPageWithKey}
