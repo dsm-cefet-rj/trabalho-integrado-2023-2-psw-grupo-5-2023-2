@@ -29,11 +29,7 @@ export default function Login(){
   return (
       <div className='container'>
 
-        <div className="row">
-          <div className='col-2 mx-auto'>
-            <img src={logo} alt="Easy Cook logo" className='img-fluid'/>
-          </div>
-        </div>
+        <img src={logo} alt="Easy Cook logo" className='mx-auto d-block'/>
 
         <div className='row'>
           <div className="col-8 mx-auto">
