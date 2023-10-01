@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/index.css'
 import '../styles/homepage.css'
 import Rodape from '../components/Rodape'
 import logo from '../images/easycook1-nobg.png'

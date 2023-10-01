@@ -1,0 +1,20 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// $body-bg: #E3B4B4;
+
+$custom-colors: (
+    "primary": #B22828,
+    "secondary": #fa7e7e,
+    "tertiary": #a52525,
+    "vermelho-escuro": #B22828,
+    "vermelho-mais-escuro": #a52525,
+    "vermelho-claro": #fa7e7e,
+    "fundo-rosa": #E3B4B4,
+    "aliceblue": aliceblue,
+    "branco": white,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";

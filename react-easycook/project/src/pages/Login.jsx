@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/easycook1-nobg.png'
-import '../styles/login.css'
 
 export default function Login(){
 
@@ -35,32 +34,43 @@ const getApiData = async () => {
 }
 
   return (
-      <div id='login-page'>
-        <div className='login-forms'>
-          <img src={logo} alt="Easy Cook logo" className='blend-mode imagem-centralizada' />
-          <h1>Use '@.com' e 'asd'  para autenticar</h1>
-          <h1>ou se cadastre (JSON Server necessario)</h1>
-          <label id="login">Login</label>
-          <input id='userEmail' placeholder='Seu e-mail' type='email' 
+      <div className='p-5 vh-100 bg-fundo-rosa'>
+        <img src={logo} alt="Easy Cook logo" className='mx-auto d-block'/>
+        <div className="form-outline mb-4">
+          <label id="login" class="form-label">Login</label>
+          <input id='userEmail' placeholder='Seu e-mail' type='email' class="form-control"
             name='userEmail'
             onChange={ event => setUserEmail(event.target.value)}
           />
-          <input id='userPassword' placeholder='Sua senha' type='password'
+        </div>  
+
+        <div className="form-outline mb-4">
+          <input id='userPassword' placeholder='Sua senha' type='password' class="form-control"
             name='userPassword'
             onChange={ event => setUserPassword(event.target.value)}
-          /> 
-          <button className="login-button" onClick={clickLogin}>Login</button>
-          <Link className="link" to="/esqueci-minha-senha">
-            <a href='localhost:3000' className="esqueci-userPassword" hidden={true}>Esqueci minha senha</a>
-          </Link>
-          <Link className="link" to="/cadastre-se">
-            <a href='localhost:3000' id="cadastre-se">Cadastre-se</a>
-          </Link>
+          />
         </div>
-        <h2>teste:</h2>
-        <h2 >email: {userEmail}</h2>
-        <h2>senha: {userPassword}</h2>
-        <h3>{logando}</h3>
+        
+        <div class="row mb-4">
+
+          <div className="col text-center">
+            <Link to="/cadastre-se">
+              <a className="link-aliceblue justify-content-end" href='localhost:3000' id="cadastre-se">Cadastre-se</a>
+            </Link>
+          </div>
+
+          <div className="col text-center">
+            <Link to="/esqueci-minha-senha">
+              <a className="link-aliceblue" href='localhost:3000'>Esqueci minha senha</a>
+            </Link>
+          </div>
+            
+          
+        </div>
+
+        <div className="row justify-content-center">
+          <button className="btn btn-primary col-6" onClick={clickLogin}>Login</button>
+        </div>
       </div>
   )
 
