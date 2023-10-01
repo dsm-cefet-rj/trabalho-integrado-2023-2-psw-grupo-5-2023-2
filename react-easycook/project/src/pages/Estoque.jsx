@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/estoque.css'
 import Rodape from '../components/Rodape'
 import Ingrediente from '../components/Ingrediente'
 import Cabecalho from '../components/Cabecalho'
@@ -49,12 +48,12 @@ export default function Estoque(){
     }, [refreshKey]);
 
     return (
-        <div className='container-fluid p-0 '>
+        <div className='container-fluid p-0'>
             <div className=''>
                 <Cabecalho titulo="Estoque" home filtro></Cabecalho>
             </div>
             <div id='estoque'>
-                <div className='lista-ingredientes'>
+                <div className=''>
                     <Lista 
                         rotaNovoObj="/novo-ingrediente" 
                         nomeObjetos="Novo Ingrediente"
@@ -63,9 +62,6 @@ export default function Estoque(){
                         atualizarQtdDB={atualizarQtdDB}
                         refreshPageWithKey={refreshPageWithKey}
                     ></Lista>
-                    <div className='listas'>
-                    </div>
-                    
                 </div>
             </div>
             <Rodape></Rodape>

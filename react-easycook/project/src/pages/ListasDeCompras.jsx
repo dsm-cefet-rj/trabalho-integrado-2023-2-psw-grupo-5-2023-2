@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/estoque.css'
 import Ingrediente from '../components/Ingrediente'
 import Cabecalho from '../components/Cabecalho'
 import { Lista } from '../components/Listas'
@@ -23,23 +22,21 @@ export default function ListaDeCompras(){
     }, []);
 
     return (
-        <div>
+        <div className='container-fluid p-0'>
             <div>
                 <Cabecalho titulo="Listas de Compras" home filtro></Cabecalho>
             </div>
-            <div id='lista-de-compras'>
-                <div className='lista-ingredientes'>
+            <div id=''>
+                <div className=''>
                     <Lista
                         nomeObjetos="Nova Lista de Compras"
                         rotaNovoObj="/nova-lista-de-compras"
                         objetos={listasDeCompras}
                         tipoObjeto={"listaDeCompras"}
                     ></Lista>
-                    <div className='listas'>
-                    </div>
-                    <Rodape></Rodape>
                 </div>
             </div>
+            <Rodape></Rodape>
         </div>
     )
 }

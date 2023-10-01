@@ -20,10 +20,10 @@ export default function DetalhesPopup({
         <div className="col-3 mx-1 btn btn-primary" onClick={e => setPopup(!popup)}>
         
             <div className="" hidden={popup}>
-                <i className="bi bi-three-dots-vertical"></i>
+                <i className="bi bi-three-dots-vertical mx-auto"></i>
             </div>
 
-            <div className="my-1 py-1" hidden={!popup}>
+            <div className="my-1 py-1 mx-auto" hidden={!popup}>
                 <i className="bi bi-three-dots-vertical"></i>
             </div>
             </div>

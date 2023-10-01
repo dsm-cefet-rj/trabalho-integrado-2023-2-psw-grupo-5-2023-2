@@ -1,29 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import '../styles/compras.css';
-
+import DetalhesPopup from "./DetalhesPopup";
 
 export default function ListaCompras({nome, id, ingredientes}) {
     
     var [popup, setPopup] = useState(true);
-    const tmp = ">";
+    var [ingredientString, setIngredientString] = useState("");
+    
+    useEffect(() => {
+        var s = "";
+        ingredientes.map((ing) => {
+            s = s + ing.nome + ", ";
+        });
+        setIngredientString(s);
+    })
+
     return(
-        <div id="compras" className="componente">
-            <label id="nome">{nome}</label>
-            <label id="nome">{id}</label>
-            {
-                ingredientes.map((ing) => (
-                    <label>{ing.nome}</label>
-                    ))
-            }
-            
-            <div className="buttons">
-                
-                <button onClick={e => setPopup(!popup)}>{tmp}</button>
-            </div>
-            <div hidden={popup}>
-                  <Link to={`/detalhes-lista-compras/${id}`}><h3 className="cinza">Detalhes</h3></Link>
-                  <h3 className="vermelho" onClick={e => setPopup(!popup)}>Remover</h3>
+        <div id="" className="row w-100 align-items-center text-center border-bottom mt-3 py-3">
+
+            <div className="col-10 d-flex">
+                <label id="id" className="col-1 my-auto">{id}</label>
+                <label id="nome" className="col-2 my-auto">{nome}</label>
+                <p className="col-9 my-auto">{ingredientString}</p>
+            </div>            
+            <div className="col-2">
+                <div className="row d-flex justify-content-center">
+                    <DetalhesPopup 
+                        id={id}
+                        favoritavel={false}
+                        removeObjeto={""}
+                        favoritaObjeto={""}
+                        rotaConsulta={"detalhes-lista-compras"} 
+                    ></DetalhesPopup>
+                </div>
             </div>
         </div>
     )
