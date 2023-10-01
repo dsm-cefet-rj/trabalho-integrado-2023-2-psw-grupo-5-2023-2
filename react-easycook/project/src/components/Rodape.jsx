@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom'
 
 export default function Rodape(){
     return (
-        <div className='Rodape'>
+        <div className='navbar bg-secondary px-5 mt-auto sticky-bottom'>
             <Link to='/'>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ff3d3d" class="bi bi-house-fill icone-home-page" viewBox="0 0 16 16">
             <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>

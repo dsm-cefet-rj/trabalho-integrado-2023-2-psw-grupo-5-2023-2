@@ -34,9 +34,7 @@ export default function Receitas(){
                     objetos={receitas}
                     tipoObjeto={"receita"}
                 ></Lista>
-                <div className='listas'>                  
-                    <Rodape></Rodape>
-                </div>
+                <Rodape></Rodape>
             </div>
         </div>
     )

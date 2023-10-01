@@ -49,8 +49,8 @@ export default function Estoque(){
     }, [refreshKey]);
 
     return (
-        <div>
-            <div>
+        <div className='container-fluid p-0 '>
+            <div className=''>
                 <Cabecalho titulo="Estoque" home filtro></Cabecalho>
             </div>
             <div id='estoque'>
@@ -66,9 +66,9 @@ export default function Estoque(){
                     <div className='listas'>
                     </div>
                     
-                    <Rodape></Rodape>
                 </div>
             </div>
+            <Rodape></Rodape>
         </div>
     )
 

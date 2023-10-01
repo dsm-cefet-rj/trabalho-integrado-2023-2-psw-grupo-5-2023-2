@@ -16,7 +16,7 @@ export function Lista({
 }) {
      
     return (
-        <div id="listas">
+        <div id="listas" className="min-vh-100">
             <Link to={rotaNovoObj}>
                 <button id="novo-objeto">{nomeObjetos}</button>
             </Link>

@@ -9,10 +9,12 @@ import {Link} from 'react-router-dom'
 
 export default function HomePage(){
     return (
-        <div className='container' id='home'>
-          <img src={logo} className="d-block"></img>
-          <ContentHP></ContentHP>
-          <Rodape></Rodape>
+        <div className=''>
+          <div className='container min-vh-100' id='home'>
+            <img src={logo} className="d-block"></img>
+            <ContentHP></ContentHP>
+          </div>
+            <Rodape></Rodape>
         </div>
-    )
+          )
 }
