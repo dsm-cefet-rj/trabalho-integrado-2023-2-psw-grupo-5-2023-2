@@ -58,16 +58,16 @@ export default function Ingrediente({
     return(
         <div className="row w-100 align-items-center text-center border-bottom mt-3 py-3">
 
-            <div className="col-9 d-flex">
-                <label id="id" className="col-1 my-auto">{id}</label>
-                <label id="nome" className="col-2 my-auto">{nome}</label>
-                <p id="descricao" className="col-5 text-start my-auto">{descricao} </p>
-                <label id="categoriaPrincipal" className="col-1 my-auto">{categoriaPrincipal}</label>
-                <label id="qtd" className="col-2 my-auto">{qtd}</label>
-                <label id="medida" className="col-1 my-auto">{medida}</label>
+            <div className="col-md-9 col-12 d-flex mb-4 mb-md-0 flex-wrap">
+                <label id="id" className="col-1 col-md-1 my-auto">{id}</label>
+                <label id="nome" className="col-5 col-md-2 my-auto">{nome}</label>
+                <label id="categoriaPrincipal" className="col-5 col-md-2 my-auto">{categoriaPrincipal}</label>
+                <p id="descricao" className="col-12 col-md-4 text-center text-md-start my-4 ps-3 my-md-auto">{descricao} </p>
+                <label id="qtd" className="col-6 col-md-2 my-auto text-end text-md-center">{qtd}</label>
+                <label id="medida" className="col-6 col-md-1 my-auto text-start text-md-center">{medida}</label>
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-md-3">
                 <div className="row d-flex justify-content-center">
                     <button className="col-3 mx-1 btn btn-primary" onClick={() => {atualizarQtdDB(id, Number(qtd+variacao)); setQtd(qtd + variacao)}}>+</button>
                     <button className="col-3 mx-1 btn btn-primary" onClick={() => {if (qtd > (variacao - 1)) {atualizarQtdDB(id, qtd-variacao); setQtd(qtd - variacao)}}}>-</button>

@@ -33,6 +33,7 @@ export function Lista({
                     nome={obj.nome}
                     qtd={obj.qtd}
                     variacao={obj.variacao}
+                    categoriaPrincipal={obj.categoriaPrincipal}
                     medida={obj.medida}
                     descricao={obj.descricao}
                     id={obj.id}
