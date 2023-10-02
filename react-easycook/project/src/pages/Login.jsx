@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/easycook1-nobg.png'
+import '../styles/old.login.css'
 
 export default function Login(){
 
@@ -35,7 +36,7 @@ const getApiData = async () => {
 
   return (
       <div className='p-5 vh-100 mx-auto col-lg-6 col-12'>
-        <img src={logo} alt="Easy Cook logo" className='mx-auto d-block'/>
+        <img src={logo} alt="Easy Cook logo" className='mx-auto d-block blend-mode'/>
         <div className="form-outline mb-4">
           <label id="login" class="form-label">Login</label>
           <input id='userEmail' placeholder='Seu e-mail' type='email' className="form-control bg-branco"

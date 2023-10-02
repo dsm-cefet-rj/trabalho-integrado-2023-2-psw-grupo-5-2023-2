@@ -7,11 +7,11 @@ export default function ContainerBodyLC(){
             <form>
                 <div className="mb-3 row mb-3">
                     <label for="nome-lista" className="form-label">Nome</label>
-                    <input type="text" className="form-control width" id="nome-lista" aria-describedby="nome-lista"/>
+                    <input type="text" className="form-control width bg-branco cor-cinza" id="nome-lista" aria-describedby="nome-lista"/>
                 </div>
                 <div className="mb-3 row mb-3">
                     <label for="ingrediente-form" className="form-label">Ingredientes</label>
-                    <select className="form-select width" id="ingredientes-form" aria-describedby="ingredientes-form">
+                    <select className="form-select width bg-branco cor-cinza" id="ingredientes-form" aria-describedby="ingredientes-form">
                         <option>Escolha os ingredientes</option>
                         <option>Ingrediente 1</option>
                         <option>Ingrediente 2</option>
@@ -42,7 +42,7 @@ export default function ContainerBodyLC(){
               
                 <div className="mb-3 row mb-3">
                     <label for="descricao-lista" className="form-label">Descrição</label>
-                    <textarea className="form-control width" id="descricao-lista" rows="3"></textarea>
+                    <textarea className="form-control width bg-branco cor-cinza" id="descricao-lista" rows="3"></textarea>
                 </div>
                 <div className="">
                     <button type="submit" className="btn btn-primary row mb-3" >Criar</button>

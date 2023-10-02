@@ -11,7 +11,7 @@ export default function HomePage(){
     return (
         <div className=''>
           <div className='container min-vh-100' id='home'>
-            <img src={logo} className="d-block"></img>
+            <img src={logo} className="d-block blend-mode"></img>
             <ContentHP></ContentHP>
           </div>
             <Rodape></Rodape>

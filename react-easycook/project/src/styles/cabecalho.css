@@ -126,15 +126,11 @@ body{
     border: 0 none;
     font-size: 110%;
   }
-  .Cabecalho .icone-filtro{
-    width: 3.5em;
-  }
+ 
   .Cabecalho .icone-filtro:hover{
     cursor: pointer;
   }
-  .Cabecalho .icone-home{
-    width: 5em;
-  }
+ 
 
 #edicao a:link, #edicao a:visited{
   color: white;
@@ -160,7 +156,6 @@ body{
 .Cabecalho button:hover {
   cursor: pointer;
 }
-.icone-tres-pontos, .excluir{
+.icone-tres-pontos, .excluir, .icone-favoritar{
   cursor: pointer;
 }
-

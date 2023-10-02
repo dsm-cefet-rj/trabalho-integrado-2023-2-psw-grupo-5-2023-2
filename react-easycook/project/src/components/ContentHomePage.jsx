@@ -6,7 +6,7 @@ export default function ContentHP(){
     return (
         <div className='card-group'>
             <div className="card text-center bg-branco rounded-3 mx-2">
-                <h1 className="card-header border-0">Em falta!</h1>
+                <h1 className="card-header border-0 cor-titulo">Em falta!</h1>
                 <div className="card-body">
                     <ul>
                        <li>Ingrediente 1</li>
@@ -20,7 +20,7 @@ export default function ContentHP(){
                 </div>
             </div>
                 <div className="card text-center bg-branco rounded-3 mx-auto">
-                    <h1 className="card-header border-0">Em falta!</h1>
+                    <h1 className="card-header border-0  cor-titulo">Em falta!</h1>
                     <div className="card-body">
                         <p>Lista de ingredientes ou modo de preparo da receita selecionada nesse painel.</p>
                     </div>
