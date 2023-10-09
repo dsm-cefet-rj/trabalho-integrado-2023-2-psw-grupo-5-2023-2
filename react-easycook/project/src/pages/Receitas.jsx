@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/estoque.css'
 import Cabecalho from '../components/Cabecalho'
 import { Lista } from '../components/Listas'
 import Rodape from '../components/Rodape'
 import Receita from '../components/Receita'
-import '../styles/listas.css'
 
 export default function Receitas(){
 
@@ -27,15 +25,17 @@ export default function Receitas(){
             <div>
                 <Cabecalho titulo="Receitas" home filtro></Cabecalho>
             </div>
-            <div className='lista-receitas'>
-                <Lista 
-                    nomeObjetos="Nova Receita"
-                    rotaNovoObj="/nova-receita"
-                    objetos={receitas}
-                    tipoObjeto={"receita"}
-                ></Lista>
-                <Rodape></Rodape>
+            <div>
+                <div>
+                    <Lista 
+                        nomeObjetos="Nova Receita"
+                        rotaNovoObj="/nova-receita"
+                        objetos={receitas}
+                        tipoObjeto={"receita"}
+                    ></Lista>
+                </div>
             </div>
+            <Rodape></Rodape>
         </div>
     )
 }

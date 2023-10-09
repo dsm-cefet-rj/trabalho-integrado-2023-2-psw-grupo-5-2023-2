@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import '../styles/listas.css'
 import { Link } from "react-router-dom"
 import ListaDeCompras from "../pages/ListasDeCompras";
 import ListaCompras from "./ListasCompras";
 import Ingrediente from './Ingrediente'
 import Receita from "./Receita";
+import '../styles/listas.css'
 
 export function Lista({
     tipoObjeto, 
@@ -16,7 +16,7 @@ export function Lista({
 }) {
      
     return (
-        <div id="listas" className="container-fluid border-black border-black min-vh-100 my-0">
+        <div id="listas" className="container-fluid border-black border-black min-vh-100 my-0 bg-azure">
             <Link to={rotaNovoObj}>
                 <button className="" id="novo-objeto">{nomeObjetos}</button>
             </Link>

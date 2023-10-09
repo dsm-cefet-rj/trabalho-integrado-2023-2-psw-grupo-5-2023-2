@@ -31,6 +31,7 @@ export default function ListaCompras({nome, id, ingredientes}) {
                         removeObjeto={""}
                         favoritaObjeto={""}
                         rotaConsulta={"detalhes-lista-compras"} 
+                        redundante={true}
                     ></DetalhesPopup>
                 </div>
             </div>

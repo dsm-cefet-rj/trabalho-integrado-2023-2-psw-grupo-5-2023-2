@@ -1,7 +1,6 @@
 import { useState } from "react";
-import '../styles/ingrediente.css';
-import '../styles/receita.css';
 import { Link } from "react-router-dom";
+import DetalhesPopup from "./DetalhesPopup";
 
 export default function Receita({nome, categoriaPrincipal, id, descricao, ingredientes}) {
     
@@ -33,19 +32,23 @@ export default function Receita({nome, categoriaPrincipal, id, descricao, ingred
         removeReceita(id)
     }
     return(
-        <div id="receita" className="componente">
-            <label id="nome">{nome}</label>
-            <label id="descricao">{descricao}</label>
-
-            
-            <div className="buttons">
-                
-                <button onClick={e => setPopup(!popup)}>{tmp}</button>
-            </div>
-            <div id="popup-detalhes-excluir" hidden={popup}>
-                  <Link to={`/detalhes-receita/${id}`}><h3 className="cinza">Detalhes</h3></Link>
-                  <h3 className="vermelho" onClick={HandleRemoveReceitaClick}>Remover</h3>
-                  <h3 className="favoritar" onClick=''>Favoritar</h3>
+        <div className="row w-100 align-items-center text-center border-bottom mt-3 py-3">
+            <div className="col-9 d-flex">
+                <label id="nome" className="col-2 my auto">{nome}</label>
+                <label id="descricao" className="col-4 my auto">{descricao}</label>
+                <p className="col-6 my-auto">blablabla</p>
+            </div>    
+            <div className="col-3">
+                <div className="row d-flex justify-content-center">
+                    <DetalhesPopup
+                        id={id}
+                        favoritavel={true}
+                        removeObjeto={""}
+                        favoritaObjeto={""}
+                        rotaConsulta={"detalhes-receita"}
+                        redundante={true}
+                    ></DetalhesPopup>
+                </div>
             </div>
         </div>
     )
