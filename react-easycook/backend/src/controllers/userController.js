@@ -11,7 +11,7 @@ import userSchema from '../../models/userSchema.js'
         if(!userNome || !id){
             //erro
             return response.status(400).json({
-                erro: 'necessario preencher nome e id'})
+                erro: 'necessario preencher nome e/ou id'})
         }
 
         const userCreated = await userSchema.create({
@@ -25,7 +25,36 @@ import userSchema from '../../models/userSchema.js'
         })
         return response.json(userCreated)
     }
- export default {create, read}
+
+    async function deleteUser(request, response){
+        const {id} = request.params
+
+        const userDeleted = await userSchema.findOneAndDelete({_id: id})
+
+        if(userDeleted){
+            return response.json(userDeleted)
+        }
+        return response.status(401).json({error: 'não foi encontrado o registro para deletar'})
+    }
+     
+    async function update(request, response){
+        const {id} = request.params
+        const updateData = request.body
+
+        try{
+            const updatedUser = await userSchema.findOneAndUpdate({_id:id}, updateData,{new:true})
+        
+        if(updatedUser){
+            return response.json(updatedUser)
+        }
+        return response.status(404).json({error: 'não foi encontrado o registro para atualizar'})
+        }
+        catch(error){
+            return response.status(500).json({ error: 'erro interno do servidor' })
+        }
+    }
+
+ export default {create, read, deleteUser, update}
 
 
     
