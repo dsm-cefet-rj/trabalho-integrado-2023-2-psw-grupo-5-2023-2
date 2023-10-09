@@ -1,6 +1,20 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
-import ingredienteSchema from '../models/ingredienteSchema'
+
+const ingredienteSchema = new Schema({
+    nome: {type:String},
+    categoriaPrincipal: {type:String},
+    medida: {type:String},
+    qtd: {type:Number},
+    variacao: {type:Number},
+    descricao: {type:String},
+    id: {
+        type:String,
+        required: true
+    }
+})
+
+
 
 const receitaSchema = new Schema({
     nome: {type:String},
@@ -10,7 +24,9 @@ const receitaSchema = new Schema({
         required: true
     },
     descricao: {type:String},
-    ingredientes: {type: {ingredienteSchema}}
+    ingredientes: {
+        type: [ingredienteSchema]
+    }
 })
 
 
