@@ -1,7 +1,7 @@
 import express from 'express'
 const app = express()
 
-import routes from '../src/routes/routes.js'
+import routes from '../src/routes.js'
 
 import '../src/config/dbConfig.js'
 

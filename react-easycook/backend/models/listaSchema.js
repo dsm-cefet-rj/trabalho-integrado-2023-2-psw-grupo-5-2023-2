@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
-import ingredienteSchema from './ingredienteSchema'
+import ingredienteSchema from '../models/ingredienteSchema.js'
 
 const listaSchema = new Schema({
     nome: {type:String},
