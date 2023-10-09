@@ -8,10 +8,10 @@ import userSchema from '../../models/userSchema.js'
     async function create(request, response){
         const {id, userNome, userEmail, userCpf, userPassword, userDataNasc, createdAt} = request.body
 
-        if(!userNome || !id){
+        if(!userNome || !id || !userEmail || !userCpf || !userPassword || !userDataNasc){
             //erro
             return response.status(400).json({
-                erro: 'necessario preencher nome e/ou id'})
+                erro: 'preencha todos os campos'})
         }
 
         const userCreated = await userSchema.create({

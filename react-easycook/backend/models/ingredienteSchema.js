@@ -5,8 +5,8 @@ const ingredienteSchema = new Schema({
     nome: {type:String},
     categoriaPrincipal: {type:String},
     medida: {type:String},
-    qtd: {type:String},
-    variacao: {type:String},
+    qtd: {type:Number},
+    variacao: {type:Number},
     descricao: {type:String},
     id: {
         type:String,
