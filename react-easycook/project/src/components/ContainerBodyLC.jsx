@@ -4,8 +4,9 @@ export default function ContainerBodyLC() {
   return (
     <div className="Container">
       <form>
-        <div className="mb-3 row mb-3">
-          <label for="nome-lista" className="form-label">
+        <div className="row col-10 px-5 mx-auto text-center align-items-center justify-content-center my-3 py-3">
+        <div className="input-group mb-3 px-0">
+          <label for="nome-lista" className="input-group-text">
             Nome
           </label>
           <input
@@ -15,10 +16,7 @@ export default function ContainerBodyLC() {
             aria-describedby="nome-lista"
           />
         </div>
-        <div className="mb-3 row mb-3">
-          <label for="ingrediente-form" className="form-label">
-            Ingredientes
-          </label>
+        <div className="input-group mb-3 px-0">
           <select
             className="form-select width bg-branco cor-cinza"
             id="ingredientes-form"
@@ -30,10 +28,10 @@ export default function ContainerBodyLC() {
             <option>Ingrediente 3</option>
           </select>
         </div>
-        <div className="row mb-3">
-          <div className="section">
-            <div className="div-ing">
-              <label for="Qtd">Ingrediente </label>
+        <div className=" mb-3 px-0">
+          
+            <div className="section input-group">
+              <label for="Qtd" className="input-group-text">Ingrediente </label>
               <input
                 className="Qtd"
                 type="number"
@@ -43,11 +41,11 @@ export default function ContainerBodyLC() {
                 min="1"
                 step="1"
               />
-              <label for="Qtd">Un</label>
+              <label for="Qtd" className="input-group-text">Un</label>
             </div>
             <br></br>
-            <div className="div-ing">
-              <label for="Qtd">Ingrediente </label>
+            <div className="div-ing section input-group">
+              <label for="Qtd" className="input-group-text">Ingrediente </label>
               <input
                 className="Qtd"
                 type="number"
@@ -57,11 +55,11 @@ export default function ContainerBodyLC() {
                 min="1"
                 step="1"
               />
-              <label for="Qtd">Kg</label>
+              <label for="Qtd" className="input-group-text">Kg</label>
             </div>
             <br></br>
-            <div className="div-ing">
-              <label for="Qtd">Ingrediente </label>
+            <div className="div-ing section input-group">
+              <label for="Qtd" className="input-group-text">Ingrediente </label>
               <input
                 className="Qtd"
                 type="number"
@@ -71,12 +69,10 @@ export default function ContainerBodyLC() {
                 min="100"
                 step="50"
               />
-              <label for="Qtd">mL</label>
+              <label for="Qtd" className="input-group-text">mL</label>
             </div>
-          </div>
-
-          <div className="mb-3 row mb-3">
-            <label for="descricao-lista" className="form-label">
+            <br></br>
+            <label for="descricao-lista" className="input-group-text">
               Descrição
             </label>
             <textarea
@@ -84,9 +80,10 @@ export default function ContainerBodyLC() {
               id="descricao-lista"
               rows="3"
             ></textarea>
+          
           </div>
-          <div className="">
-            <button type="submit" className="btn btn-primary row mb-3">
+          <div className="row justify-content-center mx-auto px-0">
+            <button type="submit" className="btn btn-primary col-6">
               Criar
             </button>
           </div>
