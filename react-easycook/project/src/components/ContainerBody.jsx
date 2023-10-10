@@ -190,21 +190,19 @@ function ContainerNovaListaDeCompras() {
 function ContainerNovaReceitas() {
   return (
     <div className="Container" id="container">
-      <form className="grid" id="form">
-        <div>
-          <img src={img} className="quadrado" alt="imagem-ingrediente" />
-        </div>
-        <div className="area1">
-          <div className="area-nome">
-            <label> Nome </label>
+      <form className="row col-10 px-5 mx-auto text-center align-items-center justify-content-center my-3 py-3" id="form">
+        
+        <div className="">
+          <div className="input-group mb-3 px-0">
+            <label className="input-group-text"> Nome </label>
             <br></br>
-            <input placeholder="Nome" type="text" id="criar-nome-ing" />
+            <input placeholder="Nome" type="text"  className="form-control bg-azure" id="criar-nome-ing" />
           </div>
 
-          <div className="area-categoria">
-            <label> Categoria Principal </label>
+          <div className="input-group mb-3 px-0">
+            <label className="input-group-text"> Categoria Principal </label>
             <br></br>
-            <select className="categoria">
+            <select className="form-select bg-azure">
               <option> Categoria 1</option>
               <option> Categoria 2 </option>
               <option> Categoria 3 </option>
@@ -212,8 +210,8 @@ function ContainerNovaReceitas() {
             </select>
           </div>
 
-          <div className="area-ingrediente">
-            <label> Ingredientes </label>
+          <div className="input-group">
+            <label className="input-group-text"> Ingredientes </label>
             <br></br>
             <select style={{ width: "70%" }} className="ingrediente">
               <option> Ingrediente 1</option>
