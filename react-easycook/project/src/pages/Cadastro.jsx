@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/easycook1-nobg.png'
 import '../styles/Cadastro.css'
@@ -25,6 +25,17 @@ export default function Login(){
     "userPassword": userPassword,
     "userDataNasc": userDataNasc
   }
+
+  useEffect(() => {
+    function enableSubmitButton(){
+      let btn = document.getElementById('button-cadastro')
+      btn.style.background = '#B22828'
+      if(userNome && userEmail && userCpf && userDataNasc && userPassword){
+        btn.style.background = '#ff2635'
+      }
+    }
+    enableSubmitButton()
+}, [userNome, userEmail, userCpf, userDataNasc, userPassword])
 
   return (
       <div className='container'>
@@ -86,7 +97,7 @@ export default function Login(){
           </div>
         </div>
         <div className="row justify-content-center mt-3">
-            <button className="btn btn-primary col-3 mx-2" onClick={submitCadastro}>Cadastrar-se</button>
+            <button id="button-cadastro" className="btn btn-primary col-3 mx-2" onClick={submitCadastro}>Cadastrar-se</button>
             <Link to="/login" className="btn btn-primary col-3 text-white mx-2">Voltar</Link>
         </div>
         
@@ -115,4 +126,6 @@ export default function Login(){
       },
     })
   }
+
+  
 }

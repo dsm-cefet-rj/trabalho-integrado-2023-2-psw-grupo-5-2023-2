@@ -83,3 +83,8 @@
 .blend-mode{
     mix-blend-mode: multiply;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

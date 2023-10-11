@@ -39,6 +39,14 @@
       "userCpf": "",
       "userPassword": "",
       "userDataNasc": "2023-10-22"
+    },
+    {
+      "id": 654767,
+      "userNome": "fsfsfsf",
+      "userEmail": "gfdgdggd",
+      "userCpf": "6547674",
+      "userPassword": "436363663",
+      "userDataNasc": "2000-04-23"
     }
   ],
   "ingredientes": [
