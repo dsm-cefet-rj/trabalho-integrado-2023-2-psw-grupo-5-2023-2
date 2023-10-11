@@ -8,7 +8,16 @@ const listaSchema = new Schema({
         type:String,
         required: true
     },
-    ingredientes: {type: {ingredienteSchema}}
+    ingredientes:  [{nome: {type:String},
+        categoriaPrincipal: {type:String},
+        medida: {type:String},
+        qtd: {type:Number},
+        variacao: {type:Number},
+        descricao: {type:String},
+        id: {
+            type:String,
+            required: true
+        }}]
 })
 
 export default mongoose.model('Lista', listaSchema)

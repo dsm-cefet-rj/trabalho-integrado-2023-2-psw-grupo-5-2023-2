@@ -4,7 +4,8 @@ const routes = express.Router()
 import userController from '../src/controllers/userController.js'
 import ingredientController from '../src/controllers/ingredientController.js'
 import recipeController from '../src/controllers/recipeController.js'
-import receitaSchema from '../models/receitaSchema.js'
+import listController from './controllers/listController.js'
+
 
 //Rota Usuario
 routes.post('/usuario', userController.create)
@@ -22,6 +23,10 @@ routes.patch('/ingrediente/:id', ingredientController.update)
 routes.post('/receita', recipeController.create)
 routes.get('/receita', recipeController.read)
 routes.delete('/receita/:id', recipeController.deleteRecipe)
-routes.patch('/receita/:id', recipeController.update)
+
+//Rota Lista
+routes.post('/lista', listController.create)
+routes.get('/lista', listController.read)
+routes.delete('/lista/:id', listController.deleteList)
 
 export default routes

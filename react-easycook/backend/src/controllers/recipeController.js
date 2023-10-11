@@ -1,7 +1,7 @@
 import receitaSchema from '../../models/receitaSchema.js'
 
 
-async function update(request, response){
+/*async function update(request, response){
     const {id} = request.params
     const {ingredientes} = request.body
     const {descricao} = request.body
@@ -21,7 +21,7 @@ async function update(request, response){
     }
     return response.json(recipe)
 }
-
+*/
 
 async function create(request, response){
     const {nome,
@@ -60,4 +60,4 @@ async function read(request, response){
     return response.json(recipeList)
 }
 
-export default {update, create, deleteRecipe, read}
+export default {create, deleteRecipe, read}
