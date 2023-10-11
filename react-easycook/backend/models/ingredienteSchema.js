@@ -14,4 +14,5 @@ const ingredienteSchema = new Schema({
     }
 })
 
+
 export default mongoose.model('Ingrediente', ingredienteSchema)

@@ -1,14 +1,22 @@
 import receitaSchema from '../../models/receitaSchema.js'
 
+
 async function update(request, response){
     const {id} = request.params
     const {ingredientes} = request.body
+    const {descricao} = request.body
+    const {nome} = request.body
+    const {categoriaPrincipal} = request.body
 
     const recipe = await receitaSchema.findOne({_id:id})
 
     if(ingredientes){
-        recipe.ingredientes = ingredientes
-
+        recipe.descricao = descricao
+        if(descricao==""){
+            recipe.descricao = ""
+        }
+        recipe.nome = nome
+        recipe.categoriaPrincipal = categoriaPrincipal
         await recipe.save()
     }
     return response.json(recipe)
@@ -36,6 +44,20 @@ async function create(request, response){
     return response.json(recipeCreated)
 }
 
+async function deleteRecipe(request, response){
+    const {id} = request.params
 
+    const recipeDeleted = await receitaSchema.findOneAndDelete({_id: id})
 
-export default {update, create}
+    if(recipeDeleted){
+        return response.json(recipeDeleted)
+    }
+    return response.status(401).json({error: 'não foi encontrado o registro para deletar'})
+}
+
+async function read(request, response){
+    const recipeList = await receitaSchema.find()
+    return response.json(recipeList)
+}
+
+export default {update, create, deleteRecipe, read}
