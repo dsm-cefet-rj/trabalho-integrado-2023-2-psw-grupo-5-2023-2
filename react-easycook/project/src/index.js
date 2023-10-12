@@ -8,6 +8,9 @@ import { Route, BrowserRouter, createBrowserRouter, RouterProvider } from "react
 // PÁGINAS
 import Routes from './routes'
 
+import {Provider} from 'react-redux'
+import store from './redux/store'
+
   // Movido para routes.js porque fica mais limpo
 const router = createBrowserRouter(Routes)
 
@@ -19,6 +22,8 @@ const router = createBrowserRouter(Routes)
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <div className=''>
+    <Provider store={store}>
     <RouterProvider router={router}/>
+    </Provider>
   </div>
 )

@@ -6,10 +6,18 @@ import iconeIngrediente from '../images/menu-ingredientes.png'
 import iconeReceitas from '../images/menu-receitas.png'
 import iconeFavoritos from '../images/menu-favorito.png'
 
+import {useSelector, useDispatch} from 'react-redux'
+
 //LINK do ROUTER
 import {Link} from 'react-router-dom'
+import rootReducer from '../redux/root-reducer'
 
 export default function Rodape(){
+
+    const {currentUser} = useSelector(rootReducer => rootReducer.userReducer);
+    const dispatch = useDispatch()
+
+    console.log({currentUser});
     return (
         <div className='navbar bg-secondary px-5 mt-auto sticky-bottom'>
             <Link to='/' class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Página Inicial">
