@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DetalhesPopup from "./DetalhesPopup";
+import '../styles/receita2.css'
 
 export default function Receita({nome, categoriaPrincipal, id, descricao, ingredientes}) {
     
@@ -35,8 +36,8 @@ export default function Receita({nome, categoriaPrincipal, id, descricao, ingred
         <div className="row w-100 align-items-center text-center border-bottom mt-3 py-3">
             <div className="col-9 d-flex">
                 <label id="nome" className="col-2 my auto">{nome}</label>
-                <label id="descricao" className="col-4 my auto">{descricao}</label>
-                <p className="col-6 my-auto">blablabla</p>
+                <label id="descricao" className="col-12 my auto">{descricao} </label>
+                
             </div>    
             <div className="col-3">
                 <div className="row d-flex justify-content-center">

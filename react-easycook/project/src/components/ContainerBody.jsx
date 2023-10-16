@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import img from "../../src/images/quadrado-vinho.jpg";
 import NotFound from "../pages/NotFound";
 import {
-  CategoriasDeIngredientes,
-
+  CategoriasDeReceitas,
 } from "../listas";
 import { FetchScript as fs } from "../scripts/fetchScripts";
 
@@ -205,9 +204,11 @@ function ContainerNovaReceitas() {
   useEffect(() => {
     fs.getApiData("ingredientes").then((value) => {
       setOpcoesSubstitutosSubstitutos(value);
-      setId(value.length);
+  
     });
-
+    fs.getApiData("receitas").then((value) => {
+      setId(value.length);
+    })
   }, []);
 
 
@@ -227,10 +228,12 @@ function ContainerNovaReceitas() {
             <label className="input-group-text"> Categoria Principal </label>
             <br></br>
             <select className="form-select bg-azure" onChange={e => setcategoriaPrincipal(e.target.value)}>
-              <option> Categoria 1</option>
-              <option> Categoria 2 </option>
-              <option> Categoria 3 </option>
-              <option> Categoria 4 </option>
+            <option disabled selected value hidden="true">
+              Categoria Principal
+            </option>
+            {CategoriasDeReceitas.map((cat) => (
+              <option value={cat}>{cat}</option>
+            ))}
             </select>
           </div>
 
@@ -255,10 +258,10 @@ function ContainerNovaReceitas() {
           </div>
         
 
-          <div className="area-descricao" onChange={e => setdescricao(e.target.value)}>
-            <label> Descrição e Modo de Preparo </label>
+          <div className="input-group mb-3 px-0" onChange={e => setdescricao(e.target.value)}>
+            <label className="input-group-text"> Descrição e Modo de Preparo </label>
             <br></br>
-            <textarea cols="33" rows="6" placeholder="Descrição e Modo de Preparo">
+            <textarea className="input-group mb-0 px-9 form-control bg-azure" cols="33" rows="6" placeholder="Descrição e Modo de Preparo">
               
             </textarea>
           </div>
@@ -280,6 +283,7 @@ function ContainerNovaReceitas() {
       id,
       nome,
       categoriaPrincipal,
+      ingredientes,
       descricao,
     });
     console.log(requestBody);

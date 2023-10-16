@@ -12,6 +12,20 @@ export const CategoriasDeIngredientes = [
     "Açúcares e Doces"
 ]
 
+export const CategoriasDeReceitas = [
+    "Doces e Sobremesas",
+    "Carnes",
+    "Aves",
+    "Peixes e Frutos do Mar",
+    "Saladas, Molhos e Acompanhamentos",
+    "Sopas",
+    "Massas",
+    "Bebidas",
+    "Lanches",
+    "Alimentação Saudável",
+    "Prato Único"
+]
+
 export const OpcoesDeMedidas = [
     "g",
     "Kg",
