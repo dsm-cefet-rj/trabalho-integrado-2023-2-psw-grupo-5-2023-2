@@ -2,20 +2,20 @@ import React from "react"
 import { Route, BrowserRouter, redirect } from "react-router-dom"
 
     // Páginas
-import Login from './pages/Login'
-import HomePage from './pages/HomePage'
-import NovoIngrediente from './pages/NovoIngrediente'
-import EditarIngrediente from './pages/EditarIngrediente'
-import Estoque from './pages/Estoque'
-import Cadastro from "./pages/Cadastro"
-import NotFound from "./pages/NotFound"
-import NovaListaDeCompras from "./pages/NovaListaDeCompras"
-import ListaDeCompras from "./pages/ListasDeCompras"
-import Receitas from "./pages/Receitas"
-import NovaReceita from "./pages/NovaReceita"
-import DetalhesIngredientes from "./pages/DetalhesIngredientes"
-import DetalhesReceita from "./pages/DetalhesReceita"
-import DetalhesCompras from "./pages/DetalhesCompras"
+import Login from '../src/pages/Login.jsx'
+import HomePage from '../src/pages/HomePage.jsx'
+import NovoIngrediente from '../src/pages/NovoIngrediente.jsx'
+import EditarIngrediente from '../src/pages/EditarIngrediente.jsx'
+import Estoque from '../src/pages/Estoque.jsx'
+import Cadastro from "../src/pages/Cadastro.jsx"
+import NotFound from "../src/pages/NotFound.jsx"
+import NovaListaDeCompras from "../src/pages/NovaListaDeCompras.jsx"
+import ListaDeCompras from "../src/pages/ListasDeCompras.jsx"
+import Receitas from "../src/pages/Receitas.jsx"
+import NovaReceita from "../src/pages/NovaReceita.jsx"
+import DetalhesIngredientes from "../src/pages/DetalhesIngredientes.jsx"
+import DetalhesReceita from "../src/pages/DetalhesReceita.jsx"
+import DetalhesCompras from "../src/pages/DetalhesCompras.jsx"
 
     // path: 'caminho após o link'
     //element: <Página/>

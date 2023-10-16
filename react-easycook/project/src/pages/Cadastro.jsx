@@ -110,7 +110,7 @@ export default function Login(){
     console.log(`userData: ${userData}`);
     console.log(`JSON.stringify(userData): ${JSON.stringify(userData)}`);
     
-    fetch('http://localhost:3002/users', {
+    fetch('http://localhost:3001/usuario', {
       method: 'POST', 
       mode: 'cors', 
       body: JSON.stringify({

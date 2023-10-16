@@ -6,7 +6,7 @@ import './styles.scss'
 import { Route, BrowserRouter, createBrowserRouter, RouterProvider } from "react-router-dom"
 
 // PÁGINAS
-import Routes from './routes'
+import Routes from '../src/routes.js'
 
   // Movido para routes.js porque fica mais limpo
 const router = createBrowserRouter(Routes)
