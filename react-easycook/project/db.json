@@ -138,28 +138,6 @@
       "nome": "Salada de Abacaxi",
       "categoriaPrincipal": "Categoria 3",
       "descricao": "só abacaxi...."
-    },
-    {
-      "id": 3,
-      "nome": "dgfgd",
-      "categoriaPrincipal": "Sopas",
-      "ingredientes": [],
-      "descricao": ""
-    },
-    {
-      "id": 4,
-      "nome": "Sanduíche",
-      "categoriaPrincipal": "Lanches",
-      "ingredientes": {
-        "nome": "Ovo",
-        "categoriaPrincipal": "Derivados",
-        "medida": "Un",
-        "qtd": 6,
-        "variacao": 1,
-        "descricao": "Um Ovo",
-        "id": 0
-      },
-      "descricao": ""
     }
   ],
   "listas": [
@@ -210,6 +188,12 @@
           "id": 3
         }
       ]
+    },
+    {
+      "id": 2,
+      "nome": "fsfsfdfsd",
+      "ingredientes": "Ingrediente 3",
+      "descricao": "dsfffs"
     }
   ]
 }

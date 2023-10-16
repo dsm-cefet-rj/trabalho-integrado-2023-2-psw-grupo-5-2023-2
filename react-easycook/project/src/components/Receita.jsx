@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import DetalhesPopup from "./DetalhesPopup";
 import '../styles/receita2.css'
 
-export default function Receita({nome, categoriaPrincipal, id, descricao, ingredientes}) {
+export default function Receita({nome, categoriaPrincipal, id, descricao, ingredientes,refreshPageWithKey}) {
     
     var [popup, setPopup] = useState(true);
     const tmp = ">";
@@ -30,7 +30,10 @@ export default function Receita({nome, categoriaPrincipal, id, descricao, ingred
         }
     };
     const HandleRemoveReceitaClick = () =>{
-        removeReceita(id)
+        removeReceita(id);
+        setTimeout(() => {
+            refreshPageWithKey(id);
+        }, 100);
     }
     return(
         <div className="row w-100 align-items-center text-center border-bottom mt-3 py-3">
@@ -44,7 +47,7 @@ export default function Receita({nome, categoriaPrincipal, id, descricao, ingred
                     <DetalhesPopup
                         id={id}
                         favoritavel={true}
-                        removeObjeto={""}
+                        removeObjeto={HandleRemoveReceitaClick}
                         favoritaObjeto={""}
                         rotaConsulta={"detalhes-receita"}
                         redundante={true}
