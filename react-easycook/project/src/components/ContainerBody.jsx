@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import img from "../../src/images/quadrado-vinho.jpg";
 import NotFound from "../pages/NotFound";
+import {
+  CategoriasDeIngredientes,
+
+} from "../listas";
+import { FetchScript as fs } from "../scripts/fetchScripts";
 
 export default function ContainerBodyNovaPagina({ tipoBody = "" }) {
   return escolheContainer(tipoBody);
@@ -188,6 +194,24 @@ function ContainerNovaListaDeCompras() {
 }
 
 function ContainerNovaReceitas() {
+  let navigate = useNavigate();
+  const [id, setId] = useState();
+  const [nome, setnome] = useState("");
+  const [categoriaPrincipal, setcategoriaPrincipal] = useState(null);
+  const [descricao, setdescricao] = useState("");
+  const [ingredientes, setIngredientes] = useState([])
+  const [opcoesSubstitutos, setOpcoesSubstitutosSubstitutos] = useState([]);
+
+  useEffect(() => {
+    fs.getApiData("ingredientes").then((value) => {
+      setOpcoesSubstitutosSubstitutos(value);
+      setId(value.length);
+    });
+
+  }, []);
+
+
+
   return (
     <div className="Container" id="container">
       <form className="row col-10 px-5 mx-auto text-center align-items-center justify-content-center my-3 py-3" id="form">
@@ -196,13 +220,13 @@ function ContainerNovaReceitas() {
           <div className="input-group mb-3 px-0">
             <label className="input-group-text"> Nome </label>
             <br></br>
-            <input placeholder="Nome" type="text"  className="form-control bg-azure" id="criar-nome-ing" />
+            <input onChange={e => setnome(e.target.value)} placeholder="Nome" type="text"  className="form-control bg-azure" id="criar-nome-ing" />
           </div>
 
           <div className="input-group mb-3 px-0">
             <label className="input-group-text"> Categoria Principal </label>
             <br></br>
-            <select className="form-select bg-azure">
+            <select className="form-select bg-azure" onChange={e => setcategoriaPrincipal(e.target.value)}>
               <option> Categoria 1</option>
               <option> Categoria 2 </option>
               <option> Categoria 3 </option>
@@ -213,54 +237,56 @@ function ContainerNovaReceitas() {
           <div className="input-group">
             <label className="input-group-text"> Ingredientes </label>
             <br></br>
-            <select style={{ width: "70%" }} className="ingrediente">
-              <option> Ingrediente 1</option>
-              <option> Ingrediente 2 </option>
-              <option> Ingrediente 3 </option>
-              <option> Ingrediente 4 </option>
+            <select style={{ width: "70%" }} className="ingrediente" onChange={(e) => {
+              setIngredientes(JSON.parse(e.target.value));
+              console.log(e.target.value);
+            }}>
+            <option selected value={[]}>
+              Ingredientes
+            </option>
+            {opcoesSubstitutos.map((sub) => (
+              <option value={JSON.stringify(sub)}>{sub.nome}</option>
+            ))}
             </select>
             <div id="buttons" style={{ width: "15%" }} className="buttons">
               <button>+</button>
               <button>-</button>
             </div>
           </div>
-        </div>
-        <div className="area2">
-          <div className="area-outras-categorias">
-            <label> Outras Categorias </label>
-            <br></br>
-            <select className="outras-categorias">
-              <option> Outras Categorias 1 </option>
-              <option> Outras Categorias 2 </option>
-              <option> Outras Categorias 3 </option>
-              <option> Outras Categorias 4 </option>
-            </select>
-          </div>
-        </div>
+        
 
-        <div className="area3">
-          <div className="area-substitutos">
-            <label> Substitutos </label>
-            <br></br>
-            <select className="substitutos">
-              <option> Substituto 1 </option>
-              <option> Substituto 2 </option>
-              <option> Substituto 3 </option>
-              <option> Substituto 4 </option>
-            </select>
-          </div>
-
-          <div className="area-descricao">
+          <div className="area-descricao" onChange={e => setdescricao(e.target.value)}>
             <label> Descrição e Modo de Preparo </label>
             <br></br>
-            <textarea cols="33" rows="6">
-              Descrição e Modo de Preparo
+            <textarea cols="33" rows="6" placeholder="Descrição e Modo de Preparo">
+              
             </textarea>
           </div>
 
-          <button type="submit"> Criar </button>
+          <button type="submit" onClick={handleNovaReceita}> Criar </button>
         </div>
       </form>
     </div>
   );
+
+  function handleNovaReceita() {
+    if (
+      nome === "" ||
+      categoriaPrincipal === null 
+    ) {
+      return console.log("Preencha os campos!");
+    }
+    let requestBody = JSON.stringify({
+      id,
+      nome,
+      categoriaPrincipal,
+      descricao,
+    });
+    console.log(requestBody);
+
+    fs.postApiData("receitas", requestBody);
+    setTimeout(() => {
+      navigate("/receitas/");
+    }, 150);
+  }
 }

@@ -87,20 +87,6 @@ export default function App() {
         <div className="input-group mb-3 px-0">
           <select
             className="form-select bg-azure"
-            onChange={(e) => setOutrasCategorias(e.target.value)}
-          >
-            <option selected value={null}>
-              Categoria Alternativa
-            </option>
-            {CategoriasDeIngredientes.map((cat) => (
-              <option value={cat}>{cat}</option>
-            ))}
-          </select>
-        </div>
-
-        <div className="input-group mb-3 px-0">
-          <select
-            className="form-select bg-azure"
             onChange={(e) => {
               setSubstitutos(JSON.parse(e.target.value));
               console.log(e.target.value);

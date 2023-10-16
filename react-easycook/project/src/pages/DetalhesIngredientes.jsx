@@ -13,7 +13,10 @@ const { id } = useParams();
         const response = await fetch(
             "http://localhost:3002/ingredientes/" + id
         ).then((response) => response.json())
-        .then((res) => setingrediente(res))
+        .then((res) => {
+            setingrediente(res)
+        
+        })
         .catch(console.log);
     }
 
@@ -29,20 +32,9 @@ const { id } = useParams();
                 <h1> {ingrediente.nome} </h1>
                 <span> Categoria </span>
                 
-                <p> Categoria </p>
-                <span> Substitutos </span>
+                <p> {ingrediente.categoriaPrincipal} </p>
                 
-                <table id="tabela-substitutos">
-                    <tr>
-                        <td><a href="">Ingrediente 1</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="">Ingrediente 5</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="">Ingrediente 10</a></td>
-                    </tr>
-                </table>
+                
             </div>
             
         </div>
