@@ -28,7 +28,7 @@ export default function Login(){
 
 const getApiData = async () => {
   const response = await fetch(
-      "http://localhost:3002/users"
+      "http://localhost:3001/usuario"
   ).then((response) => response.json())
   .then((data) => setUsers(data))
   .catch(console.log);
