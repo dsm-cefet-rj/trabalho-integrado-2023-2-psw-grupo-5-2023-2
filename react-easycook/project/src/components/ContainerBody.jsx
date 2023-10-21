@@ -256,17 +256,22 @@ function ContainerNovaReceitas() {
               <button>-</button>
             </div>
           </div>
-        
+        <br></br>
 
-          <div className="input-group mb-3 px-0" onChange={e => setdescricao(e.target.value)}>
-            <label className="input-group-text"> Descrição e Modo de Preparo </label>
-            <br></br>
-            <textarea className="input-group mb-0 px-9 form-control bg-azure" cols="33" rows="6" placeholder="Descrição e Modo de Preparo">
-              
+          <div className="px-0 justify-content-center" onChange={e => setdescricao(e.target.value)}>
+            <span className="input-group-text"> Descrição e Modo de Preparo </span>
+            <textarea 
+            className="form-control bg-azure" rows={3} 
+            placeholder="Descrição e Modo de Preparo">
             </textarea>
           </div>
+          <br></br> 
 
-          <button type="submit" onClick={handleNovaReceita}> Criar </button>
+          <div className="mx-auto px-0">
+          <button type="submit" 
+          className="btn btn-primary col-6"
+          onClick={handleNovaReceita}> Criar </button>
+          </div>
         </div>
       </form>
     </div>
