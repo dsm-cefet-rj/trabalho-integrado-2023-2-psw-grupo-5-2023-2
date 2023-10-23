@@ -4,7 +4,13 @@ import userSchema from '../../models/userSchema.js'
         const userList = await userSchema.find();
         return response.json(userList)
     }
-
+/*
+    async function readOne(request, response){
+        const {id} = request.params
+        const user = await userSchema.findOneAndReplace({_id: id})
+        return response.json(user)
+    }
+*/
     async function create(request, response){
         const {id, userNome, userEmail, userCpf, userPassword, userDataNasc, createdAt} = request.body
 

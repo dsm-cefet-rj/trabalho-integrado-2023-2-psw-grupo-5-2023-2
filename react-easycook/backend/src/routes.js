@@ -21,12 +21,12 @@ routes.patch('/ingrediente/:id', ingredientController.update)
 
 //Rota Receita
 routes.post('/receita', recipeController.create)
-routes.get('/receita', recipeController.read)
+routes.get('/receita/:id', recipeController.read)
 routes.delete('/receita/:id', recipeController.deleteRecipe)
 
 //Rota Lista
 routes.post('/lista', listController.create)
-routes.get('/lista', listController.read)
+routes.get('/lista/:id', listController.read)
 routes.delete('/lista/:id', listController.deleteList)
 
 export default routes

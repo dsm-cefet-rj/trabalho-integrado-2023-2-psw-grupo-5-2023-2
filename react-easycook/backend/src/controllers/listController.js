@@ -29,9 +29,10 @@ async function deleteList(request, response){
 }
 
 async function read(request, response){
+    const {id} = request.params
     let err
     try{
-        const list = await listaSchema.findById(request.params.id).populate('ingredientes')
+        const list = await listaSchema.findById({_id: id}).populate('ingredientes')
         if(list != null ){
             return response.status(200).json(list)
         }

@@ -56,9 +56,10 @@ async function deleteRecipe(request, response){
 }
 
 async function read(request, response){
+    const {id} = request.params
     let err
     try{
-        const recipeList = await receitaSchema.findById(request.params.id).populate('ingredientes')
+        const recipeList = await receitaSchema.findById({_id: id}).populate('ingredientes')
         if(recipeList != null ){
             return response.status(200).json(recipeList)
         }
