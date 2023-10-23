@@ -5,6 +5,20 @@ async function read(request, response){
     return response.json(ingredientList)
 }
 
+async function readOne(request, response){
+    const {id} = request.params
+    let err
+    try{
+        const ing = await ingredienteSchema.findById({_id: id})
+        if(ing != null ){
+            return response.status(200).json(ing)
+        }
+    }
+    catch(errParam){
+        response.status(404).json({})
+    }
+}
+
 async function create(request, response){
     const {nome,categoriaPrincipal,medida,qtd,variacao,descricao,id} = request.body
 
@@ -46,4 +60,4 @@ async function update(request, response){
     }
 }
 
-export default {read, create, deleteIngredient, update}
+export default {read, create, deleteIngredient, update, readOne}

@@ -44,4 +44,10 @@ async function read(request, response){
     
 }
 
-export default {create, deleteList, read}
+async function readAll(request, response){
+    const listGroup = await listaSchema.find()
+    return response.json(listGroup)
+}
+
+
+export default {create, deleteList, read, readAll}

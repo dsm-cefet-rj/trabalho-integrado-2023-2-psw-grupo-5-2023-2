@@ -69,4 +69,9 @@ async function read(request, response){
     }
 }
 
-export default {create, deleteRecipe, read}
+async function readAll(request, response){
+    const RecipeGroup = await receitaSchema.find()
+    return response.json(RecipeGroup)
+}
+
+export default {create, deleteRecipe, read, readAll}

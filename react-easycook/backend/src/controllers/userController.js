@@ -4,13 +4,21 @@ import userSchema from '../../models/userSchema.js'
         const userList = await userSchema.find();
         return response.json(userList)
     }
-/*
+
     async function readOne(request, response){
         const {id} = request.params
-        const user = await userSchema.findOneAndReplace({_id: id})
-        return response.json(user)
+        let err
+        try{
+        const user = await userSchema.findById({_id: id})
+            if(user != null ){
+                return response.status(200).json(user)
+            }
+        }
+    catch(errParam){
+        response.status(404).json({})
     }
-*/
+    }
+
     async function create(request, response){
         const {id, userNome, userEmail, userCpf, userPassword, userDataNasc, createdAt} = request.body
 
@@ -60,7 +68,7 @@ import userSchema from '../../models/userSchema.js'
         }
     }
 
- export default {create, read, deleteUser, update}
+ export default {create, read, deleteUser, update, readOne}
 
 
     
