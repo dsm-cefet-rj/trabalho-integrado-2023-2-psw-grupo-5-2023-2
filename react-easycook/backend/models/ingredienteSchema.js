@@ -1,12 +1,28 @@
 import mongoose from 'mongoose'
+import normalize from 'normalize-mongoose'
 const Schema = mongoose.Schema
 
 const ingredienteSchema = new Schema({
-    nome: {type:String},
-    categoriaPrincipal: {type:String},
-    medida: {type:String},
-    qtd: {type:Number},
-    variacao: {type:Number},
+    nome: {
+        type:String,
+        required: true
+    },
+    categoriaPrincipal: {
+        type:String,
+        required: true
+    },
+    medida: {
+        type:String,
+        required: true
+    },
+    qtd: {
+        type:Number,
+        required: true
+    },
+    variacao: {
+        type:Number,
+        required: true
+    },
     descricao: {type:String},
     id: {
         type:String,
@@ -14,5 +30,6 @@ const ingredienteSchema = new Schema({
     }
 })
 
+ingredienteSchema.plugin(normalize)
 
 export default mongoose.model('Ingrediente', ingredienteSchema)

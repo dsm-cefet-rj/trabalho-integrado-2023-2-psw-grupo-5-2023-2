@@ -1,23 +1,22 @@
 import mongoose from 'mongoose'
+import normalize from 'normalize-mongoose'
 const Schema = mongoose.Schema
-import ingredienteSchema from '../models/ingredienteSchema.js'
 
 const listaSchema = new Schema({
-    nome: {type:String},
+    nome: {
+        type:String,
+        required: true
+    },
     id: {
         type:String,
         required: true
     },
-    ingredientes:  [{nome: {type:String},
-        categoriaPrincipal: {type:String},
-        medida: {type:String},
-        qtd: {type:Number},
-        variacao: {type:Number},
-        descricao: {type:String},
-        id: {
-            type:String,
-            required: true
-        }}]
+    ingredientes:  [{
+         type: mongoose.Schema.Types.ObjectId,
+         ref: 'Ingrediente'   
+    }]
 })
+
+listaSchema.plugin(normalize)
 
 export default mongoose.model('Lista', listaSchema)
