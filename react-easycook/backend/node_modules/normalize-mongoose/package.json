@@ -2,6 +2,7 @@
 	"name": "normalize-mongoose",
 	"version": "1.0.0",
 	"description": "Normalize Mongoose JSON output",
+	"main": "index.js",
 	"license": "MIT",
 	"repository": "abranhe/normalize-mongoose",
 	"homepage": "https://p.abranhe.com/normalize-mongoose",
