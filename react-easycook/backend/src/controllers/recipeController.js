@@ -30,7 +30,7 @@ async function create(request, response){
     descricao,
     ingredientes} = request.body
 
-    if(!nome || !id || !categoriaPrincipal || !ingredientes){
+    if(!nome || !id || !categoriaPrincipal){
         response.status(404).json({error: 'preencha os campos necessarios'})
     }
 
@@ -39,7 +39,7 @@ async function create(request, response){
         categoriaPrincipal,
         id,
         descricao,
-        ingredientes
+        ingredientes: ingredientes
     })
     return response.json(recipeCreated)
 }
