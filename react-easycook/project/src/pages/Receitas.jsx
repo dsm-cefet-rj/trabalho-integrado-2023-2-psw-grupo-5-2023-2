@@ -8,7 +8,7 @@ export default function Receitas() {
   const [receitas, setreceitas] = useState([]);
 
   const getApiData = async () => {
-    const response = await fetch("http://localhost:3002/receitas")
+    const response = await fetch("receita")
       .then((response) => response.json())
       .then((res) => setreceitas(res))
       .catch(console.log);

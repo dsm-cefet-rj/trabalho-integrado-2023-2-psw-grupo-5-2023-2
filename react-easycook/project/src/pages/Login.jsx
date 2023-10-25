@@ -1,86 +1,107 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import logo from '../images/easycook1-nobg.png'
-import '../styles/old.login.css'
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../images/easycook1-nobg.png";
+import "../styles/old.login.css";
 
-export default function Login(){
-
+export default function Login() {
   let navigate = useNavigate();
 
-  const [userEmail, setUserEmail] = useState('');
-  const [userPassword, setUserPassword] = useState('');
-  const [logando, setLogando] = useState('');
-  const [users, setUsers] = useState([{
-    "id": "11111111111",
-    "userNome": "usuarioTeste",
-    "userEmail": "@.com",
-    "userCpf": "11111111111",
-    "userPassword": "asd",
-    "userDataNasc": "2023-09-24"
-  }]);
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [logando, setLogando] = useState("");
+  const [users, setUsers] = useState([
+    {
+      id: "11111111111",
+      userNome: "usuarioTeste",
+      userEmail: "@.com",
+      userCpf: "11111111111",
+      userPassword: "asd",
+      userDataNasc: "2023-09-24",
+    },
+  ]);
 
-  let emailValue = '';
-  let passwordValue = '';
+  let emailValue = "";
+  let passwordValue = "";
 
   useEffect(() => {
     getApiData();
-}, []);
+  }, []);
 
-const getApiData = async () => {
-  const response = await fetch(
-      "http://localhost:3001/usuario"
-  ).then((response) => response.json())
-  .then((data) => setUsers(data))
-  .catch(console.log);
-}
+  const getApiData = async () => {
+    const response = await fetch("/usuario")
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch(console.log);
+  };
 
   return (
-      <div className='p-5 vh-100 mx-auto col-lg-6 col-12'>
-        <img src={logo} alt="Easy Cook logo" className='mx-auto d-block blend-mode'/>
-        <div className="form-outline mb-4">
-          <label id="login" class="form-label">Login</label>
-          <input id='userEmail' placeholder='Seu e-mail' type='email' className="form-control bg-branco"
-            name='userEmail'
-            onChange={ event => setUserEmail(event.target.value)}
-          />
-        </div>  
+    <div className="p-5 vh-100 mx-auto col-lg-6 col-12">
+      <img
+        src={logo}
+        alt="Easy Cook logo"
+        className="mx-auto d-block blend-mode"
+      />
+      <div className="form-outline mb-4">
+        <label id="login" class="form-label">
+          Login
+        </label>
+        <input
+          id="userEmail"
+          placeholder="Seu e-mail"
+          type="email"
+          className="form-control bg-branco"
+          name="userEmail"
+          onChange={(event) => setUserEmail(event.target.value)}
+        />
+      </div>
 
-        <div className="form-outline mb-4">
-          <input id='userPassword' placeholder='Sua senha' type='password' className="form-control bg-branco"
-            name='userPassword'
-            onChange={ event => setUserPassword(event.target.value)}
-          />
+      <div className="form-outline mb-4">
+        <input
+          id="userPassword"
+          placeholder="Sua senha"
+          type="password"
+          className="form-control bg-branco"
+          name="userPassword"
+          onChange={(event) => setUserPassword(event.target.value)}
+        />
+      </div>
+
+      <div class="row mb-4">
+        <div className="col text-center">
+          <Link to="/cadastre-se">
+            <a
+              className="link-aliceblue justify-content-end"
+              href="localhost:3000"
+              id="cadastre-se"
+            >
+              Cadastre-se
+            </a>
+          </Link>
         </div>
-        
-        <div class="row mb-4">
 
-          <div className="col text-center">
-            <Link to="/cadastre-se">
-              <a className="link-aliceblue justify-content-end" href='localhost:3000' id="cadastre-se">Cadastre-se</a>
-            </Link>
-          </div>
-
-          <div className="col text-center">
-            <Link to="/esqueci-minha-senha">
-              <a className="link-aliceblue" href='localhost:3000'>Esqueci minha senha</a>
-            </Link>
-          </div>
-            
-          
-        </div>
-
-        <div className="row justify-content-center">
-          <button className="btn btn-primary col-6" onClick={clickLogin}>Login</button>
+        <div className="col text-center">
+          <Link to="/esqueci-minha-senha">
+            <a className="link-aliceblue" href="localhost:3000">
+              Esqueci minha senha
+            </a>
+          </Link>
         </div>
       </div>
-  )
+
+      <div className="row justify-content-center">
+        <button className="btn btn-primary col-6" onClick={clickLogin}>
+          Login
+        </button>
+      </div>
+    </div>
+  );
 
   function clickLogin() {
     let temp = "";
-    if (userEmail === '' || userPassword === '') {
+    if (userEmail === "" || userPassword === "") {
       temp = temp.concat("Os campos não podem estar vazios.");
     }
-    if (!userEmail.includes('@') || !userEmail.includes('.com')) {
+    if (!userEmail.includes("@") || !userEmail.includes(".com")) {
       temp = temp + "Formato inválido de e-mail.";
     }
     console.log(users);
@@ -97,16 +118,15 @@ const getApiData = async () => {
       }
     }
 
-    if ((i > -1) && (userPassword === users[i].userPassword)) {
+    if (i > -1 && userPassword === users[i].userPassword) {
       setLogando("Autenticado!");
       navigate("/");
       return;
-    }
-    else {
+    } else {
       setLogando("Email ou login invalido.");
       return;
     }
-    
+
     setLogando(temp);
   }
 }

@@ -1,44 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import Cabecalho from '../components/Cabecalho'
-import '../styles/detalhesIngrediente.css'
-import img from '../images/quadrado-vinho.jpg'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import Cabecalho from "../components/Cabecalho";
+import "../styles/detalhesIngrediente.css";
+import img from "../images/quadrado-vinho.jpg";
+import { useParams } from "react-router-dom";
 
-export default function DetalhesIngrediente(){
-const { id } = useParams();
+export default function DetalhesIngrediente() {
+  const { id } = useParams();
 
-    const [ingrediente, setingrediente] = useState([]);
+  const [ingrediente, setingrediente] = useState([]);
 
-    const getApiData = async () => {
-        const response = await fetch(
-            "http://localhost:3002/ingredientes/" + id
-        ).then((response) => response.json())
-        .then((res) => {
-            setingrediente(res)
-        
-        })
-        .catch(console.log);
-    }
+  const getApiData = async () => {
+    const response = await fetch("ingrediente/" + id)
+      .then((response) => response.json())
+      .then((res) => {
+        setingrediente(res);
+      })
+      .catch(console.log);
+  };
 
-    useEffect(() => {
-        getApiData();
-    }, []);
+  useEffect(() => {
+    getApiData();
+  }, []);
 
-    return (
-        <div className='DetalhesIngrediente'>
-            <Cabecalho titulo="Detalhes" fundo='claro' outros home/>
-            <div className='corpo'>
-                <img src={img} className="imagem-quadrado" alt='img-igrediente'/>
-                <h1> {ingrediente.nome} </h1>
-                <span> Categoria </span>
-                
-                <p> {ingrediente.categoriaPrincipal} </p>
-                
-                
-            </div>
-            
-        </div>
-    )
+  return (
+    <div className="DetalhesIngrediente">
+      <Cabecalho titulo="Detalhes" fundo="claro" outros home />
+      <div className="corpo">
+        <img src={img} className="imagem-quadrado" alt="img-igrediente" />
+        <h1> {ingrediente.nome} </h1>
+        <span> Categoria </span>
 
-    
+        <p> {ingrediente.categoriaPrincipal} </p>
+      </div>
+    </div>
+  );
 }
