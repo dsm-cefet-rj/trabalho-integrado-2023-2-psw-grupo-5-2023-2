@@ -4,14 +4,20 @@
 
 O projeto é dividido em duas pastas:
 
-* Prototipagem -> Protótipos de HTML/JS/CSS
-* react-easycook/project. -> Projeto desenvolvido com o framework React
+- Prototipagem -> Protótipos de HTML/JS/CSS
+- react-easycook/project -> Projeto desenvolvido com o framework React e NodeJS
 
 Para ter uma melhor visualização do projeto, recomenda-se baixar a fonte de texto utilizada:
 
     https://freefontsfamily.com/helvetica-font-family/
 
-Para iniciar o projeto, navegue pelo seu terminal até a pasta:
+Você pode instalar e iniciar o projeto usando os scripts "project-install" e "project-run" na pasta raíz do projeto:
+
+    project-install
+
+    project-run
+
+Ou, alternativamente, navegue pelo seu terminal até a pasta:
 
     ./react-easycook/project
 
@@ -21,15 +27,27 @@ Nesta páginas, caso não tenha instalado, instale as dependências com o comand
 
 Note que é necessário ter o node instalado no computador.
 
-Após instalar as dependências, rode o programa, com o terminal na mesma pasta:
+Após instalar as dependências, rode o frontend, com o terminal na mesma pasta:
 
     npm start
 
-E, por fim, execute o database de testes com o comando:
+Para o backend, navegue até a pasta:
 
-    json-server --watch db.json --port 3002
+    ./react-easycook/backend
 
-Por padrão, o frontend do projeto está sendo executado na porta localhost:3000 enquanto o backend do banco de dados de teste na porta localhost:3000.
+Instale as dependências:
+
+    npm install
+
+Rode o backend:
+
+    npm run dev
+
+Caso encontre problemas, verifique seu acesso ao mongodb Atlas ou as dependências do nodemon. Tente instalar globalmente:
+
+    npm install -g nodemon
+
+Por padrão, o frontend do projeto está sendo executado na porta localhost:3000 enquanto o backend do banco de dados de teste na porta localhost:3001.
 
 ## Executando o DB de mockup
 
@@ -38,8 +56,7 @@ Execute o seguinte comando com o terminal na pasta do projeto (`./react-easycook
     json-server --watch db.json --port 3002
 
 Caso apresente um erro, instale o json-server:
-    npm install -g json-server
-
+npm install -g json-server
 
 ## Fluxo de trabalho do github
 
