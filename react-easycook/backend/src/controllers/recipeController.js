@@ -69,7 +69,7 @@ async function read(request, response) {
 }
 
 async function readAll(request, response) {
-  const RecipeGroup = await receitaSchema.find();
+  const RecipeGroup = await receitaSchema.find().populate("ingredientes");
   return response.json(RecipeGroup);
 }
 
