@@ -6,6 +6,12 @@ import ingredientController from "../src/controllers/ingredientController.js";
 import recipeController from "../src/controllers/recipeController.js";
 import listController from "./controllers/listController.js";
 
+/*
+    Acho que faz sentido a gente tentar usar as rotas tipo:
+    /api/usuario
+    /api/ingrediente
+*/
+
 //Rota Usuario
 routes.post("/usuario", userController.create);
 routes.get("/usuario", userController.read);

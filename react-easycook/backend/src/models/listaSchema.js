@@ -14,7 +14,7 @@ const listaSchema = new Schema({
   },
   ingredientes: [
     {
-      type: Object,
+      type: Schema.Types.ObjectId,
       ref: "Ingrediente",
     },
   ],

@@ -45,7 +45,8 @@ async function read(request, response) {
 }
 
 async function readAll(request, response) {
-  const listGroup = await listaSchema.find();
+  const listGroup = await listaSchema.find()
+    .populate("ingredientes");
   return response.json(listGroup);
 }
 

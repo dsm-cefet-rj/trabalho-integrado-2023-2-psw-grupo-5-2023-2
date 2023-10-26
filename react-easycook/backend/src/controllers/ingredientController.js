@@ -1,4 +1,4 @@
-import ingredienteSchema from "../models/receitaSchema.js";
+import ingredienteSchema from "../models/ingredienteSchema.js";
 
 async function read(request, response) {
   const ingredientList = await ingredienteSchema.find();
