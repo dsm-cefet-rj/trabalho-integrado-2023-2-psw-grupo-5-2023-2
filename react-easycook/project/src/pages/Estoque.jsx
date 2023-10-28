@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Rodape from "../components/Rodape";
-import Ingrediente from "../components/Ingrediente";
 import Cabecalho from "../components/Cabecalho";
 import { Lista } from "../components/Listas";
+import { FetchScript } from "../scripts/fetchScripts";
 
 export default function Estoque() {
   const [ingredientes, setIngredientes] = useState([]);
-
-  const getApiData = async () => {
-    const response = await fetch("ingrediente")
-      .then((response) => response.json())
-      .then((data) => setIngredientes(data))
-      .catch(console.log);
-  };
 
   const atualizarQtdDB = async (ingredienteId, novaQtd) => {
     try {
@@ -35,7 +28,9 @@ export default function Estoque() {
   };
 
   useEffect(() => {
-    getApiData();
+    FetchScript.listAllData("ingrediente").then((response) => {
+      setIngredientes(response);
+    });
   }, []);
 
   return (

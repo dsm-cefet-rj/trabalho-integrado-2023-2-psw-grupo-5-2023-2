@@ -24,10 +24,7 @@ export default function App() {
   const [descricao, setdescricao] = useState("");
 
   useEffect(() => {
-    fs.getApiData("ingredientes").then((value) => {
-      setOpcoesSubstitutosSubstitutos(value);
-      setId(value.length);
-    });
+
   }, []);
 
   return (
@@ -84,23 +81,6 @@ export default function App() {
           </select>
         </div>
 
-        <div className="input-group mb-3 px-0">
-          <select
-            className="form-select bg-azure"
-            onChange={(e) => {
-              setSubstitutos(JSON.parse(e.target.value));
-              console.log(e.target.value);
-            }}
-          >
-            <option selected value={[]}>
-              Ingredientes Substitutos
-            </option>
-            {opcoesSubstitutos.map((sub) => (
-              <option value={JSON.stringify(sub)}>{sub.nome}</option>
-            ))}
-          </select>
-        </div>
-
         <div className="px-0 justify-content-center">
           <span className="input-group-text"> Descrição </span>
           <textarea
@@ -144,7 +124,7 @@ export default function App() {
     });
     console.log(requestBody);
 
-    fs.postApiData("ingredientes", requestBody);
+    fs.postData("ingrediente", requestBody);
     setTimeout(() => {
       navigate("/estoque/");
     }, 150);
