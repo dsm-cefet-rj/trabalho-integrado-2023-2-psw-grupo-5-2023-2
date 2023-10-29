@@ -39,7 +39,7 @@ export function Lista({
           categoriaPrincipal={obj.categoriaPrincipal}
           medida={obj.medida}
           descricao={obj.descricao}
-          id={obj.id}
+          id={obj._id}
           atualizarQtdDB={atualizarQtdDB}
           refreshPageWithKey={refreshPageWithKey}
         ></Ingrediente>

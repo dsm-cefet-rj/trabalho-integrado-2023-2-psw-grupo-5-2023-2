@@ -7,7 +7,7 @@ import {
   OpcoesDeVariacao,
 } from "../listas";
 import img from "../../src/images/quadrado-vinho.jpg";
-import { FetchScript as fs } from "../scripts/fetchScripts";
+import { FetchScript as fs } from "../scripts/ApiBackend";
 
 export default function App() {
   let navigate = useNavigate();

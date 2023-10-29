@@ -3,9 +3,12 @@ import Cabecalho from "../components/Cabecalho";
 import "../styles/detalhesIngrediente.css";
 import img from "../images/quadrado-vinho.jpg";
 import { useParams } from "react-router-dom";
+import { FetchScript } from "../scripts/ApiBackend";
 
 export default function DetalhesIngrediente() {
   const { id } = useParams();
+
+  
 
   const [ingrediente, setingrediente] = useState([]);
 
@@ -19,7 +22,9 @@ export default function DetalhesIngrediente() {
   };
 
   useEffect(() => {
-    getApiData();
+    console.log(FetchScript.RequestPaths.ingredientes);
+  FetchScript.getDataById(FetchScript.RequestPaths.ingredientes, id)
+    .then((response) => setingrediente(response));
   }, []);
 
   return (

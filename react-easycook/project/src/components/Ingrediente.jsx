@@ -58,9 +58,6 @@ export default function Ingrediente({
   return (
     <div className="row w-100 align-items-center text-center border-bottom mt-3 py-3">
       <div className="col-md-9 col-12 d-flex mb-4 mb-md-0 flex-wrap">
-        <label id="id" className="col-1 col-md-1 my-auto">
-          {id}
-        </label>
         <label id="nome" className="col-5 col-md-2 my-auto">
           {nome}
         </label>
@@ -69,7 +66,7 @@ export default function Ingrediente({
         </label>
         <p
           id="descricao"
-          className="col-12 col-md-4 text-center text-md-start my-4 ps-3 my-md-auto"
+          className="col-12 col-md-5 text-center text-md-start my-4 ps-3 my-md-auto"
         >
           {descricao}{" "}
         </p>

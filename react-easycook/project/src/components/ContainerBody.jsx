@@ -5,7 +5,7 @@ import NotFound from "../pages/NotFound";
 import {
   CategoriasDeReceitas,
 } from "../listas";
-import { FetchScript as fs } from "../scripts/fetchScripts";
+import { FetchScript as fs } from "../scripts/ApiBackend";
 
 export default function ContainerBodyNovaPagina({ tipoBody = "" }) {
   return escolheContainer(tipoBody);

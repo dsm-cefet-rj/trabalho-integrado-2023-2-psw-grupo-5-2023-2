@@ -1,10 +1,20 @@
 import { React } from "react";
 
 export class FetchScript {
+
+  static RequestPaths = { // Adicionar estoque e provavelmente outros
+    usuarios: "/usuario/",
+    ingredientes : "/ingrediente/",
+    receitas: "/receita/",
+    listas: "/lista/",
+    opcoes: "/opcoes/"
+  }
+
+  
   static listAllData = async (objectUrl) => {
     
     var d;
-    var response = await fetch(`/${objectUrl}`)
+    var response = await fetch(`${objectUrl}`)
       .then((response) => response.json())
       .then((data) => (d = data))
       .catch(console.log);
@@ -15,7 +25,7 @@ export class FetchScript {
   
   static getDataById = async (objectUrl, objectId) => {
     
-    var response = await fetch(`/${objectUrl}/${objectId}`)
+    var response = await fetch(`${objectUrl}${objectId}`)
       .then((response) => response.json())
       .then((data) => (response = data))
       .catch(console.log);
@@ -63,3 +73,4 @@ export class FetchScript {
     }
   };
 }
+
