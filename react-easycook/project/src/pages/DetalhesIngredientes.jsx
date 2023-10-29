@@ -12,17 +12,7 @@ export default function DetalhesIngrediente() {
 
   const [ingrediente, setingrediente] = useState([]);
 
-  const getApiData = async () => {
-    const response = await fetch("ingrediente/" + id)
-      .then((response) => response.json())
-      .then((res) => {
-        setingrediente(res);
-      })
-      .catch(console.log);
-  };
-
   useEffect(() => {
-    console.log(FetchScript.RequestPaths.ingredientes);
   FetchScript.getDataById(FetchScript.RequestPaths.ingredientes, id)
     .then((response) => setingrediente(response));
   }, []);

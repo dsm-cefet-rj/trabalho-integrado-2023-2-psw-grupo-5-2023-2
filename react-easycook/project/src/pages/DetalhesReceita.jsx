@@ -3,25 +3,16 @@ import Cabecalho from "../components/Cabecalho";
 import img from "../images/quadrado-vinho.jpg";
 import "../styles/detalhesIngrediente.css";
 import { useParams } from "react-router-dom";
+import { FetchScript } from "../scripts/ApiBackend";
 
 export default function DetalhesReceita() {
   const { id } = useParams();
 
   const [receita, setReceita] = useState([]);
-  //var [ingredientes, setIngredientes] = useState(receita['ingredientes'])
-
-  const getApiData = async () => {
-    const response = await fetch("receita/" + id)
-      .then((response) => response.json())
-      .then((res) => {
-        console.log(res["ingredientes"][0].qtd);
-        setReceita(res);
-      })
-      .catch(console.log);
-  };
 
   useEffect(() => {
-    getApiData();
+    FetchScript.getDataById(FetchScript.RequestPaths.receitas, id)
+    .then((response) => setReceita(response));
   }, []);
 
   return (
@@ -30,7 +21,7 @@ export default function DetalhesReceita() {
       <div className="corpo">
         <img src={img} className="imagem-quadrado" alt="img-igrediente" />
         <h1>
-          [{receita.id}] {receita.nome}
+          {receita.nome}
         </h1>
         <span> Categoria </span>
 

@@ -20,13 +20,10 @@ export default function ListaCompras({ nome, id, ingredientes }) {
       className="row w-100 align-items-center text-center border-bottom mt-3 py-3"
     >
       <div className="col-10 d-flex">
-        <label id="id" className="col-1 my-auto">
-          {id}
-        </label>
         <label id="nome" className="col-2 my-auto">
           {nome}
         </label>
-        <p className="col-9 my-auto">{ingredientString}</p>
+        <p className="col-10 my-auto">{ingredientString}</p>
       </div>
       <div className="col-2">
         <div className="row d-flex justify-content-center">

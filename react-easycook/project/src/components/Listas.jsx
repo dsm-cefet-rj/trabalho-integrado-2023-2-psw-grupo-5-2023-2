@@ -50,7 +50,7 @@ export function Lista({
         <Receita
           nome={obj.nome}
           categoriaPrincipal={obj.categoriaPrincipal}
-          id={obj.id}
+          id={obj._id}
           descricao={obj.descricao}
           ingredientes={obj.ingredientes}
         ></Receita>
@@ -60,7 +60,7 @@ export function Lista({
       return objetos.map((obj) => (
         <ListaCompras
           nome={obj.nome}
-          id={obj.id}
+          id={obj._id}
           ingredientes={obj.ingredientes}
         ></ListaCompras>
       ));
