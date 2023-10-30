@@ -52,7 +52,7 @@ async function create(request, response) {
     userDataNasc,
     createdAt,
   });
-  return response.json(userCreated);
+  return response.status(200).json(userCreated);
 }
 
 async function deleteUser(request, response) {

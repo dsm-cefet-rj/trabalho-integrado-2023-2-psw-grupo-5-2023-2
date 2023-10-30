@@ -13,6 +13,7 @@ export default function Login() {
   const [userPassword, setUserPassword] = useState("");
   const [id, setId] = useState(Number);
 
+
   let emailValue = "";
   let passwordValue = "";
 
@@ -128,29 +129,48 @@ export default function Login() {
           Voltar
         </Link>
       </div>
+      <div style={{ visibility: 'hidden' }} id="verifica-cadastro" className="row justify-content-center mt-3 col-2 mx-auto" >
+            <p>Usuário Cadastrado</p>
+      </div>
     </div>
   );
 
-  function submitCadastro() {
-    // Send data to the backend via POST
-    console.log("Deveria acontecer algo");
-    console.log(`userData: ${userData}`);
-    console.log(`JSON.stringify(userData): ${JSON.stringify(userData)}`);
 
-    fetch("usuario", {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify({
-        id,
-        userNome,
-        userEmail,
-        userCpf,
-        userPassword,
-        userDataNasc,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
+
+  async function submitCadastro() {
+    try{
+      // Send data to the backend via POST
+      console.log("Deveria acontecer algo");
+      console.log(`userData: ${userData}`);
+      console.log(`JSON.stringify(userData): ${JSON.stringify(userData)}`);
+
+      const response = await fetch("usuario", {
+        method: "POST",
+        mode: "cors",
+        body: JSON.stringify({
+          id,
+          userNome,
+          userEmail,
+          userCpf,
+          userPassword,
+          userDataNasc,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      if (response.status === 200) {
+      console.log('Cadastro realizado com SUCESSO')
+      document.getElementById("verifica-cadastro").style.visibility = "visible"
+      }
+      if (response.status === 400) {
+        console.log('erro')
+        document.getElementById("verifica-cadastro").style.visibility = "hidden"
+        }
+    } catch(error){
+     console.error('erro ao realizar o cadastro', error)
+     
+    }
+  
   }
 }
