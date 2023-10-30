@@ -27,6 +27,18 @@ const userSchema = new Schema({
         type:Date,
         required: true
     },
+    estoque: {
+        type: Schema.Types.ObjectId,
+        ref: 'Estoque'
+    },
+    receitas: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Receita'
+    }],
+    listas: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Lista'
+    }],
     createdAt:{
         type: Date,
         default: Date.now()
