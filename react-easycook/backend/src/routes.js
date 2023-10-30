@@ -5,6 +5,7 @@ import userController from "../src/controllers/userController.js";
 import ingredientController from "../src/controllers/ingredientController.js";
 import recipeController from "../src/controllers/recipeController.js";
 import listController from "./controllers/listController.js";
+import stockController from "./controllers/stockController.js";
 
 /*
     Acho que faz sentido a gente tentar usar as rotas tipo:
@@ -37,5 +38,9 @@ routes.post("/lista", listController.create);
 routes.get("/lista/:id", listController.read);
 routes.get("/lista", listController.readAll);
 routes.delete("/lista/:id", listController.deleteList);
+
+//Rota Estoque de um Usuário
+routes.get("/estoque/:userId/ingredientes", stockController.read);
+
 
 export default routes;
