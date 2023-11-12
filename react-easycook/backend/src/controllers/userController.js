@@ -1,3 +1,4 @@
+import estoqueSchema from "../models/estoqueSchema.js";
 import userSchema from "../models/userSchema.js";
 
 async function read(request, response) {
@@ -52,7 +53,15 @@ async function create(request, response) {
     userDataNasc,
     createdAt,
   });
-  return response.json(userCreated);
+
+
+
+  const stockCreated = await estoqueSchema.create({
+    user: userCreated._id,
+    ingredientes: []
+  })
+
+  return response.status(200).json(userCreated);
 }
 
 async function deleteUser(request, response) {
