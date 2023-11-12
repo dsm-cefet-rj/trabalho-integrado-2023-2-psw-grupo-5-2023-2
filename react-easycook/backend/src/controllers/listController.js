@@ -2,15 +2,14 @@ import ingredienteSchema from "../models/ingredienteSchema.js";
 import listaSchema from "../models/listaSchema.js";
 
 async function create(request, response) {
-  const { nome, id, ingredientes } = request.body;
+  const { nome, ingredientes } = request.body;
 
-  if (!nome || !id || !ingredientes) {
+  if (!nome) {
     response.status(404).json({ error: "preencha os campos necessarios" });
   }
 
   const listCreated = await listaSchema.create({
     nome,
-    id,
     ingredientes,
   });
   return response.json(listCreated);
@@ -35,7 +34,12 @@ async function read(request, response) {
   try {
     const list = await listaSchema
       .findById({ _id: id })
-      .populate("ingredientes");
+      .populate({
+        path: 'ingredientes',
+        populate: {
+          path: 'ingrediente'
+        }
+      });
     if (list != null) {
       return response.status(200).json(list);
     }
@@ -46,8 +50,35 @@ async function read(request, response) {
 
 async function readAll(request, response) {
   const listGroup = await listaSchema.find()
-    .populate("ingredientes");
+    .populate({
+      path: 'ingredientes',
+      populate: {
+        path: 'ingrediente'
+      }
+    });
   return response.json(listGroup);
 }
 
-export default { create, deleteList, read, readAll };
+async function update(request, response) {
+  const { id } = request.params;
+  const updateData = request.body;
+
+  try {
+    const updatedList = await listaSchema.findOneAndUpdate(
+      { _id: id },
+      updateData,
+      { new: true }
+    );
+
+    if (updatedList) {
+      return response.json(updatedList);
+    }
+    return response
+      .status(404)
+      .json({ error: "não foi encontrado o registro para atualizar" });
+  } catch (error) {
+    return response.status(500).json({ error: "erro interno do servidor" });
+  }
+}
+
+export default { create, deleteList, update, read, readAll };

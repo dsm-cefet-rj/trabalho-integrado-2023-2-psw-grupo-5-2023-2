@@ -9,7 +9,7 @@ const estoqueSchema = new Schema({
     },
     ingredientes: [{
         type: Schema.Types.ObjectId,
-        ref: 'Ingrediente'
+        ref: 'Monitoracao'
     }]
 });
 

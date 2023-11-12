@@ -1,4 +1,6 @@
-import monitoracaomonitoracaoIngredienteSchema from "../models/monitoracaomonitoracaoIngredienteSchema";
+import estoqueSchema from "../models/estoqueSchema.js";
+import listaSchema from "../models/listaSchema.js";
+import monitoracaoIngredienteSchema from "../models/monitoracaoIngredienteSchema.js";
 
 async function read(request, response) {
   const list = await monitoracaoIngredienteSchema.find();
@@ -23,16 +25,50 @@ async function create(request, response) {
     request.body;
 
   if (!ingrediente || !qtd || !ownerType || !owner) {
-    response.status(404).json({ error: "preencha os campos necessarios" });
+    return response.status(404).json({ error: "preencha os campos necessarios" });
   }
 
-  const ingredientCreated = await monitoracaoIngredienteSchema.create({
+  let ingredientCreated = await monitoracaoIngredienteSchema.create({
     ingrediente,
     qtd,
     ownerType,
     owner,
   });
-  return response.json(ingredientCreated);
+
+  if (ownerType === "Lista") {
+    var list = await listaSchema.findById(owner);
+    list.ingredientes.push(ingredientCreated._id);
+
+    try {
+      let updatingLista = await listaSchema.findByIdAndUpdate(
+        owner,
+        { ingredientes: list.ingredientes},
+        { new: false }
+        );
+    } catch (error) {
+      console.log(error + "// erro adicionando monitoracao a lista");
+    }
+    return response.json(ingredientCreated);
+  } 
+  else if (ownerType === "Estoque") {
+    var estoque = await estoqueSchema.findById(owner);
+    estoque.ingredientes.push(ingredientCreated._id);
+
+    try {
+      let updatingEstoque = await estoqueSchema.findByIdAndUpdate(
+        owner,
+        { ingredientes: estoque.ingredientes},
+        { new: false }
+        );
+    } catch (error) {
+      console.log(error + "// erro adicionando monitoracao ao estoque");
+    }
+    return response.json(ingredientCreated);
+  }
+  else {
+    return response.status(404).json({ error: "preencha os campos necessarios" });
+  }
+  
 }
 
 async function remove(request, response) {
@@ -72,4 +108,4 @@ async function update(request, response) {
     }
 }
 
-export default { read, create, deleteIngredient, update, readOne };
+export default { read, create, remove, update, readOne };

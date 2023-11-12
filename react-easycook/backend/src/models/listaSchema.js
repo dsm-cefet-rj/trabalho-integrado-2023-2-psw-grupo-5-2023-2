@@ -8,14 +8,10 @@ const listaSchema = new Schema({
     type: String,
     required: true,
   },
-  id: {
-    type: String,
-    required: true,
-  },
   ingredientes: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Ingrediente",
+      ref: "Monitoracao",
     },
   ],
 });

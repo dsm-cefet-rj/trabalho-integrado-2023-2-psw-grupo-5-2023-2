@@ -5,6 +5,7 @@ import userController from "../src/controllers/userController.js";
 import ingredientController from "../src/controllers/ingredientController.js";
 import recipeController from "../src/controllers/recipeController.js";
 import listController from "./controllers/listController.js";
+import monitoracaoController from "./controllers/monitoracaoController.js";
 import stockController from "./controllers/stockController.js";
 
 /*
@@ -38,9 +39,18 @@ routes.post("/lista", listController.create);
 routes.get("/lista/:id", listController.read);
 routes.get("/lista", listController.readAll);
 routes.delete("/lista/:id", listController.deleteList);
+routes.patch("/lista/:id", listController.update);
+
+//Rota Monitoracao
+routes.post("/monitoracao", monitoracaoController.create);
+routes.get("/monitoracao", monitoracaoController.read);
+routes.get("/monitoracao/:id", monitoracaoController.readOne);
+routes.delete("/monitoracao/:id", monitoracaoController.remove);
+routes.patch("/monitoracao/:id", monitoracaoController.update);
 
 //Rota Estoque de um Usuário
 routes.get("/estoque/:userId/ingredientes", stockController.read);
+routes.get("/estoque/", stockController.readAll);
 
 
 export default routes;
