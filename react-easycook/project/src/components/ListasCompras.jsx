@@ -9,7 +9,7 @@ export default function ListaCompras({ nome, id, ingredientes }) {
   useEffect(() => {
     var s = "";
     ingredientes.map((ing) => {
-      s = s + ing.nome + ", ";
+      s = s + ing.ingrediente.nome + ", ";
     });
     setIngredientString(s);
   });

@@ -29,9 +29,9 @@ export function Lista({
   );
 
   function escolheElemento() {
-    console.log(`Objetos: ${objetos}`);
+    console.log(`Objetos: ${JSON.stringify(objetos)}`);
     if (tipoObjeto === "ingrediente") {
-      return objetos.map((obj) => (
+      return objetos?.map((obj) => (
         <Ingrediente
           nome={obj.nome}
           qtd={obj.qtd}
@@ -46,7 +46,7 @@ export function Lista({
       ));
     }
     if (tipoObjeto === "receita") {
-      return objetos.map((obj) => (
+      return objetos?.map((obj) => (
         <Receita
           nome={obj.nome}
           categoriaPrincipal={obj.categoriaPrincipal}
@@ -57,12 +57,27 @@ export function Lista({
       ));
     }
     if (tipoObjeto === "listaDeCompras") {
-      return objetos.map((obj) => (
+      return objetos?.map((obj) => (
         <ListaCompras
           nome={obj.nome}
-          id={obj._id}
+          id={obj.id}
           ingredientes={obj.ingredientes}
         ></ListaCompras>
+      ));
+    }
+    if (tipoObjeto === "ingredienteCompras") {
+      return objetos?.map((obj) => (
+        <Ingrediente
+          nome={obj.ingrediente.nome}
+          qtd={obj.qtd}
+          variacao={obj.ingrediente.variacao}
+          categoriaPrincipal={obj.ingrediente.categoriaPrincipal}
+          medida={obj.ingrediente.medida}
+          descricao={obj.ingrediente.descricao}
+          id={obj.id}
+          atualizarQtdDB={atualizarQtdDB}
+          refreshPageWithKey={refreshPageWithKey}
+        ></Ingrediente>
       ));
     }
   }

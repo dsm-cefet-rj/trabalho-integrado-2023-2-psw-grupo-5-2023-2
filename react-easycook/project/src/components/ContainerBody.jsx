@@ -202,11 +202,11 @@ function ContainerNovaReceitas() {
   const [opcoesSubstitutos, setOpcoesSubstitutosSubstitutos] = useState([]);
 
   useEffect(() => {
-    fs.getApiData("ingredientes").then((value) => {
+    fs.getApiData("/ingrediente/").then((value) => {
       setOpcoesSubstitutosSubstitutos(value);
   
     });
-    fs.getApiData("receitas").then((value) => {
+    fs.getApiData("/receita/").then((value) => {
       setId(value.length);
     })
   }, []);

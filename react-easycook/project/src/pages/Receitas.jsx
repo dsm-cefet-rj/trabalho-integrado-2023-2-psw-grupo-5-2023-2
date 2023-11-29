@@ -3,19 +3,16 @@ import Cabecalho from "../components/Cabecalho";
 import { Lista } from "../components/Listas";
 import Rodape from "../components/Rodape";
 import Receita from "../components/Receita";
+import { FetchScript } from "../scripts/ApiBackend";
 
 export default function Receitas() {
   const [receitas, setreceitas] = useState([]);
 
-  const getApiData = async () => {
-    const response = await fetch("receita")
-      .then((response) => response.json())
-      .then((res) => setreceitas(res))
-      .catch(console.log);
-  };
-
   useEffect(() => {
-    getApiData();
+    FetchScript.listAllData(FetchScript.RequestPaths.receitas).then((response) => {
+
+      setreceitas(response);
+    });
   }, []);
 
   return (

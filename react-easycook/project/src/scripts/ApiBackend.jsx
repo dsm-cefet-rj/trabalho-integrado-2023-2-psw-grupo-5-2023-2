@@ -7,7 +7,8 @@ export class FetchScript {
     ingredientes : "/ingrediente/",
     receitas: "/receita/",
     listas: "/lista/",
-    opcoes: "/opcoes/"
+    opcoes: "/opcoes/",
+    monitoracao: "/monitoracao/"
   }
 
   

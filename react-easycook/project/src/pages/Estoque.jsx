@@ -8,27 +8,12 @@ export default function Estoque() {
   const [ingredientes, setIngredientes] = useState([]);
 
   const atualizarQtdDB = async (ingredienteId, novaQtd) => {
-    try {
-      const result = await fetch(`${FetchScript.RequestPaths.ingredientes}/${ingredienteId}`, {
-        method: "PATCH",
-        body: JSON.stringify({ qtd: novaQtd }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (result.ok) {
-        console.log("Quantidade atualizada com sucesso no banco de dados.");
-      } else {
-        console.error("Falha ao atualizar a quantidade no banco de dados.");
-      }
-    } catch (error) {
-      console.error("Erro ao atualizar a quantidade no banco de dados:", error);
-    }
+    FetchScript.patchApiData(FetchScript.RequestPaths.ingredientes, ingredienteId, JSON.stringify({ qtd: novaQtd }));
   };
 
   useEffect(() => {
-    FetchScript.listAllData("ingrediente").then((response) => {
+    FetchScript.listAllData(FetchScript.RequestPaths.ingredientes).then((response) => {
+
       setIngredientes(response);
     });
   }, []);
@@ -46,7 +31,7 @@ export default function Estoque() {
             objetos={ingredientes}
             tipoObjeto="ingrediente"
             atualizarQtdDB={atualizarQtdDB}
-          ></Lista>
+          />
         </div>
       </div>
       <Rodape></Rodape>

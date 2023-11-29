@@ -4,19 +4,16 @@ import Cabecalho from "../components/Cabecalho";
 import { Lista } from "../components/Listas";
 import Rodape from "../components/Rodape";
 import Compras from "../components/ListasCompras";
+import { FetchScript } from "../scripts/ApiBackend";
 
 export default function ListaDeCompras() {
   const [listasDeCompras, setListasDeCompras] = useState([]);
 
-  const getApiData = async () => {
-    const response = await fetch("/lista")
-      .then((response) => response.json())
-      .then((res) => setListasDeCompras(res))
-      .catch(console.log);
-  };
-
   useEffect(() => {
-    getApiData();
+    FetchScript.listAllData(FetchScript.RequestPaths.listas).then((response) => {
+
+      setListasDeCompras(response);
+    });
   }, []);
 
   return (

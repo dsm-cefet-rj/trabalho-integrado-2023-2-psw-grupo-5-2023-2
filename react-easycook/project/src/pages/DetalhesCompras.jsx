@@ -59,7 +59,7 @@ export default function DetalhesCompras() {
             rotaNovoObj="/novo-ingrediente"
             nomeObjetos="Novo Ingrediente"
             objetos={ingredientes}
-            tipoObjeto="ingrediente"
+            tipoObjeto="ingredienteCompras"
             atualizarQtdDB={atualizarQtdDB}
           ></Lista>
           <div className="listas"></div>
