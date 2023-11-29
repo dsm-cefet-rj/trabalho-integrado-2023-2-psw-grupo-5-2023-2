@@ -14,7 +14,7 @@ export default function DetalhesCompras() {
   const [lista, setLista] = useState([]);
 
   const getApiData = async () => {
-    const response = await fetch("/lista/" + id)
+    const response = await fetch("http://localhost:3001/lista/" + id)
       .then((response) => response.json())
       .then((res) => {
         console.log(res);

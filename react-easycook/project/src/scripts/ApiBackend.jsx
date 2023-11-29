@@ -1,21 +1,21 @@
 import { React } from "react";
 
-export class FetchScript {
+const baseUrl = "http://localhost:3001";
 
-  static RequestPaths = { // Adicionar estoque e provavelmente outros
+export class FetchScript {
+  static RequestPaths = {
+    // Adicionar estoque e provavelmente outros
     usuarios: "/usuario/",
-    ingredientes : "/ingrediente/",
+    ingredientes: "/ingrediente/",
     receitas: "/receita/",
     listas: "/lista/",
     opcoes: "/opcoes/",
-    monitoracao: "/monitoracao/"
-  }
+    monitoracao: "/monitoracao/",
+  };
 
-  
   static listAllData = async (objectUrl) => {
-    
     var d;
-    var response = await fetch(`${objectUrl}`)
+    var response = await fetch(`${baseUrl}${objectUrl}`)
       .then((response) => response.json())
       .then((data) => (d = data))
       .catch(console.log);
@@ -23,10 +23,8 @@ export class FetchScript {
     return Promise.resolve(d);
   };
 
-  
   static getDataById = async (objectUrl, objectId) => {
-    
-    var response = await fetch(`${objectUrl}${objectId}`)
+    var response = await fetch(`${baseUrl}${objectUrl}${objectId}`)
       .then((response) => response.json())
       .then((data) => (response = data))
       .catch(console.log);
@@ -37,26 +35,26 @@ export class FetchScript {
   static postData = async (objectUrl, body) => {
     var response;
     try {
-      fetch(`/${objectUrl}`, {
+      fetch(`${baseUrl}${objectUrl}`, {
         method: "POST",
         mode: "cors",
         body: body,
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
-      }).then()
-      .then((data) => (response = data));
+      })
+        .then()
+        .then((data) => (response = data));
       return Promise.resolve(response);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-    
   };
 
   //objectUrl format: /path/
   static patchApiData = async (objectUrl, objectId, requestBody) => {
     try {
-      const result = await fetch(objectUrl + objectId, {
+      const result = await fetch(baseUrl + objectUrl + objectId, {
         method: "PATCH",
         body: requestBody,
         headers: {
@@ -74,4 +72,3 @@ export class FetchScript {
     }
   };
 }
-

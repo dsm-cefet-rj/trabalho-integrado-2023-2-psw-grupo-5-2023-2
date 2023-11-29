@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import img from "../../src/images/quadrado-vinho.jpg";
 import NotFound from "../pages/NotFound";
-import {
-  CategoriasDeReceitas,
-} from "../listas";
+import { CategoriasDeReceitas } from "../listas";
 import { FetchScript as fs } from "../scripts/ApiBackend";
 
 export default function ContainerBodyNovaPagina({ tipoBody = "" }) {
@@ -198,79 +196,103 @@ function ContainerNovaReceitas() {
   const [nome, setnome] = useState("");
   const [categoriaPrincipal, setcategoriaPrincipal] = useState(null);
   const [descricao, setdescricao] = useState("");
-  const [ingredientes, setIngredientes] = useState([])
+  const [ingredientes, setIngredientes] = useState([]);
   const [opcoesSubstitutos, setOpcoesSubstitutosSubstitutos] = useState([]);
 
   useEffect(() => {
-    fs.getApiData("/ingrediente/").then((value) => {
+    fs.listAllData("/ingrediente/").then((value) => {
       setOpcoesSubstitutosSubstitutos(value);
-  
     });
-    fs.getApiData("/receita/").then((value) => {
+    fs.listAllData("/receita/").then((value) => {
       setId(value.length);
-    })
+    });
   }, []);
-
-
 
   return (
     <div className="Container" id="container">
-      <form className="row col-10 px-5 mx-auto text-center align-items-center justify-content-center my-3 py-3" id="form">
-        
+      <form
+        className="row col-10 px-5 mx-auto text-center align-items-center justify-content-center my-3 py-3"
+        id="form"
+      >
         <div className="">
           <div className="input-group mb-3 px-0">
             <label className="input-group-text"> Nome </label>
             <br></br>
-            <input onChange={e => setnome(e.target.value)} placeholder="Nome" type="text"  className="form-control bg-azure" id="criar-nome-ing" />
+            <input
+              onChange={(e) => setnome(e.target.value)}
+              placeholder="Nome"
+              type="text"
+              className="form-control bg-azure"
+              id="criar-nome-ing"
+            />
           </div>
 
           <div className="input-group mb-3 px-0">
             <label className="input-group-text"> Categoria Principal </label>
             <br></br>
-            <select className="form-select bg-azure" onChange={e => setcategoriaPrincipal(e.target.value)}>
-            <option disabled selected value hidden="true">
-              Categoria Principal
-            </option>
-            {CategoriasDeReceitas.map((cat) => (
-              <option value={cat}>{cat}</option>
-            ))}
+            <select
+              className="form-select bg-azure"
+              onChange={(e) => setcategoriaPrincipal(e.target.value)}
+            >
+              <option disabled selected value hidden="true">
+                Categoria Principal
+              </option>
+              {CategoriasDeReceitas.map((cat) => (
+                <option value={cat}>{cat}</option>
+              ))}
             </select>
           </div>
 
           <div className="input-group">
             <label className="input-group-text"> Ingredientes </label>
             <br></br>
-            <select style={{ width: "70%" }} className="ingrediente" onChange={(e) => {
-              setIngredientes(JSON.parse(e.target.value));
-              console.log(e.target.value);
-            }}>
-            <option selected value={[]}>
-              Ingredientes
-            </option>
-            {opcoesSubstitutos.map((sub) => (
-              <option value={JSON.stringify(sub)}>{sub.nome}</option>
-            ))}
+            <select
+              style={{ width: "70%" }}
+              className="ingrediente"
+              onChange={(e) => {
+                setIngredientes(JSON.parse(e.target.value));
+                console.log(e.target.value);
+              }}
+            >
+              <option selected value={[]}>
+                Ingredientes
+              </option>
+              {opcoesSubstitutos.map((sub) => (
+                <option value={JSON.stringify(sub)}>{sub.nome}</option>
+              ))}
             </select>
             <div id="buttons" style={{ width: "15%" }} className="buttons">
               <button>+</button>
               <button>-</button>
             </div>
           </div>
-        <br></br>
+          <br></br>
 
-          <div className="px-0 justify-content-center" onChange={e => setdescricao(e.target.value)}>
-            <span className="input-group-text"> Descrição e Modo de Preparo </span>
-            <textarea 
-            className="form-control bg-azure" rows={3} 
-            placeholder="Descrição e Modo de Preparo">
-            </textarea>
+          <div
+            className="px-0 justify-content-center"
+            onChange={(e) => setdescricao(e.target.value)}
+          >
+            <span className="input-group-text">
+              {" "}
+              Descrição e Modo de Preparo{" "}
+            </span>
+            <textarea
+              className="form-control bg-azure"
+              rows={3}
+              placeholder="Descrição e Modo de Preparo"
+            ></textarea>
           </div>
-          <br></br> 
+          <br></br>
 
           <div className="mx-auto px-0">
-          <button type="submit" 
-          className="btn btn-primary col-6"
-          onClick={handleNovaReceita}> Criar </button>
+            <button
+              type="submit"
+              className="btn btn-primary col-6"
+              onClick={handleNovaReceita}
+            >
+              {" "}
+              Criar{" "}
+            </button>
           </div>
         </div>
       </form>
@@ -278,10 +300,7 @@ function ContainerNovaReceitas() {
   );
 
   function handleNovaReceita() {
-    if (
-      nome === "" ||
-      categoriaPrincipal === null 
-    ) {
+    if (nome === "" || categoriaPrincipal === null) {
       return console.log("Preencha os campos!");
     }
     let requestBody = JSON.stringify({
