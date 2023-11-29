@@ -25,6 +25,10 @@ Nesta páginas, caso não tenha instalado, instale as dependências com o comand
 
     npm install
 
+ou, tente um clean install:
+
+    npm ci
+
 Note que é necessário ter o node instalado no computador.
 
 Após instalar as dependências, rode o frontend, com o terminal na mesma pasta:
