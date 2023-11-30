@@ -5,6 +5,7 @@ import Ingrediente from "../components/Ingrediente";
 import Cabecalho from "../components/Cabecalho";
 import { Lista } from "../components/Listas";
 import { useParams } from "react-router-dom";
+import { FetchScript } from "../scripts/ApiBackend";
 
 export default function DetalhesCompras() {
   const [ingredientes, setIngredientes] = useState([]);
@@ -25,27 +26,16 @@ export default function DetalhesCompras() {
   };
 
   useEffect(() => {
-    getApiData();
+    FetchScript.getDataById(FetchScript.RequestPaths.listas, id).then((response) => {
+      console.log(response);
+      setLista(response);
+      setIngredientes(response["ingredientes"]);
+    })
   }, []);
 
   const atualizarQtdDB = async (ingredienteId, novaQtd) => {
-    try {
-      const result = await fetch(`/ingrediente/${ingredienteId}`, {
-        method: "PATCH",
-        body: JSON.stringify({ qtd: novaQtd }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (result.ok) {
-        console.log("Quantidade atualizada com sucesso no banco de dados.");
-      } else {
-        console.error("Falha ao atualizar a quantidade no banco de dados.");
-      }
-    } catch (error) {
-      console.error("Erro ao atualizar a quantidade no banco de dados:", error);
-    }
+    let body = JSON.stringify({ qtd: novaQtd });
+    FetchScript.patchApiData(FetchScript.RequestPaths.monitoracao, ingredienteId, body);
   };
 
   return (

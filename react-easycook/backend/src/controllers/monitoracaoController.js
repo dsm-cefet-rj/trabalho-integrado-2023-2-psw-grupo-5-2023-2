@@ -94,7 +94,7 @@ async function update(request, response) {
     const updatedObj = await monitoracaoIngredienteSchema.findOneAndUpdate(
       { _id: id },
       updateData,
-      { new: true }
+      { new: false }
     );
 
     if (updatedObj) {

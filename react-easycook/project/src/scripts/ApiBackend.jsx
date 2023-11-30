@@ -23,6 +23,17 @@ export class FetchScript {
     return Promise.resolve(d);
   };
 
+  // TODO
+  static listAllOwnerData = async (objectUrl, ownerId) => {
+    var d;
+    var response = await fetch(`${baseUrl}${objectUrl}`)
+      .then((response) => response.json())
+      .then((data) => (d = data))
+      .catch(console.log);
+
+    return Promise.resolve(d);
+  };
+
   static getDataById = async (objectUrl, objectId) => {
     var response = await fetch(`${baseUrl}${objectUrl}${objectId}`)
       .then((response) => response.json())
