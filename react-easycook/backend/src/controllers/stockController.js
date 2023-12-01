@@ -36,7 +36,8 @@ async function readAll(request, response) {
             populate: {
                 path: 'ingrediente'
             }
-        });
+        })
+        .populate('user');
     } catch (error) {
         return response.status(500);
     }

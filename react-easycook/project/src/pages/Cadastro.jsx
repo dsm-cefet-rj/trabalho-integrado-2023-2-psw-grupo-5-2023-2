@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/easycook1-nobg.png";
 import "../styles/Cadastro.css";
+import { FetchScript } from "../scripts/ApiBackend";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -144,21 +145,17 @@ export default function Login() {
       console.log(`userData: ${userData}`);
       console.log(`JSON.stringify(userData): ${JSON.stringify(userData)}`);
 
-      const response = await fetch("usuario", {
-        method: "POST",
-        mode: "cors",
-        body: JSON.stringify({
-          id,
-          userNome,
-          userEmail,
-          userCpf,
-          userPassword,
-          userDataNasc,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
+      let body = JSON.stringify({
+        id,
+        userNome,
+        userEmail,
+        userCpf,
+        userPassword,
+        userDataNasc,
       });
+
+      const response = FetchScript.postData(FetchScript.RequestPaths.usuarios, body);
+
       if (response.status === 200) {
       console.log('Cadastro realizado com SUCESSO')
       document.getElementById("verifica-cadastro").style.visibility = "visible"
