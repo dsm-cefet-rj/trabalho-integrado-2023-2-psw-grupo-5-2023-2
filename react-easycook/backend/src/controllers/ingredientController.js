@@ -19,11 +19,11 @@ async function readOne(request, response) {
 }
 
 async function create(request, response) {
-  const { nome, categoriaPrincipal, medida, qtd, variacao, descricao, id } =
+  const { nome, categoriaPrincipal, medida, qtd, variacao, descricao } =
     request.body;
 
-  if (!nome || !id || !categoriaPrincipal || !medida || !qtd || !variacao) {
-    response.status(404).json({ error: "preencha os campos necessarios" });
+  if (!nome || !categoriaPrincipal || !medida || !qtd || !variacao) {
+    return response.status(404).json({ error: "preencha os campos necessarios" });
   }
 
   const ingredientCreated = await ingredienteSchema.create({
@@ -33,7 +33,6 @@ async function create(request, response) {
     qtd,
     variacao,
     descricao,
-    id,
   });
   return response.json(ingredientCreated);
 }

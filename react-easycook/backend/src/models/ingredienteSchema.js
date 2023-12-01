@@ -26,7 +26,7 @@ const ingredienteSchema = new Schema({
     descricao: {type:String},
     id: {
         type:String,
-        required: true
+        required: false
     }
 })
 

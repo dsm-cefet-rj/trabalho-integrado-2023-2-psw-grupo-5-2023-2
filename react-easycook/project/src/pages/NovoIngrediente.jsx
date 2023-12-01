@@ -115,16 +115,14 @@ export default function App() {
       id,
       nome,
       categoriaPrincipal,
-      outrasCategorias,
       medida,
       qtd: qtd,
       variacao: parseFloat(variacao),
-      substitutos,
       descricao,
     });
     console.log(requestBody);
 
-    fs.postData("ingrediente", requestBody);
+    fs.postData(fs.RequestPaths.ingredientes, requestBody);
     setTimeout(() => {
       navigate("/estoque/");
     }, 150);
