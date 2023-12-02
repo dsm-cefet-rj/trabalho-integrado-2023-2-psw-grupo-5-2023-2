@@ -73,4 +73,10 @@ async function readAll(request, response) {
   return response.json(RecipeGroup);
 }
 
-export default { create, deleteRecipe, read, readAll };
+async function readUserRecipes(request, response) {
+  const userId = request.params.userId;
+  const recipeList = await receitaSchema.find({ownerUser: userId}).populate("ingredientes").exec();
+  return response.json(recipeList);
+}
+
+export default { create, deleteRecipe, read, readAll, readUserRecipes };

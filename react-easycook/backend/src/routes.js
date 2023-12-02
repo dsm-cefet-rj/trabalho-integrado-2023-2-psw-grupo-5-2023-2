@@ -8,12 +8,6 @@ import listController from "./controllers/listController.js";
 import monitoracaoController from "./controllers/monitoracaoController.js";
 import stockController from "./controllers/stockController.js";
 
-/*
-    Acho que faz sentido a gente tentar usar as rotas tipo:
-    /api/usuario
-    /api/ingrediente
-*/
-
 //Rota Usuario
 routes.post("/usuario", userController.create);
 routes.get("/usuario", userController.read);
@@ -32,12 +26,14 @@ routes.patch("/ingrediente/:id", ingredientController.update);
 routes.post("/receita", recipeController.create);
 routes.get("/receita/:id", recipeController.read);
 routes.get("/receita", recipeController.readAll);
+routes.get("/receita/user/id", recipeController.readUserRecipes);
 routes.delete("/receita/:id", recipeController.deleteRecipe);
 
 //Rota Lista
 routes.post("/lista", listController.create);
 routes.get("/lista/:id", listController.read);
 routes.get("/lista", listController.readAll);
+routes.get("/lista/user/:id", listController.readUserLists);
 routes.delete("/lista/:id", listController.deleteList);
 routes.patch("/lista/:id", listController.update);
 
@@ -47,6 +43,10 @@ routes.get("/monitoracao", monitoracaoController.read);
 routes.get("/monitoracao/:id", monitoracaoController.readOne);
 routes.delete("/monitoracao/:id", monitoracaoController.remove);
 routes.patch("/monitoracao/:id", monitoracaoController.update);
+// Retorna todos os ingredientes monitorados pelo estoque do usuario // routes.get("/monitoracao/user/:id/estoques", monitoracaoController.readStockFromUserId); 
+// Retorna todas as listas e ingredientes monitorados pelo usuario // routes.get("/monitoracao/user/:id/listas", monitoracaoController.readStockFromUserId); 
+// Retorna todas as receitas e ingredientes monitorados pelo usuario // routes.get("/monitoracao/user/:id/receitas", monitoracaoController.readStockFromUserId); 
+
 
 //Rota Estoque de um Usuário
 routes.get("/estoque/:userId/ingredientes", stockController.read);

@@ -17,17 +17,14 @@ const ingredienteSchema = new Schema({
     },
     qtd: {
         type:Number,
-        required: true
+        required: false,
+        default: 0
     },
     variacao: {
         type:Number,
         required: true
     },
     descricao: {type:String},
-    id: {
-        type:String,
-        required: false
-    }
 })
 
 ingredienteSchema.plugin(normalize)
