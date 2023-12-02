@@ -21,6 +21,8 @@ const userSchema = new Schema({
     },
     userPassword: {
         type:String,
+        //min: 6,
+        //max:12,
         required: true
     },
     userDataNasc: {

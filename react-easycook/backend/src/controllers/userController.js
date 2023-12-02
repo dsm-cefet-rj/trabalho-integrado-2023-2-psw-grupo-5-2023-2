@@ -1,5 +1,9 @@
 import estoqueSchema from "../models/estoqueSchema.js";
 import userSchema from "../models/userSchema.js";
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt'
+import env from '../env'
+
 
 async function read(request, response) {
   const userList = await userSchema.find();
@@ -8,15 +12,27 @@ async function read(request, response) {
 
 async function readOne(request, response) {
   const { id } = request.params;
+  const password = req.body.userPassword || ''
   let err;
   try {
     const user = await userSchema.findById({ _id: id });
-    if (user != null) {
-      return response.status(200).json(user);
+    if (user != null && bcrypt.compareSync(password, user.password)) {
+      const token = jwt.sign(user, env.authSecret, {
+        expiresIn: "1 day"
+      })
+
+      return response.status(200).json({user, token});
     }
   } catch (errParam) {
     response.status(404).json({});
   }
+}
+
+const validateToken = (req, res, next) => {
+  const token = req.body.token || ''
+  jwt.verify(token, env.authSecret, function(err, decoded) {
+  return res.status(200).send({valid: !err})
+  })
 }
 
 async function create(request, response) {
@@ -44,12 +60,16 @@ async function create(request, response) {
     });
   }
 
+  const salt = bcrypt.genSaltSync()
+  const passwordHash = bcrypt.hashSync(password, salt)
+
+
   const userCreated = await userSchema.create({
     id,
     userNome,
     userEmail,
     userCpf,
-    userPassword,
+    userPassword: passwordHash,
     userDataNasc,
     createdAt,
   });
@@ -99,4 +119,4 @@ async function update(request, response) {
   }
 }
 
-export default { create, read, deleteUser, update, readOne };
+export default { create, read, deleteUser, update, readOne, validateToken };
