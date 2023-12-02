@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Cabecalho from "../components/Cabecalho";
-import { Lista } from "../components/Listas";
-import Rodape from "../components/Rodape";
-import Receita from "../components/Receita";
-import { FetchScript } from "../scripts/ApiBackend";
+import Cabecalho from "../../components/compartilhados/Cabecalho";
+import { Lista } from "../../components/compartilhados/listas/Listas";
+import Rodape from "../../components/compartilhados/Rodape";
+import Receita from "../../components/compartilhados/listas/Receita";
+import { FetchScript } from "../../scripts/ApiBackend";
 
 export default function Receitas() {
   const [receitas, setreceitas] = useState([]);

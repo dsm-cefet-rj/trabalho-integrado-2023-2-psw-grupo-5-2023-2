@@ -1,7 +1,7 @@
 import React from "react";
-import Rodape from "../components/Rodape";
-import logo from "../images/easycook1-nobg.png";
-import ContentHP from "../components/ContentHomePage";
+import Rodape from "../../components/compartilhados/Rodape";
+import logo from "../../images/easycook1-nobg.png";
+import ContentHP from "../../components/ContentHomePage";
 
 //LINK do ROUTER
 import { Link } from "react-router-dom";

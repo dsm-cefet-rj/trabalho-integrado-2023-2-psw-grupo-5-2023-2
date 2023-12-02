@@ -1,18 +1,18 @@
 import React from "react"
-import seta from "../../src/images/icone-seta-branca.png"
-import tresPontos from "../../src/images/3pontos.png"
-import homeButton from "../../src/images/icone-casa.png"
-import filtroTotal from "../../src/images/icone-filtro.png"
-import favoritoButton from "../../src/images/menu-favorito.png"
-import "../../src/styles/cabecalho.css"
+import seta from '../../images/icone-seta-branca.png'
+import tresPontos from "../../images/3pontos.png"
+import homeButton from "../../images/icone-casa.png"
+import filtroTotal from "../../images/icone-filtro.png"
+import favoritoButton from "../../images/menu-favorito.png"
+import "../../styles/cabecalho.css"
 import { Link, useNavigate} from "react-router-dom"
 import {useState} from 'react'
 
-import nomeFiltro from '../images/filtro-pesquisa.png'
-import ingredienteFiltro from '../images/filtro-ingrediente.png'
-import AZFiltro from '../images/filtro-a-z.png'
-import ZAFiltro from '../images/filtro-z-a.png'
-import categoriaFiltro from '../images/filtro-categoria.png'
+import nomeFiltro from '../../images/filtro-pesquisa.png'
+import ingredienteFiltro from '../../images/filtro-ingrediente.png'
+import AZFiltro from '../../images/filtro-a-z.png'
+import ZAFiltro from '../../images/filtro-z-a.png'
+import categoriaFiltro from '../../images/filtro-categoria.png'
 
 export default function Cabecalho({titulo, fundo = 'claro', outros, filtro, home, favorito, cancelar, salvar}) {
   

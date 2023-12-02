@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../images/easycook1-nobg.png";
-import "../styles/old.login.css";
+import logo from "../../images/easycook1-nobg.png";
+import "../../styles/old.login.css";
 
 export default function Login() {
   let navigate = useNavigate();

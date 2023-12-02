@@ -1,10 +1,10 @@
 import React from 'react'
-import '../styles/rodape.css'
-import iconeHomePage from '../images/menu-home-page.png'
-import iconeCompras from '../images/menu-lista-compras.png'
-import iconeIngrediente from '../images/menu-ingredientes.png'
-import iconeReceitas from '../images/menu-receitas.png'
-import iconeFavoritos from '../images/menu-favorito.png'
+import '../../styles/rodape.css'
+import iconeHomePage from '../../images/menu-home-page.png'
+import iconeCompras from '../../images/menu-lista-compras.png'
+import iconeIngrediente from '../../images/menu-ingredientes.png'
+import iconeReceitas from '../../images/menu-receitas.png'
+import iconeFavoritos from '../../images/menu-favorito.png'
 
 //LINK do ROUTER
 import {Link} from 'react-router-dom'

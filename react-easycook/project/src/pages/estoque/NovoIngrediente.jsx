@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Cabecalho from "../components/Cabecalho";
+import Cabecalho from "../../components/compartilhados/Cabecalho";
 import {
   CategoriasDeIngredientes,
   OpcoesDeMedidas,
   OpcoesDeVariacao,
-} from "../listas";
-import img from "../../src/images/quadrado-vinho.jpg";
-import { FetchScript as fs } from "../scripts/ApiBackend";
+} from "../../listas";
+import img from "../../images/quadrado-vinho.jpg";
+import { FetchScript as fs } from "../../scripts/ApiBackend";
 
 export default function App() {
   let navigate = useNavigate();

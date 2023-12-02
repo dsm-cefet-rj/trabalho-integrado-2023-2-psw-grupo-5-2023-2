@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import DetalhesPopup from "./DetalhesPopup";
-import "../styles/receita2.css";
+import DetalhesPopup from "../DetalhesPopup";
+import "../../../styles/receita2.css";
 
 export default function Receita({
   nome,

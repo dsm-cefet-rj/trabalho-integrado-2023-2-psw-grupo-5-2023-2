@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../images/easycook1-nobg.png";
-import "../styles/Cadastro.css";
-import { FetchScript } from "../scripts/ApiBackend";
+import logo from "../../images/easycook1-nobg.png";
+import "../../styles/Cadastro.css";
+import { FetchScript } from "../../scripts/ApiBackend";
 
 export default function Login() {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React from "react"
-import Cabecalho from "../components/Cabecalho"
-import '../styles/editarIngrediente.css'
-import img from '../images/quadrado-vinho.jpg'
+import Cabecalho from "../../components/compartilhados/Cabecalho"
+import '../../styles/editarIngrediente.css'
+import img from '../../images/quadrado-vinho.jpg'
 
 export default function EditarIngrediente(){
     return(

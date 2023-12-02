@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Rodape from "../components/Rodape";
-import Cabecalho from "../components/Cabecalho";
-import { Lista } from "../components/Listas";
-import { FetchScript } from "../scripts/ApiBackend";
+import Rodape from "../../components/compartilhados/Rodape";
+import Cabecalho from "../../components/compartilhados/Cabecalho";
+import { Lista } from "../../components/compartilhados/listas/Listas";
+import { FetchScript } from "../../scripts/ApiBackend";
 
 export default function Estoque() {
   const [ingredientes, setIngredientes] = useState([]);

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Cabecalho from "../components/Cabecalho";
-import "../styles/detalhesIngrediente.css";
-import img from "../images/quadrado-vinho.jpg";
+import Cabecalho from "../../components/compartilhados/Cabecalho";
+import "../../styles/detalhesIngrediente.css";
+import img from "../../images/quadrado-vinho.jpg";
 import { useParams } from "react-router-dom";
-import { FetchScript } from "../scripts/ApiBackend";
+import { FetchScript } from "../../scripts/ApiBackend";
 
 export default function DetalhesIngrediente() {
   const { id } = useParams();

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../styles/estoque.css";
-import Rodape from "../components/Rodape";
-import Ingrediente from "../components/Ingrediente";
-import Cabecalho from "../components/Cabecalho";
-import { Lista } from "../components/Listas";
+import "../../styles/estoque.css";
+import Rodape from "../../components/compartilhados/Rodape";
+import Ingrediente from "../../components/compartilhados/listas/Ingrediente";
+import Cabecalho from "../../components/compartilhados/Cabecalho";
+import { Lista } from "../../components/compartilhados/listas/Listas";
 import { useParams } from "react-router-dom";
-import { FetchScript } from "../scripts/ApiBackend";
+import { FetchScript } from "../../scripts/ApiBackend";
 
 export default function DetalhesCompras() {
   const [ingredientes, setIngredientes] = useState([]);

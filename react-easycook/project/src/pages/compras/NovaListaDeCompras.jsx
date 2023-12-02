@@ -1,6 +1,6 @@
 import React from 'react'
-import Cabecalho from '../components/Cabecalho'
-import ContainerBodyLC from '../components/ContainerBodyLC'
+import Cabecalho from '../../components/compartilhados/Cabecalho'
+import ContainerBodyLC from '../../components/ContainerBodyLC'
 
 
 export default function NovaListaDeCompras(){

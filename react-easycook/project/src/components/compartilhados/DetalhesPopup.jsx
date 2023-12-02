@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import '../styles/ingrediente.css';
-import '../styles/receita.css';
+import '../../styles/ingrediente.css';
+import '../../styles/receita.css';
 import { Link } from "react-router-dom";
-import Routes from "../routes";
+import Routes from "../../routes";
 
 export default function DetalhesPopup({
     id, 

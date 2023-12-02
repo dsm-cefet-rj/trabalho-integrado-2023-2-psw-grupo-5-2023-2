@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ListaDeCompras from "../pages/ListasDeCompras";
+import ListaDeCompras from "../../../pages/compras/ListasDeCompras";
 import ListaCompras from "./ListasCompras";
 import Ingrediente from "./Ingrediente";
 import Receita from "./Receita";
-import "../styles/listas.css";
+import "../../../styles/listas.css";
 
 export function Lista({
   tipoObjeto,

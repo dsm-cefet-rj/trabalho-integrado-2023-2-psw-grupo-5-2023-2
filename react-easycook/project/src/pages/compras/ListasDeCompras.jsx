@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Ingrediente from "../components/Ingrediente";
-import Cabecalho from "../components/Cabecalho";
-import { Lista } from "../components/Listas";
-import Rodape from "../components/Rodape";
-import Compras from "../components/ListasCompras";
-import { FetchScript } from "../scripts/ApiBackend";
+import Ingrediente from "../../components/compartilhados/listas/Ingrediente";
+import Cabecalho from "../../components/compartilhados/Cabecalho";
+import { Lista } from "../../components/compartilhados/listas/Listas";
+import Rodape from "../../components/compartilhados/Rodape";
+import Compras from "../../components/compartilhados/listas/ListasCompras";
+import { FetchScript } from "../../scripts/ApiBackend";
 
 export default function ListaDeCompras() {
   const [listasDeCompras, setListasDeCompras] = useState([]);

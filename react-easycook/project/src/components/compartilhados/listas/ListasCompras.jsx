@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import DetalhesPopup from "./DetalhesPopup";
+import DetalhesPopup from "../DetalhesPopup";
 
 export default function ListaCompras({ nome, id, ingredientes }) {
   var [popup, setPopup] = useState(true);
