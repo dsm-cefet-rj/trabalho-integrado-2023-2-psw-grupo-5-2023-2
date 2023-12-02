@@ -14,6 +14,10 @@ const listaSchema = new Schema({
       ref: "Monitoracao",
     },
   ],
+  ownerUser: {
+    type: Schema.Types.ObjectId,
+    ref: 'Usuario'
+},
 });
 
 listaSchema.plugin(normalize);

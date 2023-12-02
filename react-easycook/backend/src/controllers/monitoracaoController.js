@@ -1,9 +1,47 @@
 import estoqueSchema from "../models/estoqueSchema.js";
 import listaSchema from "../models/listaSchema.js";
 import monitoracaoIngredienteSchema from "../models/monitoracaoIngredienteSchema.js";
+import userSchema from "../models/userSchema.js";
 
 async function read(request, response) {
   const list = await monitoracaoIngredienteSchema.find();
+  return response.json(list);
+}
+
+async function readStockFromUserId(request, response) {
+  const userId = request.params.userId;
+  const user = await userSchema.findById(userId);
+  const estoqueId = user.estoque;
+  const list = await monitoracaoIngredienteSchema.find({owner: estoqueId}).exec();
+  return response.json(list);
+}
+
+async function readFromRecipeFromUserId(request, response) {
+  const userId = request.params.userId;
+  const user = await userSchema.findById(userId);
+  const estoqueId = user.estoque;
+  const list = await monitoracaoIngredienteSchema.find({owner: estoqueId}).exec();
+  return response.json(list);
+}
+
+async function readListsFromUserId(request, response) {
+  const userId = request.params.userId;
+  const user = await userSchema.findById(userId);
+  const estoqueId = user.estoque;
+  const list = await monitoracaoIngredienteSchema.find({owner: estoqueId}).exec();
+  return response.json(list);
+}
+
+async function addMonitoracaoToStockFromUserId(request, response) {
+  const userId = request.params.userId;
+  const user = await userSchema.findById(userId);
+  const estoqueId = user.estoque;
+  const list = await monitoracaoIngredienteSchema.create({
+    ingrediente: request.body.ingrediente,
+    qtd: request.body.qtd,
+    owner: estoqueId,
+    ownerType: request.body.ownerType,
+  });
   return response.json(list);
 }
 
@@ -73,7 +111,7 @@ async function create(request, response) {
 
 async function remove(request, response) {
   const { id } = request.params;
-
+  // trabalhar exclusão lógica ao invés da física?
   const obj = await monitoracaoIngredienteSchema.findOneAndDelete({
     _id: id,
   });

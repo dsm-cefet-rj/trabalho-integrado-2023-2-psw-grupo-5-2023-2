@@ -18,8 +18,12 @@ const receitaSchema = new Schema({
     descricao: {type:String},
     ingredientes:  [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Ingrediente'
-    }]
+        ref: 'Monitoracao'
+    }],
+    ownerUser: {
+        type: Schema.Types.ObjectId,
+        ref: 'Usuario'
+    },
     
 })
 

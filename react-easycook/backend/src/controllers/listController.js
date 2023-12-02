@@ -59,6 +59,16 @@ async function readAll(request, response) {
   return response.json(listGroup);
 }
 
+async function readUserLists(request, response) {
+  const userid = request.params.id;
+  if (!userid) { response.status(500);}
+  console.log("oba");
+  console.log(userid);
+  const listsList = await listaSchema.find({ownerUser: userid}).populate("ingredientes").exec();
+
+  return response.status(200).json(listsList);
+}
+
 async function update(request, response) {
   const { id } = request.params;
   const updateData = request.body;
@@ -81,4 +91,4 @@ async function update(request, response) {
   }
 }
 
-export default { create, deleteList, update, read, readAll };
+export default { create, deleteList, update, read, readAll, readUserLists };

@@ -18,8 +18,12 @@ const monitoracaoIngredienteSchema = new Schema({
     },
     ownerType: {
         type: String,
-        enum: ['Estoque', 'Lista'],
+        enum: ['Estoque', 'Lista', 'Receita'],
         required: true
+    },
+    active: {
+        type: Boolean,
+        default: false
     }
 })
 

@@ -1,5 +1,6 @@
 import ingredienteSchema from "../models/ingredienteSchema.js"
 import estoqueSchema from "../models/estoqueSchema.js"
+import monitoracaoIngredienteSchema from "../models/monitoracaoIngredienteSchema.js";
 
 async function read(request, response) {
     const userId = request.params.userId
@@ -17,6 +18,7 @@ async function read(request, response) {
             return response.status(404).json({error: 'estoque não encontrado para este usuário'})
         }
         //const ingredientesEstoque = await ingredienteSchema.find({_id: { $in: estoque.ingredientes }})
+        const ingredientesEstoque = await monitoracaoIngredienteSchema.find({owner: estoque.id}).populate('ingrediente');
         response.status(200).json(ingredientesEstoque)
         console.log(estoque)
     } catch(error){
