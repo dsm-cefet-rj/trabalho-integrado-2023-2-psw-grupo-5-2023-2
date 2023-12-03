@@ -87,6 +87,6 @@ const loader = async () => {
       return redirect("/");
     }
     return redirect("/login");
-  };
+};
 
- export default Routes
+export default Routes
