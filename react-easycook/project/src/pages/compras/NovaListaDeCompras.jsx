@@ -3,6 +3,7 @@ import Cabecalho from '../../components/compartilhados/Cabecalho'
 import BodyNovaListaDeCompras from './BodyNovaListaDeCompras'
 
 
+
 export default function NovaListaDeCompras(){
     return (
         <div>
