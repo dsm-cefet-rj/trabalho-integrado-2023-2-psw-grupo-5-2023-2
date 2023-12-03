@@ -1,8 +1,9 @@
+import dotenv from 'dotenv'
 import estoqueSchema from "../models/estoqueSchema.js";
 import userSchema from "../models/userSchema.js";
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt'
-import env from '../env'
+import env from '../.env.js'
 
 
 async function read(request, response) {

@@ -9,12 +9,6 @@ import listController from "./controllers/listController.js";
 import monitoracaoController from "./controllers/monitoracaoController.js";
 import stockController from "./controllers/stockController.js";
 
-const openApi = express.Router()
-server.use('/oapi', openApi)
-const AuthService = require('./controllers/userController.js');
-openApi.post('/usuario', AuthService.create);
-openApi.post('/signup', AuthService.readOne);
-openApi.post('/validateToken', AuthService.validateToken);
 
 //Rota Usuario
 //routes.post("/usuario", userController.create);
@@ -22,17 +16,6 @@ routes.get("/usuario", userController.read);
 //routes.get("/usuario/:id", userController.readOne);
 routes.delete("/usuario/:id", userController.deleteUser);
 routes.patch("/usuario/:id", userController.update);
-
-
-const protectedApi = express.Router()
-server.use('/src', protectedApi);
-protectedApi.use(auth);
-const ingrediente = require(ingredientController);
-ingrediente.register(protectedApi, '/ingrediente');
-const receita = require(recipeController);
-receita.register(protectedApi, '/receita');
-const lista = require(listController);
-lista.register(protectedApi, '/lista');
 
 
 //Rota Ingrediente
@@ -72,5 +55,25 @@ routes.patch("/monitoracao/:id", monitoracaoController.update);
 routes.get("/estoque/:userId/ingredientes", stockController.read);
 routes.get("/estoque/", stockController.readAll);
 
+export function authRouting(server) {
 
-export default routes;
+    const openApi = express.Router()
+    server.use('/oapi', openApi)
+    const AuthService = require('./controllers/userController.js');
+    openApi.post('/usuario', AuthService.create);
+    openApi.post('/signup', AuthService.readOne);
+    openApi.post('/validateToken', AuthService.validateToken);
+    
+    
+    const protectedApi = express.Router()
+    server.use('/src', protectedApi);
+    protectedApi.use(auth);
+    const ingrediente = require(ingredientController);
+    ingrediente.register(protectedApi, '/ingrediente');
+    const receita = require(recipeController);
+    receita.register(protectedApi, '/receita');
+    const lista = require(listController);
+    lista.register(protectedApi, '/lista');
+    }
+
+export default { routes, authRouting };

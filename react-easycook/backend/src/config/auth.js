@@ -1,7 +1,8 @@
+import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
-import env from '../.env'
+import env from '../.env.js'
 
-module.exports = (req, res, next) => {
+export default (req, res, next) => {
     // CORS preflight request
     if (req.method === 'OPTIONS') {
         next()

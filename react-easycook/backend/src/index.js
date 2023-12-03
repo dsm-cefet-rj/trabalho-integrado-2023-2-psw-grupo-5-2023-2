@@ -13,3 +13,5 @@ app.use(routes);
 app.listen(port, () => {
   console.log(`Back inicializado e escutando a porta ${port}`);
 });
+
+export default app;
