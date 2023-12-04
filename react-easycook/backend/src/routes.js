@@ -8,10 +8,12 @@ import recipeController from "../src/controllers/recipeController.js";
 import listController from "./controllers/listController.js";
 import monitoracaoController from "./controllers/monitoracaoController.js";
 import stockController from "./controllers/stockController.js";
+import authController from "./controllers/authController.js";
 
 // Autenticacao
-routes.get("/auth/signup", userController.cadastro); // Cadastro
-routes.get("/auth/signing", userController.login); // Login
+routes.post("/auth/signup", authController.signup);
+routes.post("/auth/signin", authController.signin);
+routes.get("/auth/user", authController.verifyToken);
 
 //Rota Usuario
 //routes.post("/usuario", userController.create);

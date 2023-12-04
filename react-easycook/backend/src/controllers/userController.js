@@ -73,10 +73,7 @@ async function create(request, response) {
     createdAt,
   });
 
-  const stockCreated = await estoqueSchema.create({
-    user: userCreated._id,
-    ingredientes: [],
-  });
+  const stockCreated = await estoqueSchema.create({});
 
   return response.status(200).json(userCreated);
 }

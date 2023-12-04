@@ -1,13 +1,17 @@
 import express from "express";
+
 const app = express();
 const port = 3001;
 
-import routes from "../src/routes.js";
-import "../src/config/dbConfig.js";
+import routes from "./routes.js";
 import cors from "cors";
+import "./config/dbConfig.js";
 
 app.use(cors());
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(routes);
 
 app.listen(port, () => {
