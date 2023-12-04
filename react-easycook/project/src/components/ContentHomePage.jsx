@@ -12,7 +12,7 @@ export default function ContentHP({ingredientes}){
                 <div className="card-body">
                     <ul>
                        {ingredienteNada.map((ingrediente) => (
-                        <li key={ingrediente._id}>{ingrediente.nome}</li>
+                        <li key={ingrediente._id}>{ingrediente.nome}: {ingrediente.qtd} {ingrediente.medida}</li>
                        ))}
                     </ul>
                 </div>
@@ -25,7 +25,7 @@ export default function ContentHP({ingredientes}){
                     <div className="card-body">
                         <ul>
                             {ingredientesPouco.map((ingrediente) => (
-                            <li key={ingrediente._id}>{ingrediente.nome}</li>
+                            <li key={ingrediente._id}>{ingrediente.nome}: {ingrediente.qtd} {ingrediente.medida}</li>
                         ))}
                         </ul>
                     </div>

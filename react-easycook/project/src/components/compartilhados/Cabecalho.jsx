@@ -42,11 +42,12 @@ export default function Cabecalho({
     var popup = document.getElementById("popup-3-pontos");
     popup.style.visibility = "visible";
   }
+  /*
   function excluir() {
     var popup = document.getElementById("popup-3-pontos");
     popup.style.visibility = "hidden";
   }
-  /*function filtroEstoque() {
+  function filtroEstoque() {
     var filtro = document.getElementById("filtro-estoque");
     filtro.style.visibility = "visible";
   }
@@ -129,9 +130,7 @@ export default function Cabecalho({
           <Link to="/editar-ingrediente">
             <h3 className="vermelho">Editar</h3>
           </Link>
-          <h3 className="preto excluir" onClick={excluir}>
-            Excluir
-          </h3>
+          
         </div>
         <div id="edicao">
           <Link
