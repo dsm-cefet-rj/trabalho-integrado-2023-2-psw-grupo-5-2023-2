@@ -44,13 +44,10 @@ export default class Cadastro extends Component {
     this.handleRegister = this.handleRegister.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
-    this.onChangeId = this.onChangeId.bind(this);
 
     this.state = {
-      id: "",
-      username: "",
-      email: "",
-      password: "",
+      userEmail: "",
+      userPassword: "",
       successful: false,
       message: "",
     };
@@ -58,27 +55,15 @@ export default class Cadastro extends Component {
     AuthService.logout();
   }
 
-  onChangeUsername(e) {
-    this.setState({
-      username: e.target.value,
-    });
-  }
-
   onChangeEmail(e) {
     this.setState({
-      email: e.target.value,
+      userEmail: e.target.value,
     });
   }
 
   onChangePassword(e) {
     this.setState({
-      password: e.target.value,
-    });
-  }
-
-  onChangeId(e) {
-    this.setState({
-      id: e.target.value,
+      userPassword: e.target.value,
     });
   }
 
@@ -92,14 +77,7 @@ export default class Cadastro extends Component {
 
     this.form.validateAll();
     if (this.checkBtn.context._errors.length === 0) {
-      AuthService.register(
-        this.state.username,
-        this.state.email,
-        this.state.password,
-        this.state.cpf,
-        this.state.dataNasc,
-        this.state.id
-      ).then(
+      AuthService.register(this.state.userEmail, this.state.userPassword).then(
         (response) => {
           this.setState({
             message: response.data.message,
