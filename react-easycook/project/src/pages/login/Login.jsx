@@ -5,14 +5,13 @@ import "../../styles/old.login.css";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import { isEmail } from "validator";
 import AuthService from "../../auth/auth.service";
 
 const required = (value) => {
   if (!value) {
     return (
       <div className="alert alert-danger" role="alert">
-        This field is required!
+        Esse campo é necessário.
       </div>
     );
   }
@@ -126,10 +125,10 @@ export default class Login extends Component {
           </div>
 
           <div class="row mb-4">
-            <div className="col text-center">
+            <div className="text-center">
               <Link to="/cadastre-se">
                 <a
-                  className="link-aliceblue justify-content-end"
+                  className="btn btn-primary col-6 link-aliceblue"
                   href="localhost:3000"
                   id="cadastre-se"
                 >
@@ -138,7 +137,7 @@ export default class Login extends Component {
               </Link>
             </div>
 
-            <div className="col text-center">
+            <div className="col text-center" hidden={true}>
               <Link to="/esqueci-minha-senha">
                 <a className="link-aliceblue" href="localhost:3000">
                   Esqueci minha senha
