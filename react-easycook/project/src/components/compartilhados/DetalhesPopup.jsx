@@ -45,12 +45,7 @@ export default function DetalhesPopup({
         >
           <i className="bi bi-search"></i>
         </Link>
-        <div
-          className="btn btn-primary col py-3 mx-1 my-1"
-          hidden={!(popup && favoritavel)}
-        >
-          <i className="img-fluid bi bi-heart"></i>
-        </div>
+
         <button
           className="btn btn-primary col py-3 mx-1 my-1"
           hidden={!popup}
