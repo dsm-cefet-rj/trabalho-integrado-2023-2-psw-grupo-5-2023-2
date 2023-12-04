@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/easycook1-nobg.png";
 import "../../styles/old.login.css";
@@ -6,6 +6,8 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import AuthService from "../../auth/auth.service";
+
+import { withRouter } from "../../components/compartilhados/WithRouter";
 
 const required = (value) => {
   if (!value) {
@@ -17,7 +19,7 @@ const required = (value) => {
   }
 };
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
@@ -30,6 +32,8 @@ export default class Login extends Component {
       loading: false,
       message: "",
     };
+
+    AuthService.logout();
   }
 
   onChangeUseremail(e) {
@@ -175,3 +179,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login);

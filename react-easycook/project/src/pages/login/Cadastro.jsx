@@ -54,6 +54,8 @@ export default class Cadastro extends Component {
       successful: false,
       message: "",
     };
+
+    AuthService.logout();
   }
 
   onChangeUsername(e) {
@@ -136,7 +138,9 @@ export default class Cadastro extends Component {
           }}
         >
           {!this.state.successful}
-
+          <div className="text text-center mx-auto">
+            <h3>Cadastro</h3>
+          </div>
           <div className="row">
             <div className="col-8 mx-auto">
               <label htmlFor="userEmail">E-mail</label>

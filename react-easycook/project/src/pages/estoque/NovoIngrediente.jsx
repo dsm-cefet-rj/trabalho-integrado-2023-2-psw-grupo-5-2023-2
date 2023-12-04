@@ -8,6 +8,7 @@ import {
 } from "../../listas";
 import img from "../../images/quadrado-vinho.jpg";
 import { FetchScript as fs } from "../../scripts/ApiBackend";
+import authService from "../../auth/auth.service";
 
 export default function App() {
   let navigate = useNavigate();
@@ -24,7 +25,9 @@ export default function App() {
   const [descricao, setdescricao] = useState("");
 
   useEffect(() => {
-
+    if (!authService.isAuthorized()) {
+      navigate("/login");
+    }
   }, []);
 
   return (

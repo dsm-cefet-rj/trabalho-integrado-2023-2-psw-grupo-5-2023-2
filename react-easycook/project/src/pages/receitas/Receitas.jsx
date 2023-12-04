@@ -4,15 +4,23 @@ import { Lista } from "../../components/compartilhados/listas/Listas";
 import Rodape from "../../components/compartilhados/Rodape";
 import Receita from "../../components/compartilhados/listas/Receita";
 import { FetchScript } from "../../scripts/ApiBackend";
+import authService from "../../auth/auth.service";
+import { useNavigate } from "react-router-dom";
 
 export default function Receitas() {
   const [receitas, setreceitas] = useState([]);
 
+  let navigate = useNavigate();
   useEffect(() => {
-    FetchScript.listAllData(FetchScript.RequestPaths.receitas).then((response) => {
+    if (!authService.isAuthorized()) {
+      navigate("/login");
+    }
 
-      setreceitas(response);
-    });
+    FetchScript.listAllData(FetchScript.RequestPaths.receitas).then(
+      (response) => {
+        setreceitas(response);
+      }
+    );
   }, []);
 
   return (
