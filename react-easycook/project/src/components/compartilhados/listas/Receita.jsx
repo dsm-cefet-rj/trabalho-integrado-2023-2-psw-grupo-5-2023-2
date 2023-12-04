@@ -55,7 +55,7 @@ export default function Receita({
         <div className="row d-flex justify-content-center">
           <DetalhesPopup
             id={id}
-            favoritavel={true}
+            favoritavel={false}
             removeObjeto={HandleRemoveReceitaClick}
             favoritaObjeto={""}
             rotaConsulta={"detalhes-receita"}
