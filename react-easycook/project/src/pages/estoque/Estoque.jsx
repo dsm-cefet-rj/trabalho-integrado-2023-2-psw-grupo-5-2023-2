@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import Rodape from "../../components/compartilhados/Rodape";
 import Cabecalho from "../../components/compartilhados/Cabecalho";
-import { Lista } from "../../components/compartilhados/listas/Listas";
+import { ListaEstoque } from "./ListasEstoque";
 import { FetchScript } from "../../scripts/ApiBackend";
 
 export default function Estoque() {
   const [ingredientes, setIngredientes] = useState([]);
 
   const atualizarQtdDB = async (ingredienteId, novaQtd) => {
-    FetchScript.patchApiData(FetchScript.RequestPaths.ingredientes, ingredienteId, JSON.stringify({ qtd: novaQtd }));
+    FetchScript.patchApiData(
+      FetchScript.RequestPaths.ingredientes,
+      ingredienteId,
+      JSON.stringify({ qtd: novaQtd })
+    );
   };
 
   useEffect(() => {
-    FetchScript.listAllData(FetchScript.RequestPaths.ingredientes).then((response) => {
-
-      setIngredientes(response);
-    });
+    FetchScript.listAllData(FetchScript.RequestPaths.ingredientes).then(
+      (response) => {
+        setIngredientes(response);
+      }
+    );
   }, []);
 
   return (
@@ -25,7 +30,7 @@ export default function Estoque() {
       </div>
       <div id="estoque">
         <div className="">
-          <Lista
+          <ListaEstoque
             rotaNovoObj="/novo-ingrediente"
             nomeObjetos="Novo Ingrediente"
             objetos={ingredientes}
