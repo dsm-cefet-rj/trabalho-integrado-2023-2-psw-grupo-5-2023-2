@@ -20,9 +20,7 @@ export function Lista({
       className="container-fluid border-black border-black min-vh-100 my-0 bg-azure"
     >
       <Link to={rotaNovoObj}>
-        <button className="" id="novo-objeto">
-          {nomeObjetos}
-        </button>
+        <button className="novo-objeto">{nomeObjetos}</button>
       </Link>
       {escolheElemento()}
     </div>
