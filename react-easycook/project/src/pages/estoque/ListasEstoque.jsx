@@ -7,6 +7,7 @@ export function ListaEstoque({
   rotaNovoObj,
   nomeObjetos,
   objetos,
+  ingredientesFiltro,
   atualizarQtdDB,
   refreshPageWithKey,
 }) {
@@ -33,6 +34,7 @@ export function ListaEstoque({
   );
 
   function escolheElemento() {
+    
     return objetos?.map((obj) => (
       <Ingrediente
         nome={obj.nome}
@@ -44,6 +46,7 @@ export function ListaEstoque({
         id={obj._id}
         atualizarQtdDB={atualizarQtdDB}
         refreshPageWithKey={refreshPageWithKey}
+        key={obj._id}
       ></Ingrediente>
     ));
   }

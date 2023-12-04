@@ -7,6 +7,7 @@ import { FetchScript } from "../../scripts/ApiBackend";
 export default function Estoque() {
   const [ingredientes, setIngredientes] = useState([]);
 
+
   const atualizarQtdDB = async (ingredienteId, novaQtd) => {
     FetchScript.patchApiData(
       FetchScript.RequestPaths.ingredientes,
@@ -19,9 +20,13 @@ export default function Estoque() {
     FetchScript.listAllData(FetchScript.RequestPaths.ingredientes).then(
       (response) => {
         setIngredientes(response);
+
+        
+        
       }
     );
   }, []);
+  
 
   return (
     <div className="container-fluid p-0">
@@ -30,10 +35,12 @@ export default function Estoque() {
       </div>
       <div id="estoque">
         <div className="">
+          
           <ListaEstoque
             rotaNovoObj="/novo-ingrediente"
             nomeObjetos="Novo Ingrediente"
             objetos={ingredientes}
+            
             tipoObjeto="ingrediente"
             atualizarQtdDB={atualizarQtdDB}
           />
