@@ -21,7 +21,7 @@ export default function Receitas() {
         setreceitas(response);
       }
     );
-  }, [user]);
+  }, [userId]);
 
   return (
     <div>
