@@ -6,7 +6,7 @@ import Receita from "../../components/compartilhados/listas/Receita";
 import { FetchScript } from "../../scripts/ApiBackend";
 import authService from "../../auth/auth.service";
 import { useNavigate } from "react-router-dom";
-import ;
+import { useParams } from "react-router-dom";
 
 export default function Receitas() {
   const [receitas, setreceitas] = useState([]);
