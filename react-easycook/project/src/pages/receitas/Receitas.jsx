@@ -16,7 +16,7 @@ export default function Receitas() {
       navigate("/login");
     }
 
-    FetchScript.listAllData('FetchScript.RequestPaths.receitas').then(
+    FetchScript.listAllData().then(
       (response) => {
         setreceitas(response);
       }
