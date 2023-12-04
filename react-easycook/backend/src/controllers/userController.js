@@ -1,10 +1,9 @@
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 import estoqueSchema from "../models/estoqueSchema.js";
 import userSchema from "../models/userSchema.js";
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt'
-import env from '../.env.js'
-
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+import env from "../.env.js";
 
 async function read(request, response) {
   const userList = await userSchema.find();
@@ -13,16 +12,16 @@ async function read(request, response) {
 
 async function readOne(request, response) {
   const { id } = request.params;
-  const password = req.body.userPassword || ''
+  const password = req.body.userPassword || "";
   let err;
   try {
     const user = await userSchema.findById({ _id: id });
     if (user != null && bcrypt.compareSync(password, user.password)) {
       const token = jwt.sign(user, env.authSecret, {
-        expiresIn: "1 day"
-      })
+        expiresIn: "1 day",
+      });
 
-      return response.status(200).json({user, token});
+      return response.status(200).json({ user, token });
     }
   } catch (errParam) {
     response.status(404).json({});
@@ -30,11 +29,11 @@ async function readOne(request, response) {
 }
 
 const validateToken = (req, res, next) => {
-  const token = req.body.token || ''
-  jwt.verify(token, env.authSecret, function(err, decoded) {
-  return res.status(200).send({valid: !err})
-  })
-}
+  const token = req.body.token || "";
+  jwt.verify(token, env.authSecret, function (err, decoded) {
+    return res.status(200).send({ valid: !err });
+  });
+};
 
 async function create(request, response) {
   const {
@@ -61,9 +60,8 @@ async function create(request, response) {
     });
   }
 
-  const salt = bcrypt.genSaltSync()
-  const passwordHash = bcrypt.hashSync(password, salt)
-
+  const salt = bcrypt.genSaltSync();
+  const passwordHash = bcrypt.hashSync(password, salt);
 
   const userCreated = await userSchema.create({
     id,
@@ -75,12 +73,10 @@ async function create(request, response) {
     createdAt,
   });
 
-
-
   const stockCreated = await estoqueSchema.create({
     user: userCreated._id,
-    ingredientes: []
-  })
+    ingredientes: [],
+  });
 
   return response.status(200).json(userCreated);
 }
@@ -120,4 +116,17 @@ async function update(request, response) {
   }
 }
 
-export default { create, read, deleteUser, update, readOne, validateToken };
+async function cadastro(request, response) {}
+
+async function login(request, response) {}
+
+export default {
+  create,
+  read,
+  deleteUser,
+  update,
+  readOne,
+  validateToken,
+  cadastro,
+  login,
+};
