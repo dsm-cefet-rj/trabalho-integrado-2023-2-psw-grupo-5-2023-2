@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Receitas() {
   const [receitas, setreceitas] = useState([]);
-  const { userId };
+  const { userId } = useParams();
 
   let navigate = useNavigate();
   useEffect(() => {
