@@ -33,6 +33,7 @@ routes.patch("/ingrediente/:id", ingredientController.update);
 routes.post("/receita", recipeController.create);
 routes.get("/receita/:id", recipeController.read);
 routes.get("/receita", recipeController.readAll);
+routes.post("/receita/user/:id", recipeController.newUserRecipe);
 routes.get("/receita/user/:id", recipeController.readUserRecipes);
 routes.delete("/receita/:id", recipeController.deleteRecipe);
 
@@ -40,6 +41,7 @@ routes.delete("/receita/:id", recipeController.deleteRecipe);
 routes.post("/lista", listController.create);
 routes.get("/lista/:id", listController.read);
 routes.get("/lista", listController.readAll);
+routes.post("/lista/user/:id", listController.newUserList);
 routes.get("/lista/user/:id", listController.readUserLists);
 routes.delete("/lista/:id", listController.deleteList);
 routes.patch("/lista/:id", listController.update);
