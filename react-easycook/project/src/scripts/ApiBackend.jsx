@@ -4,13 +4,13 @@ const baseUrl = "http://localhost:3001";
 
 export class FetchScript {
   static RequestPaths = {
-    // Adicionar estoque e provavelmente outros
     usuarios: "/usuario/",
     ingredientes: "/ingrediente/",
     receitas: "/receita/",
     listas: "/lista/",
     opcoes: "/opcoes/",
     monitoracao: "/monitoracao/",
+    estoque: "/estoque/",
   };
 
   static listAllData = async (objectUrl) => {
@@ -26,7 +26,7 @@ export class FetchScript {
   // TODO
   static listAllOwnerData = async (objectUrl, ownerId) => {
     var d;
-    var response = await fetch(`${baseUrl}${objectUrl}`)
+    var response = await fetch(`${baseUrl}${objectUrl}${ownerId}`)
       .then((response) => response.json())
       .then((data) => (d = data))
       .catch(console.log);

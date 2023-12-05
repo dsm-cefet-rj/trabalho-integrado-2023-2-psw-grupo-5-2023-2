@@ -34,19 +34,18 @@ export function ListaEstoque({
   );
 
   function escolheElemento() {
-    
     return objetos?.map((obj) => (
       <Ingrediente
-        nome={obj.nome}
+        nome={obj.ingrediente.nome}
         qtd={obj.qtd}
-        variacao={obj.variacao}
-        categoriaPrincipal={obj.categoriaPrincipal}
-        medida={obj.medida}
-        descricao={obj.descricao}
-        id={obj._id}
+        variacao={obj.ingrediente.variacao}
+        categoriaPrincipal={obj.ingrediente.categoriaPrincipal}
+        medida={obj.ingrediente.medida}
+        descricao={obj.ingrediente.descricao}
+        id={obj.id}
         atualizarQtdDB={atualizarQtdDB}
         refreshPageWithKey={refreshPageWithKey}
-        key={obj._id}
+        key={obj.id}
       ></Ingrediente>
     ));
   }
