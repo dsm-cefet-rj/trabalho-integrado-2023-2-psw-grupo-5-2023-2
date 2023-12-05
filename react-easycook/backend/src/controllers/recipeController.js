@@ -101,7 +101,7 @@ async function newUserRecipe(request, response) {
 
   let lst = await receitaSchema.findOne({ nome: request.body.nome });
 
-  if (lst.nome === request.body.nome) {
+  if (lst && lst.nome && lst.nome === request.body.nome) {
     return response
       .status(400)
       .json({ message: "Já existe uma receita com esse nome" });

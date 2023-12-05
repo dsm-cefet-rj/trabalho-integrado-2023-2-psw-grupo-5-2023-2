@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CategoriasDeReceitas } from "../../listas";
 import { FetchScript as fs } from "../../scripts/ApiBackend";
 import SelecaoComponent from "../../components/compartilhados/selecao/SelecaoComponent";
+import authService from "../../auth/auth.service";
 
 export default function BodyNovaReceita() {
   return ContainerNovaReceitas();
@@ -104,16 +105,29 @@ function ContainerNovaReceitas() {
       return e.chosen === true;
     });
 
+    let monitoracoes = [];
+
+    ings.forEach((i) => {
+      monitoracoes.push({
+        ingrediente: i.id,
+        qtd: i.qtd,
+        ownerType: "Receita",
+      });
+    });
+
     let requestBody = JSON.stringify({
-      nome,
-      categoriaPrincipal,
-      ings,
-      descricao,
+      nome: nome,
+      categoriaPrincipal: categoriaPrincipal,
+      ingredientes: monitoracoes,
+      descricao: descricao,
     });
     console.log(requestBody);
 
+    fs.postData(
+      fs.RequestPaths.receitas + "user/" + authService.getCurrentUser().id,
+      requestBody
+    );
     /*
-    fs.postApiData("receitas", requestBody);
     setTimeout(() => {
       navigate("/receitas/");
     }, 250);
