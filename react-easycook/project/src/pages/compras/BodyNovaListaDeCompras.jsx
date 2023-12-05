@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import SelecaoComponent from "../../components/compartilhados/selecao/SelecaoComponent";
-import { FetchScript as fs } from "../../scripts/ApiBackend";
+import { FetchScript, FetchScript as fs } from "../../scripts/ApiBackend";
+import authService from "../../auth/auth.service";
 
 export default function BodyNovaListaDeCompras() {
   const [nomeLista, setNomeLista] = useState("");
@@ -48,7 +49,7 @@ export default function BodyNovaListaDeCompras() {
               className="form-control width bg-branco cor-cinza"
               id="descricao-lista"
               rows="3"
-              onChange={(e) => setNomeLista(e.target.value)}
+              onChange={(e) => setDescricaoLista(e.target.value)}
             ></textarea>
           </div>
           <div className="row justify-content-center mx-auto px-0">
@@ -101,11 +102,29 @@ export default function BodyNovaListaDeCompras() {
       return e.chosen === true;
     });
 
-    let body = {
+    let monitoracoes = [];
+
+    ings.forEach((i) => {
+      monitoracoes.push({
+        ingrediente: i.id,
+        qtd: i.qtd,
+        //owner: authService.getCurrentUser().estoque,
+        ownerType: "Lista",
+      });
+    });
+
+    let body = JSON.stringify({
       nome: nomeLista,
+      ingredientes: monitoracoes,
       descricao: descricaoLista,
-      ingredientes: ings,
-    };
+    });
     console.log(body);
+
+    FetchScript.postData(
+      FetchScript.RequestPaths.receitas +
+        "user/" +
+        authService.getCurrentUser().id,
+      body
+    );
   }
 }
