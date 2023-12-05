@@ -121,7 +121,7 @@ export default function BodyNovaListaDeCompras() {
     console.log(body);
 
     FetchScript.postData(
-      FetchScript.RequestPaths.receitas +
+      FetchScript.RequestPaths.listas +
         "user/" +
         authService.getCurrentUser().id,
       body

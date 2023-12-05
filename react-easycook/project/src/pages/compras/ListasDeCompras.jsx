@@ -5,13 +5,17 @@ import { Lista } from "../../components/compartilhados/listas/Listas";
 import Rodape from "../../components/compartilhados/Rodape";
 import Compras from "../../components/compartilhados/listas/ListasCompras";
 import { FetchScript } from "../../scripts/ApiBackend";
+import authService from "../../auth/auth.service";
 
 export default function ListaDeCompras() {
   const [listasDeCompras, setListasDeCompras] = useState([]);
 
   useEffect(() => {
-    FetchScript.listAllData(FetchScript.RequestPaths.listas).then((response) => {
-
+    FetchScript.listAllData(
+      FetchScript.RequestPaths.listas +
+        "user/" +
+        authService.getCurrentUser().id
+    ).then((response) => {
       setListasDeCompras(response);
     });
   }, []);
