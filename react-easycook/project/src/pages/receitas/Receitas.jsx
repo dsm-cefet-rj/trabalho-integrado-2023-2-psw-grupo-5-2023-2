@@ -10,20 +10,19 @@ import { useParams } from "react-router-dom";
 
 export default function Receitas() {
   const [receitas, setreceitas] = useState([]);
-  const { userId } = useParams();
+  const [user, setUser] = useState(authService.getCurrentUser());
 
   let navigate = useNavigate();
+
   useEffect(() => {
     if (!authService.isAuthorized()) {
       navigate("/login");
     }
 
-    FetchScript.listAllData('/receita/user/${userId}').then(
-      (response) => {
-        setreceitas(response);
-      }
-    );
-  }, [userId]);
+    FetchScript.listAllData(`/receita/user/${user.id}`).then((response) => {
+      setreceitas(response);
+    });
+  }, []);
 
   return (
     <div>
