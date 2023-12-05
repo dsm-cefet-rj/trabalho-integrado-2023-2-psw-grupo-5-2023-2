@@ -33,7 +33,7 @@ routes.patch("/ingrediente/:id", ingredientController.update);
 routes.post("/receita", recipeController.create);
 routes.get("/receita/:id", recipeController.read);
 routes.get("/receita", recipeController.readAll);
-routes.get("/receita/user/id", recipeController.readUserRecipes);
+routes.get("/receita/user/:id", recipeController.readUserRecipes);
 routes.delete("/receita/:id", recipeController.deleteRecipe);
 
 //Rota Lista
@@ -54,7 +54,7 @@ routes.patch("/monitoracao/:id", monitoracaoController.update);
 // Retorna todas as listas e ingredientes monitorados pelo usuario // routes.get("/monitoracao/user/:id/listas", monitoracaoController.readStockFromUserId);
 // Retorna todas as receitas e ingredientes monitorados pelo usuario // routes.get("/monitoracao/user/:id/receitas", monitoracaoController.readStockFromUserId);
 
-//Rota Estoque de um Usuário
+//Rota Estoque de um UsuÃ¡rio
 routes.get("/estoque/:userId/ingredientes", stockController.read);
 routes.get("/estoque/", stockController.readAll);
 
