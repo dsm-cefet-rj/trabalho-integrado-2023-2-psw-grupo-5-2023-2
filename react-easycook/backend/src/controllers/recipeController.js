@@ -50,7 +50,7 @@ async function deleteRecipe(request, response) {
   }
   return response
     .status(401)
-    .json({ error: "não foi encontrado o registro para deletar" });
+    .json({ error: "nÃ£o foi encontrado o registro para deletar" });
 }
 
 async function read(request, response) {
@@ -74,8 +74,11 @@ async function readAll(request, response) {
 }
 
 async function readUserRecipes(request, response) {
-  const userId = request.params.userId;
-  const recipeList = await receitaSchema.find({ownerUser: userId}).populate("ingredientes").exec();
+  const userId = request.params.id;
+  const recipeList = await receitaSchema
+    .find({ ownerUser: userId })
+    .populate("ingredientes")
+    .exec();
   return response.json(recipeList);
 }
 

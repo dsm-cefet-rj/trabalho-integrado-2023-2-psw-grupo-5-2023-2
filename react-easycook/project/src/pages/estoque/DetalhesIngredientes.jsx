@@ -4,6 +4,7 @@ import "../../styles/detalhesIngrediente.css";
 import img from "../../images/quadrado-vinho.jpg";
 import { useParams } from "react-router-dom";
 import { FetchScript } from "../../scripts/ApiBackend";
+import { Link } from "react-router-dom";
 
 export default function DetalhesIngrediente() {
   const { id } = useParams();
@@ -26,6 +27,10 @@ export default function DetalhesIngrediente() {
         <span> Categoria </span>
 
         <p> {ingrediente.categoriaPrincipal} </p>
+
+        <Link to={`/editar-ingrediente/${id}`}>
+            <button>Editar</button>
+          </Link>
       </div>
     </div>
   );

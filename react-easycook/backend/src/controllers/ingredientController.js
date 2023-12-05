@@ -22,8 +22,13 @@ async function create(request, response) {
   const { nome, categoriaPrincipal, medida, qtd, variacao, descricao } =
     request.body;
 
-  if (!nome || !categoriaPrincipal || !medida || !qtd || !variacao) {
-    return response.status(404).json({ error: "preencha os campos necessarios" });
+  console.log(request.body);
+  console.log(nome);
+
+  if (!nome || !categoriaPrincipal || !medida || !variacao) {
+    return response
+      .status(500)
+      .json({ error: "preencha os campos necessarios" });
   }
 
   const ingredientCreated = await ingredienteSchema.create({

@@ -35,7 +35,7 @@ export const Routes = [
     element: <Login />,
   },
   {
-    path: "editar-ingrediente",
+    path: "editar-ingrediente/:id",
     element: <EditarIngrediente />,
   },
   {

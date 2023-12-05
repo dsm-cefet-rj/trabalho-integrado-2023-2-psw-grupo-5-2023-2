@@ -37,12 +37,12 @@ export default function Cabecalho({
       navigate("/login");
     }
   }, []);
-
+/*
   function popupConsultaIngrediente() {
     var popup = document.getElementById("popup-3-pontos");
     popup.style.visibility = "visible";
   }
-  /*
+  
   function excluir() {
     var popup = document.getElementById("popup-3-pontos");
     popup.style.visibility = "hidden";
@@ -76,18 +76,7 @@ export default function Cabecalho({
         <h2 className="titulo">{titulo}</h2>
       </div>
       <div className="rightSide">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          hidden={!outros}
-          width="50"
-          height="50"
-          fill="#ff2b2b"
-          class="bi bi-three-dots-vertical icone-tres-pontos"
-          viewBox="0 0 16 16"
-          onClick={popupConsultaIngrediente}
-        >
-          <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-        </svg>
+        
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -127,26 +116,11 @@ export default function Cabecalho({
           </svg>
         </Link>
         <div id="popup-3-pontos">
-          <Link to="/editar-ingrediente">
-            <h3 className="vermelho">Editar</h3>
-          </Link>
+          
           
         </div>
         <div id="edicao">
-          <Link
-            to="/detalhes-ingrediente/:id"
-            hidden={!salvar}
-            className="salvar"
-          >
-            <a href="localhost:3000/">Salvar</a>
-          </Link>
-          <Link
-            to="/detalhes-ingrediente/:id"
-            hidden={!cancelar}
-            className="cancelar"
-          >
-            <a href="localhost:3000/">Cancelar</a>
-          </Link>
+          
         </div>
         <div id="filtro-estoque">
           <div id="txt-filtro">

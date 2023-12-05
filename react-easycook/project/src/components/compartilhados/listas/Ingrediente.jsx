@@ -108,7 +108,7 @@ export default function Ingrediente({
           </button>
           <DetalhesPopup
             id={id}
-            favoritavel={true}
+            favoritavel={false}
             removeObjeto={handleRemoveIngredienteClick}
             favoritaObjeto={""}
             rotaConsulta={"detalhes-ingrediente"}

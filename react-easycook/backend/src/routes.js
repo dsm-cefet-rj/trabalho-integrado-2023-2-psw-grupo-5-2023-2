@@ -33,7 +33,7 @@ routes.patch("/ingrediente/:id", ingredientController.update);
 routes.post("/receita", recipeController.create);
 routes.get("/receita/:id", recipeController.read);
 routes.get("/receita", recipeController.readAll);
-routes.get("/receita/user/id", recipeController.readUserRecipes);
+routes.get("/receita/user/:id", recipeController.readUserRecipes);
 routes.delete("/receita/:id", recipeController.deleteRecipe);
 
 //Rota Lista
