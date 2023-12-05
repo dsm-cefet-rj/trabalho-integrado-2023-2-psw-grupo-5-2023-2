@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Ingrediente from "../../components/compartilhados/listas/Ingrediente";
 import Cabecalho from "../../components/compartilhados/Cabecalho";
-import { Lista } from "../../components/compartilhados/listas/Listas";
+import Lista from "./ListasListasDeCompras";
 import Rodape from "../../components/compartilhados/Rodape";
 import Compras from "../../components/compartilhados/listas/ListasCompras";
 import { FetchScript } from "../../scripts/ApiBackend";

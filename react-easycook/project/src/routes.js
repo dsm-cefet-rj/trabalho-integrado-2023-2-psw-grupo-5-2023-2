@@ -17,6 +17,7 @@ import DetalhesIngredientes from "./pages/estoque/DetalhesIngredientes.jsx";
 import DetalhesReceita from "./pages/receitas/DetalhesReceita.jsx";
 import DetalhesCompras from "../src/pages/compras/DetalhesCompras.jsx";
 import EditarEstoque from "./pages/estoque/EditarEstoque.jsx";
+import EditarListaDeCompras from "./pages/compras/EditarListaDeCompras.jsx";
 
 // path: 'caminho após o link'
 //element: <Página/>
@@ -81,6 +82,10 @@ export const Routes = [
   {
     path: "/detalhes-lista-compras/:id",
     element: <DetalhesCompras />,
+  },
+  {
+    path: "/editar-lista-de-compras/:id",
+    element: <EditarListaDeCompras />,
   },
 ];
 

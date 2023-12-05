@@ -3,9 +3,10 @@ import "../../styles/estoque.css";
 import Rodape from "../../components/compartilhados/Rodape";
 import Ingrediente from "../../components/compartilhados/listas/Ingrediente";
 import Cabecalho from "../../components/compartilhados/Cabecalho";
-import { Lista } from "../../components/compartilhados/listas/Listas";
+import Lista from "./ListaDetalhesCompras";
 import { useParams } from "react-router-dom";
 import { FetchScript } from "../../scripts/ApiBackend";
+import authService from "../../auth/auth.service";
 
 export default function DetalhesCompras() {
   const [ingredientes, setIngredientes] = useState([]);
@@ -26,16 +27,22 @@ export default function DetalhesCompras() {
   };
 
   useEffect(() => {
-    FetchScript.getDataById(FetchScript.RequestPaths.listas, id).then((response) => {
-      console.log(response);
-      setLista(response);
-      setIngredientes(response["ingredientes"]);
-    })
+    FetchScript.getDataById(FetchScript.RequestPaths.listas, id).then(
+      (response) => {
+        console.log(response);
+        setLista(response);
+        setIngredientes(response["ingredientes"]);
+      }
+    );
   }, []);
 
   const atualizarQtdDB = async (ingredienteId, novaQtd) => {
     let body = JSON.stringify({ qtd: novaQtd });
-    FetchScript.patchApiData(FetchScript.RequestPaths.monitoracao, ingredienteId, body);
+    FetchScript.patchApiData(
+      FetchScript.RequestPaths.monitoracao,
+      ingredienteId,
+      body
+    );
   };
 
   return (
@@ -46,11 +53,12 @@ export default function DetalhesCompras() {
       <div id="lista-compras">
         <div className="lista-ingredientes">
           <Lista
-            rotaNovoObj="/novo-ingrediente"
-            nomeObjetos="Novo Ingrediente"
+            rotaNovoObj={"/editar-lista-de-compras/"}
+            nomeObjetos="Editar Lista de Compras"
             objetos={ingredientes}
             tipoObjeto="ingredienteCompras"
             atualizarQtdDB={atualizarQtdDB}
+            idLista={lista.id}
           ></Lista>
           <div className="listas"></div>
 
