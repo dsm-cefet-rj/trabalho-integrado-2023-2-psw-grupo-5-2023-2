@@ -32,10 +32,8 @@ export default function EditarIngrediente() {
     
     };
     
-    FetchScript.postData(FetchScript.RequestPaths.ingredientes, id, requestBody);
-    setTimeout(() => {
-      navigate(`/estoque/${id}`);
-    }, 150);
+    FetchScript.patchApiData(FetchScript.RequestPaths.ingredientes, id, requestBody);
+    
 
   }
 
@@ -53,7 +51,7 @@ export default function EditarIngrediente() {
           placeholder={ingrediente.nome}
         />
         <span> Categoria </span>
-        <select id="edit-categoria-ingrediente" value={categoriaPrincipal} onChange={(e) => setcategoriaPrincipal(e.target.value)}>
+        <select id="edit-categoria-ingrediente" value={categoriaPrincipal} onChange={(e) => setcategoriaPrincipal(e.target.value)} >
         {CategoriasDeIngredientes.map((cat) => (
               <option value={cat}>{cat}</option>
             ))}
