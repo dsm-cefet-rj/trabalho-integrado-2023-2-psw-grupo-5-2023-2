@@ -16,8 +16,13 @@ const listaSchema = new Schema({
   ],
   ownerUser: {
     type: Schema.Types.ObjectId,
-    ref: 'Usuario'
-},
+    ref: "Usuario",
+  },
+  descricao: {
+    type: String,
+    required: false,
+    default: "",
+  },
 });
 
 listaSchema.plugin(normalize);
