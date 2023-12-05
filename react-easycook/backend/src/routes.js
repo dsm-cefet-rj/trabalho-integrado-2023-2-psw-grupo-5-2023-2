@@ -55,6 +55,7 @@ routes.patch("/monitoracao/:id", monitoracaoController.update);
 // Retorna todas as receitas e ingredientes monitorados pelo usuario // routes.get("/monitoracao/user/:id/receitas", monitoracaoController.readStockFromUserId);
 
 //Rota Estoque de um Usuário
+routes.post("/estoque/:userId/ingredientes", stockController.updateStock);
 routes.get("/estoque/:userId/ingredientes", stockController.read);
 routes.get("/estoque/", stockController.readAll);
 
