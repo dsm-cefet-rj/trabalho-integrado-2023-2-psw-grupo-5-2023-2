@@ -33,14 +33,11 @@ async function read(request, response) {
   const { id } = request.params;
   let err;
   try {
-    let list = await listaSchema.findById({ _id: id }).populate({
-      path: "ingredientes",
-      populate: {
-        path: "ingrediente",
-      },
-    });
+    let list = await listaSchema.findById({ _id: id });
 
-    const monitoracoes = await monitoracaoIngredienteSchema.find({ owner: id });
+    const monitoracoes = await monitoracaoIngredienteSchema
+      .find({ owner: id })
+      .populate("ingrediente");
 
     list.ingredientes = monitoracoes;
 
@@ -73,7 +70,9 @@ async function readUserLists(request, response) {
   console.log(listsList[0]);
   for (let l of listsList) {
     console.log(l);
-    l.ingredientes = await monitoracaoIngredienteSchema.find({ owner: l.id });
+    l.ingredientes = await monitoracaoIngredienteSchema
+      .find({ owner: l.id })
+      .populate("ingrediente");
   }
 
   return response.status(200).json(listsList);
@@ -89,6 +88,9 @@ async function newUserList(request, response) {
   }
 
   let lst = await listaSchema.find({ nome: request.body.nome });
+
+  console.log("Lista:\n" + lst);
+  console.log("Body:\n" + request.body);
 
   if (lst.nome === request.body.nome) {
     return response
@@ -107,7 +109,7 @@ async function newUserList(request, response) {
       i.owner = lista.id;
       i.ownerType = "Lista";
 
-      console.log("ingrediente: " + JSON.stringify(i));
+      //console.log("ingrediente: " + JSON.stringify(i));
 
       const c = await monitoracaoIngredienteSchema.create(i);
 
