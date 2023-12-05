@@ -115,7 +115,6 @@ export default function App() {
       return console.log("Preencha os campos!");
     }
     let requestBody = JSON.stringify({
-      id,
       nome,
       categoriaPrincipal,
       medida,
