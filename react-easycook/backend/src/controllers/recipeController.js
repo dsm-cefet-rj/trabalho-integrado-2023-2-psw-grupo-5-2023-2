@@ -1,3 +1,4 @@
+import monitoracaoIngredienteSchema from "../models/monitoracaoIngredienteSchema.js";
 import receitaSchema from "../models/receitaSchema.js";
 
 /*async function update(request, response){
@@ -75,11 +76,67 @@ async function readAll(request, response) {
 
 async function readUserRecipes(request, response) {
   const userId = request.params.id;
-  const recipeList = await receitaSchema
-    .find({ ownerUser: userId })
-    .populate("ingredientes")
-    .exec();
+
+  let recipeList = await receitaSchema.find({ ownerUser: userId });
+
+  for (let r of recipeList) {
+    console.log(r);
+    r.ingredientes = await monitoracaoIngredienteSchema
+      .find({ owner: r.id })
+      .populate("ingrediente");
+  }
+
   return response.json(recipeList);
 }
 
-export default { create, deleteRecipe, read, readAll, readUserRecipes };
+async function newUserRecipe(request, response) {
+  const userId = request.params.id;
+  let ingredientes = request.body.ingredientes;
+
+  console.log(ingredientes);
+
+  if (!request.body.nome) {
+    return response.status(400).json("A receita precisa de um nome");
+  }
+
+  let lst = await receitaSchema.findOne({ nome: request.body.nome });
+
+  if (lst.nome === request.body.nome) {
+    return response
+      .status(400)
+      .json({ message: "Já existe uma receita com esse nome" });
+  }
+
+  if (ingredientes.length > 0) {
+    const receita = await receitaSchema.create({
+      nome: request.body.nome,
+      categoriaPrincipal: request.body.categoriaPrincipal,
+      ownerUser: userId,
+      descricao: request.body.descricao ? request.body.descricao : "",
+    });
+    for (const i of ingredientes) {
+      i.owner = receita.id;
+      i.ownerType = "Receita";
+
+      // console.log("ingrediente: " + JSON.stringify(i));
+
+      const c = await monitoracaoIngredienteSchema.create(i);
+
+      // console.log(c);
+    }
+    return response.status(200).json({ message: "receita atualizada" });
+  } else {
+    return response
+      .status(400)
+      .json({ message: "Não havia ingrediente na receita." });
+  }
+}
+
+export default {
+  create,
+  deleteRecipe,
+  read,
+  readAll,
+  readUserRecipes,
+  newUserRecipe,
+};
