@@ -4,7 +4,9 @@ import monitoracaoIngredienteSchema from "../models/monitoracaoIngredienteSchema
 import userSchema from "../models/userSchema.js";
 
 async function read(request, response) {
-  const list = await monitoracaoIngredienteSchema.find();
+  const list = await monitoracaoIngredienteSchema
+    .find()
+    .populate("ingrediente", "owner");
   return response.json(list);
 }
 
@@ -12,7 +14,9 @@ async function readStockFromUserId(request, response) {
   const userId = request.params.userId;
   const user = await userSchema.findById(userId);
   const estoqueId = user.estoque;
-  const list = await monitoracaoIngredienteSchema.find({owner: estoqueId}).exec();
+  const list = await monitoracaoIngredienteSchema
+    .find({ owner: estoqueId })
+    .exec();
   return response.json(list);
 }
 
@@ -20,7 +24,9 @@ async function readFromRecipeFromUserId(request, response) {
   const userId = request.params.userId;
   const user = await userSchema.findById(userId);
   const estoqueId = user.estoque;
-  const list = await monitoracaoIngredienteSchema.find({owner: estoqueId}).exec();
+  const list = await monitoracaoIngredienteSchema
+    .find({ owner: estoqueId })
+    .exec();
   return response.json(list);
 }
 
@@ -28,7 +34,9 @@ async function readListsFromUserId(request, response) {
   const userId = request.params.userId;
   const user = await userSchema.findById(userId);
   const estoqueId = user.estoque;
-  const list = await monitoracaoIngredienteSchema.find({owner: estoqueId}).exec();
+  const list = await monitoracaoIngredienteSchema
+    .find({ owner: estoqueId })
+    .exec();
   return response.json(list);
 }
 
@@ -59,11 +67,12 @@ async function readOne(request, response) {
 }
 
 async function create(request, response) {
-  const { ingrediente, qtd, owner, ownerType } =
-    request.body;
+  const { ingrediente, qtd, owner, ownerType } = request.body;
 
   if (!ingrediente || !qtd || !ownerType || !owner) {
-    return response.status(404).json({ error: "preencha os campos necessarios" });
+    return response
+      .status(404)
+      .json({ error: "preencha os campos necessarios" });
   }
 
   let ingredientCreated = await monitoracaoIngredienteSchema.create({
@@ -80,33 +89,32 @@ async function create(request, response) {
     try {
       let updatingLista = await listaSchema.findByIdAndUpdate(
         owner,
-        { ingredientes: list.ingredientes},
+        { ingredientes: list.ingredientes },
         { new: false }
-        );
+      );
     } catch (error) {
       console.log(error + "// erro adicionando monitoracao a lista");
     }
     return response.json(ingredientCreated);
-  } 
-  else if (ownerType === "Estoque") {
+  } else if (ownerType === "Estoque") {
     var estoque = await estoqueSchema.findById(owner);
     estoque.ingredientes.push(ingredientCreated._id);
 
     try {
       let updatingEstoque = await estoqueSchema.findByIdAndUpdate(
         owner,
-        { ingredientes: estoque.ingredientes},
+        { ingredientes: estoque.ingredientes },
         { new: false }
-        );
+      );
     } catch (error) {
       console.log(error + "// erro adicionando monitoracao ao estoque");
     }
     return response.json(ingredientCreated);
+  } else {
+    return response
+      .status(404)
+      .json({ error: "preencha os campos necessarios" });
   }
-  else {
-    return response.status(404).json({ error: "preencha os campos necessarios" });
-  }
-  
 }
 
 async function remove(request, response) {
@@ -142,8 +150,8 @@ async function update(request, response) {
       .status(404)
       .json({ error: "não foi encontrado o registro para atualizar" });
   } catch (error) {
-      return response.status(500).json({ error: "erro interno do servidor" });
-    }
+    return response.status(500).json({ error: "erro interno do servidor" });
+  }
 }
 
 export default { read, create, remove, update, readOne };

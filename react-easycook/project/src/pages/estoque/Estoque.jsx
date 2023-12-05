@@ -10,7 +10,7 @@ export default function Estoque() {
 
   const atualizarQtdDB = async (ingredienteId, novaQtd) => {
     FetchScript.patchApiData(
-      FetchScript.RequestPaths.ingredientes,
+      FetchScript.RequestPaths.monitoracao,
       ingredienteId,
       JSON.stringify({ qtd: novaQtd })
     );

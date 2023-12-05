@@ -6,20 +6,23 @@ import {
   OpcoesDeMedidas,
   OpcoesDeVariacao,
 } from "../../listas";
-import { FetchScript as fs } from "../../scripts/ApiBackend";
+import { FetchScript, FetchScript as fs } from "../../scripts/ApiBackend";
 import SelecaoComponent from "../../components/compartilhados/selecao/SelecaoComponent";
+import authService from "../../auth/auth.service";
 
 export default function EditarEstoque() {
   let navigate = useNavigate();
   const [ingredientes, setIngredientes] = useState([]);
+  const [monitoracoes, setMonitoracoes] = useState({ ingredientes: [] });
 
   useEffect(() => {
     fs.listAllData(fs.RequestPaths.ingredientes).then((response) => {
       let ings = [];
       response.forEach((element) => {
-        element["chosen"] = false;
+        element["chosen"] = element.active ? element.active : false;
         ings.push(element);
       });
+
       setIngredientes(ings);
     });
   }, []);
@@ -90,9 +93,27 @@ export default function EditarEstoque() {
       return e.chosen === true;
     });
 
-    let body = {
-      ingredientes: ings,
-    };
+    let monitoracoes = [];
+
+    ings.forEach((i) => {
+      monitoracoes.push({
+        ingrediente: i.id,
+        qtd: i.qtd,
+        owner: authService.getCurrentUser().estoque,
+        ownerType: "Estoque",
+      });
+    });
+
+    let body = JSON.stringify({
+      ingredientes: monitoracoes,
+    });
     console.log(body);
+
+    FetchScript.postData(
+      FetchScript.RequestPaths.estoque +
+        authService.getCurrentUser().id +
+        "/ingredientes",
+      body
+    );
   }
 }

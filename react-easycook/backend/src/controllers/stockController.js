@@ -1,6 +1,7 @@
 import ingredienteSchema from "../models/ingredienteSchema.js";
 import estoqueSchema from "../models/estoqueSchema.js";
 import monitoracaoIngredienteSchema from "../models/monitoracaoIngredienteSchema.js";
+import userSchema from "../models/userSchema.js";
 
 async function read(request, response) {
   const userId = request.params.userId;
@@ -38,9 +39,10 @@ async function updateStock(request, response) {
   const userId = request.params.userId;
   let ingredientes = request.body.ingredientes;
 
-  const estoque = await estoqueSchema.find({ owner: userId });
+  const user = await userSchema.find({ _id: userId });
 
-  // let ings = await monitoracaoIngredienteSchema.find({ owner: estoque.id });
+  const owner = user[0].estoque;
+
   const a = await monitoracaoIngredienteSchema.updateMany(
     {},
     { active: false }
@@ -48,20 +50,22 @@ async function updateStock(request, response) {
 
   if (ingredientes.length > 0) {
     for (const i of ingredientes) {
+      i.owner = owner;
+      console.log(i);
       let mon = await monitoracaoIngredienteSchema.find({
         ingrediente: i.ingrediente,
-        owner: i.owner,
+        owner: owner,
       });
       console.log("mon: " + mon);
 
       if (mon === undefined || mon === null || mon === "" || mon.length === 0) {
         console.log("MON NÃO EXISTE");
-        lst.push(await monitoracaoIngredienteSchema.create(i));
+        const c = await monitoracaoIngredienteSchema.create(i);
       } else {
         console.log("MON EXISTE");
 
         const c = await monitoracaoIngredienteSchema.findOneAndUpdate(
-          { ingrediente: i.ingrediente, owner: i.owner },
+          { ingrediente: i.ingrediente, owner: owner },
           { active: true },
           { new: false }
         );
