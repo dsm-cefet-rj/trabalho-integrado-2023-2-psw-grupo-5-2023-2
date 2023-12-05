@@ -43,6 +43,7 @@ routes.get("/lista/:id", listController.read);
 routes.get("/lista", listController.readAll);
 routes.post("/lista/user/:id", listController.newUserList);
 routes.get("/lista/user/:id", listController.readUserLists);
+routes.post("/lista/:userId/:listId", listController.updateUserList);
 routes.delete("/lista/:id", listController.deleteList);
 routes.patch("/lista/:id", listController.update);
 

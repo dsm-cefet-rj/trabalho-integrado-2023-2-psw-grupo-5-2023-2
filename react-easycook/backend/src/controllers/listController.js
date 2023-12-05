@@ -36,7 +36,7 @@ async function read(request, response) {
     let list = await listaSchema.findById({ _id: id });
 
     const monitoracoes = await monitoracaoIngredienteSchema
-      .find({ owner: id })
+      .find({ owner: id, active: true })
       .populate("ingrediente");
 
     list.ingredientes = monitoracoes;
@@ -123,6 +123,50 @@ async function newUserList(request, response) {
   }
 }
 
+async function updateUserList(request, response) {
+  const listId = request.params.listId;
+  let ingredientes = request.body.ingredientes;
+
+  const list = await listaSchema.findOne({ _id: listId });
+
+  const owner = listId;
+
+  const a = await monitoracaoIngredienteSchema.updateMany(
+    {},
+    { active: false }
+  );
+
+  if (ingredientes.length > 0) {
+    for (const i of ingredientes) {
+      i.owner = owner;
+      console.log(i);
+      let mon = await monitoracaoIngredienteSchema.find({
+        ingrediente: i.ingrediente,
+        owner: owner,
+      });
+      console.log("mon: " + mon);
+
+      if (mon === undefined || mon === null || mon === "" || mon.length === 0) {
+        console.log("MON NÃO EXISTE");
+        const c = await monitoracaoIngredienteSchema.create(i);
+      } else {
+        console.log("MON EXISTE");
+
+        const c = await monitoracaoIngredienteSchema.findOneAndUpdate(
+          { ingrediente: i.ingrediente, owner: owner },
+          { active: true },
+          { new: false }
+        );
+
+        console.log(c);
+      }
+    }
+    return response.status(200).json({ message: "Ingredientes atualizados" });
+  } else {
+    return response.status(200).json({ message: "Ingredientes removidos" });
+  }
+}
+
 async function update(request, response) {
   const { id } = request.params;
   const updateData = request.body;
@@ -153,4 +197,5 @@ export default {
   readAll,
   readUserLists,
   newUserList,
+  updateUserList,
 };
